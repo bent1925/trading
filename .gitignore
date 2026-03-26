@@ -1,6 +1,7 @@
 *.key
 *.pem
 kalshi_trades.json
+backtest_cache/
 __pycache__/
 *.pyc
 .env
