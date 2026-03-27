@@ -190,6 +190,102 @@ class KalshiClient:
         return self.post("/trade-api/v2/portfolio/orders", body)
 
 
+# ─── Polymarket Source ───────────────────────────────────────────────────────
+
+class PolymarketSource:
+    """
+    Fetches active market prices from Polymarket's public Gamma API (no API key).
+    Used as a second market-consensus signal alongside the ESPN model.
+    """
+    GAMMA_URL = "https://gamma-api.polymarket.com/markets"
+
+    def __init__(self):
+        self._markets: Optional[list] = None
+
+    def _load(self) -> None:
+        if self._markets is not None:
+            return
+        all_markets: list = []
+        offset = 0
+        while True:
+            try:
+                r = requests.get(
+                    self.GAMMA_URL,
+                    params={"active": "true", "closed": "false",
+                            "limit": 500, "offset": offset},
+                    timeout=15,
+                )
+                r.raise_for_status()
+                batch = r.json()
+            except Exception as e:
+                log.warning(f"Polymarket fetch failed (offset={offset}): {e}")
+                break
+            if not isinstance(batch, list) or not batch:
+                break
+            all_markets.extend(batch)
+            if len(batch) < 500:
+                break
+            offset += 500
+        self._markets = all_markets
+        log.info(f"Polymarket: loaded {len(all_markets)} active markets")
+
+    def get_prob(self, yes_team: str, other_team: str) -> Optional[tuple]:
+        """
+        Returns (prob_yes_team_wins: float, matched_question: str) or None.
+        Fuzzy-matches both team names against Polymarket questions, then
+        determines which Polymarket outcome corresponds to yes_team winning.
+        """
+        self._load()
+        yes_w   = set(_words(yes_team))
+        other_w = set(_words(other_team))
+        if not yes_w or not other_w:
+            return None
+
+        best_m, best_score = None, 0
+        for m in self._markets:
+            q_w   = set(_words(m.get("question", "")))
+            y_hit = len(yes_w   & q_w)
+            o_hit = len(other_w & q_w)
+            if y_hit == 0 or o_hit == 0:
+                continue
+            score = y_hit + o_hit
+            if score > best_score:
+                best_score, best_m = score, m
+
+        if best_m is None or best_score < 2:
+            return None
+
+        try:
+            prices   = json.loads(best_m.get("outcomePrices", "[]"))
+            outcomes = json.loads(best_m.get("outcomes", "[]"))
+        except (json.JSONDecodeError, TypeError):
+            return None
+        if len(prices) < 2:
+            return None
+
+        p0 = float(prices[0])   # probability that outcomes[0] occurs
+        question = best_m.get("question", "")
+
+        # Check if outcomes explicitly name a team (not just "Yes"/"No")
+        out0_w = set(_words(outcomes[0])) if outcomes else set()
+        out1_w = set(_words(outcomes[1])) if len(outcomes) > 1 else set()
+        if yes_w & out0_w:
+            return (p0, question)
+        if yes_w & out1_w:
+            return (1.0 - p0, question)
+
+        # Outcomes are Yes/No — whichever team appears first in the question
+        # is the subject of "Yes"
+        q_lower = question.lower()
+        first_yes   = min((q_lower.find(w) for w in yes_w   if w in q_lower), default=9999)
+        first_other = min((q_lower.find(w) for w in other_w if w in q_lower), default=9999)
+        if first_yes == 9999 and first_other == 9999:
+            return None
+        if first_yes <= first_other:
+            return (p0, question)
+        return (1.0 - p0, question)
+
+
 # ─── ESPN Probability Model ─────────────────────────────────────────────────
 
 class ProbabilityModel:
@@ -222,8 +318,8 @@ class ProbabilityModel:
     @staticmethod
     def _record_win_pct(competitor: dict) -> Optional[float]:
         """
-        Returns win percentage, or None if no games have been played.
-        ESPN encodes records as a summary string "W-L" (e.g. "38-34").
+        Returns season win percentage, or None if fewer than 5 games played.
+        ESPN encodes records as a summary string "W-L[-OT]" (e.g. "38-34" or "28-40-8").
         """
         for rec in competitor.get("records", []):
             if rec.get("type") == "total":
@@ -231,9 +327,25 @@ class ProbabilityModel:
                 m = re.match(r"^(\d+)-(\d+)", summary)
                 if m:
                     w, l = int(m.group(1)), int(m.group(2))
-                    if w + l >= 5:          # require at least 5 games; early-season records are noise
+                    if w + l >= 5:
                         return w / (w + l)
-        return None  # no data
+        return None
+
+    @staticmethod
+    def _recent_form_pct(competitor: dict) -> Optional[float]:
+        """
+        Returns win percentage over the last 10 games, or None if not available.
+        ESPN exposes this as record type "lastTen" (NBA) or "last10" (some leagues).
+        """
+        for rec in competitor.get("records", []):
+            if rec.get("type") in ("lastTen", "last10"):
+                summary = rec.get("summary", "")
+                m = re.match(r"^(\d+)-(\d+)", summary)
+                if m:
+                    w, l = int(m.group(1)), int(m.group(2))
+                    if w + l > 0:
+                        return w / (w + l)
+        return None
 
     def _parse_event(self, event: dict, sport: str,
                      league: str) -> Optional[dict]:
@@ -273,22 +385,36 @@ class ProbabilityModel:
                                 sport=sport, league=league,
                                 source="espn_odds")
 
-        # 2. Fallback: season win-rate ratio + home advantage
-        h_pct = self._record_win_pct(home)
-        a_pct = self._record_win_pct(away)
-        # Require at least one team to have actual record data
-        if h_pct is None and a_pct is None:
+        # 2. Fallback: season win-rate blended with recent form + home advantage
+        h_season = self._record_win_pct(home)
+        a_season = self._record_win_pct(away)
+        if h_season is None and a_season is None:
             return None   # no basis for a model estimate
-        h_pct = h_pct if h_pct is not None else 0.5
-        a_pct = a_pct if a_pct is not None else 0.5
-        total = h_pct + a_pct
+
+        h_form = self._recent_form_pct(home)
+        a_form = self._recent_form_pct(away)
+
+        # Blend season + recent form (60/40) when last-10 is available
+        def _blend(season: Optional[float], form: Optional[float]) -> float:
+            if season is None and form is None:
+                return 0.5
+            if season is None:
+                return form
+            if form is None:
+                return season
+            return 0.6 * season + 0.4 * form
+
+        h_pct = _blend(h_season, h_form)
+        a_pct = _blend(a_season, a_form)
+        total  = h_pct + a_pct
         p_home = (h_pct / total) if total > 0 else 0.5
         HOME_EDGE = 0.04 if league not in ("wta", "atp") else 0.0
         p_home = min(0.95, max(0.05, p_home + HOME_EDGE))
+        source = "win_pct+form" if (h_form is not None or a_form is not None) else "win_pct"
         return dict(home=home_name, away=away_name,
                     prob_home=p_home, prob_away=1.0 - p_home,
                     sport=sport, league=league,
-                    source="win_pct")
+                    source=source)
 
     # ── Tennis: ranking-based model ─────────────────────────────────────────
 
@@ -527,10 +653,16 @@ def save_trade_log(log_data: dict) -> None:
 
 # ─── Opportunity Finder ──────────────────────────────────────────────────────
 
-def find_opportunities(markets: list[dict], games: list[dict]) -> list[dict]:
+def find_opportunities(markets: list[dict], games: list[dict],
+                       polymarket: Optional["PolymarketSource"] = None) -> list[dict]:
     """
     For each market, compute edge. Return trades sorted by |edge| descending.
     Deduplicates so at most one trade per event_ticker.
+
+    If a PolymarketSource is provided, the ESPN probability is blended with
+    Polymarket's implied price:
+      - ESPN sportsbook odds available → 50% ESPN + 50% Polymarket
+      - ESPN win-rate only             → 25% ESPN + 75% Polymarket
     """
     seen_events: set[str] = set()
     opps: list[dict]      = []
@@ -556,23 +688,48 @@ def find_opportunities(markets: list[dict], games: list[dict]) -> list[dict]:
         if not match:
             continue
 
-        kalshi_mid = (yes_ask_f + yes_bid_f) / 2.0   # 0–1 range
-        model_prob = match["prob_yes"]                 # 0–1 range
-        edge_pp    = (model_prob - kalshi_mid) * 100.0 # percentage points
+        espn_prob    = match["prob_yes"]
+        espn_source  = match["game"]["source"]
+        model_prob   = espn_prob
+        model_source = f"espn:{espn_source}"
+
+        # Enrich with Polymarket when available
+        if polymarket is not None:
+            yes_team_name = match["info"].replace("yes=", "")
+            g = match["game"]
+            h_overlap = _overlap(yes_team_name, g["home"])
+            a_overlap = _overlap(yes_team_name, g["away"])
+            other_team = g["away"] if h_overlap >= a_overlap else g["home"]
+
+            pm_result = polymarket.get_prob(yes_team_name, other_team)
+            if pm_result is not None:
+                pm_prob, pm_q = pm_result
+                if espn_source == "espn_odds":
+                    model_prob   = 0.5 * espn_prob + 0.5 * pm_prob
+                    model_source = f"espn_odds(50%)+polymarket(50%)"
+                else:
+                    model_prob   = 0.25 * espn_prob + 0.75 * pm_prob
+                    model_source = f"polymarket(75%)+{espn_source}(25%)"
+                log.info(
+                    f"Polymarket enriched [{yes_team_name}]: "
+                    f"ESPN={espn_prob:.3f} PM={pm_prob:.3f} "
+                    f"blended={model_prob:.3f}  '{pm_q[:60]}'"
+                )
+
+        kalshi_mid = (yes_ask_f + yes_bid_f) / 2.0
+        edge_pp    = (model_prob - kalshi_mid) * 100.0
 
         if abs(edge_pp) < MIN_EDGE_PP:
             continue
 
         # Decide side and price
         if edge_pp > 0:
-            # Model says yes is cheap → buy yes at yes_ask
             side        = "yes"
-            price_f     = yes_ask_f          # 0–1
+            price_f     = yes_ask_f
             price_cents = round(price_f * 100)
         else:
-            # Model says yes is expensive → buy no at no_ask ≈ 1 – yes_bid
             side        = "no"
-            price_f     = 1.0 - yes_bid_f   # 0–1
+            price_f     = 1.0 - yes_bid_f
             price_cents = round(price_f * 100)
 
         if price_cents < 1 or price_cents > 99:
@@ -584,16 +741,18 @@ def find_opportunities(markets: list[dict], games: list[dict]) -> list[dict]:
 
         seen_events.add(event_ticker)
         opps.append(dict(
-            market      = market,
-            match       = match,
-            side        = side,
-            price_cents = price_cents,
-            price_f     = price_f,
-            kalshi_mid  = kalshi_mid,
-            model_prob  = model_prob,
-            edge_pp     = edge_pp,
-            contracts   = contracts,
-            cost_usd    = contracts * price_f,
+            market       = market,
+            match        = match,
+            side         = side,
+            price_cents  = price_cents,
+            price_f      = price_f,
+            kalshi_mid   = kalshi_mid,
+            model_prob   = model_prob,
+            espn_prob    = espn_prob,
+            model_source = model_source,
+            edge_pp      = edge_pp,
+            contracts    = contracts,
+            cost_usd     = contracts * price_f,
         ))
 
     opps.sort(key=lambda x: abs(x["edge_pp"]), reverse=True)
@@ -623,10 +782,12 @@ def print_trade_report(opp: dict, order_result: Optional[dict],
     print(f"  Ticker  : {ticker}")
     print(f"  Game    : {game['away']} @ {game['home']}  "
           f"({game['sport'].upper()} / {game['league'].upper()})")
-    print(f"  Source  : model built from {game['source']}")
+    print(f"  Source  : {opp.get('model_source', game['source'])}")
     print()
     print(f"  Kalshi yes-bid / yes-ask : {yb:.0f}¢ / {ya:.0f}¢  "
           f"(mid = {mid:.1f}¢)")
+    if "espn_prob" in opp and abs(opp["espn_prob"] - opp["model_prob"]) > 0.001:
+        print(f"  ESPN probability (yes)   : {opp['espn_prob']*100:.1f}%")
     print(f"  Model probability (yes)  : {mp:.1f}%")
     print(f"  Edge                     : {ep:+.1f} pp  →  BUY {opp['side'].upper()}")
     print()
@@ -688,8 +849,13 @@ def run_bot(dry_run: bool = False) -> None:
         print("ESPN returned no game data for today. Cannot build model.")
         return
 
+    # Fetch Polymarket prices for ensemble blending
+    log.info("Fetching Polymarket market prices for ensemble model…")
+    polymarket = PolymarketSource()
+    polymarket._load()   # pre-load so per-game lookups are instant
+
     # Find trading opportunities
-    opps = find_opportunities(markets, games)
+    opps = find_opportunities(markets, games, polymarket=polymarket)
 
     trades_remaining = MAX_TRADES_PER_DAY - trades_done
     selected         = opps[:trades_remaining]
@@ -725,18 +891,20 @@ def run_bot(dry_run: bool = False) -> None:
                     count       = opp["contracts"],
                 )
                 trade_log["trades"].append({
-                    "timestamp"   : datetime.datetime.utcnow().isoformat() + "Z",
-                    "ticker"      : opp["market"]["ticker"],
-                    "title"       : opp["market"].get("title", ""),
-                    "side"        : opp["side"],
-                    "price_cents" : opp["price_cents"],
-                    "contracts"   : opp["contracts"],
-                    "cost_usd"    : round(opp["cost_usd"], 2),
-                    "model_prob"  : round(opp["model_prob"], 4),
-                    "kalshi_mid"  : round(opp["kalshi_mid"], 4),
-                    "edge_pp"     : round(opp["edge_pp"],    2),
-                    "order_id"    : order_result.get("order", {}).get("order_id"),
-                    "status"      : order_result.get("order", {}).get("status"),
+                    "timestamp"    : datetime.datetime.utcnow().isoformat() + "Z",
+                    "ticker"       : opp["market"]["ticker"],
+                    "title"        : opp["market"].get("title", ""),
+                    "side"         : opp["side"],
+                    "price_cents"  : opp["price_cents"],
+                    "contracts"    : opp["contracts"],
+                    "cost_usd"     : round(opp["cost_usd"], 2),
+                    "model_prob"   : round(opp["model_prob"], 4),
+                    "espn_prob"    : round(opp.get("espn_prob", opp["model_prob"]), 4),
+                    "model_source" : opp.get("model_source", ""),
+                    "kalshi_mid"   : round(opp["kalshi_mid"], 4),
+                    "edge_pp"      : round(opp["edge_pp"],    2),
+                    "order_id"     : order_result.get("order", {}).get("order_id"),
+                    "status"       : order_result.get("order", {}).get("status"),
                 })
                 trade_log["count"] += 1
                 executed += 1
