@@ -216,7 +216,7 @@ class ProbabilityModel:
                 m = re.match(r"^(\d+)-(\d+)", summary)
                 if m:
                     w, l = int(m.group(1)), int(m.group(2))
-                    if w + l > 0:
+                    if w + l >= 5:          # require at least 5 games; early-season records are noise
                         return w / (w + l)
         return None  # no data
 
