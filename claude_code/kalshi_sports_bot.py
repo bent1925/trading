@@ -110,6 +110,21 @@ class KalshiClient:
         r.raise_for_status()
         return r.json()
 
+    def delete(self, path: str) -> dict:
+        url = self.base_url + path
+        r   = requests.delete(url, headers=self._auth_headers("DELETE", path),
+                              timeout=15)
+        r.raise_for_status()
+        return r.json()
+
+    def get_open_orders(self) -> list[dict]:
+        """Returns all resting (open) orders."""
+        data = self.get("/trade-api/v2/portfolio/orders", params={"status": "resting"})
+        return data.get("orders", [])
+
+    def cancel_order(self, order_id: str) -> dict:
+        return self.delete(f"/trade-api/v2/portfolio/orders/{order_id}")
+
     # ── Public helpers ──────────────────────────────────────────────────────
 
     def get_balance_usd(self) -> float:
@@ -471,17 +486,43 @@ def match_market_to_game(market: dict, games: list[dict]) -> Optional[dict]:
 # ─── Trade Logger ────────────────────────────────────────────────────────────
 
 def load_trade_log() -> dict:
+    """
+    Returns today's log entry as {"date": today, "trades": [...], "count": N}.
+    Past days' entries are preserved in the file under their own date keys.
+    """
     today = str(datetime.date.today())
+    all_logs: dict = {}
     if os.path.exists(TRADE_LOG_FILE):
         with open(TRADE_LOG_FILE) as f:
-            data = json.load(f)
-        if data.get("date") == today:
-            return data
+            all_logs = json.load(f)
+        # Migrate old single-day format ({"date":…,"trades":…,"count":…}) to multi-day
+        if "date" in all_logs and "trades" in all_logs and isinstance(all_logs["trades"], list):
+            old_date  = all_logs["date"]
+            old_entry = {"trades": all_logs["trades"], "count": all_logs.get("count", len(all_logs["trades"]))}
+            all_logs  = {old_date: old_entry}
+            with open(TRADE_LOG_FILE, "w") as f:
+                json.dump(all_logs, f, indent=2)
+    if today in all_logs:
+        entry = all_logs[today]
+        return {"date": today, "trades": entry["trades"], "count": entry["count"]}
     return {"date": today, "trades": [], "count": 0}
 
+
 def save_trade_log(log_data: dict) -> None:
+    """Merge today's entry back into the full multi-day history and write to disk."""
+    today = log_data["date"]
+    all_logs: dict = {}
+    if os.path.exists(TRADE_LOG_FILE):
+        with open(TRADE_LOG_FILE) as f:
+            all_logs = json.load(f)
+        # Handle file still in old single-day format
+        if "date" in all_logs and "trades" in all_logs and isinstance(all_logs["trades"], list):
+            old_date  = all_logs["date"]
+            old_entry = {"trades": all_logs["trades"], "count": all_logs.get("count", len(all_logs["trades"]))}
+            all_logs  = {old_date: old_entry}
+    all_logs[today] = {"trades": log_data["trades"], "count": log_data["count"]}
     with open(TRADE_LOG_FILE, "w") as f:
-        json.dump(log_data, f, indent=2)
+        json.dump(all_logs, f, indent=2)
 
 
 # ─── Opportunity Finder ──────────────────────────────────────────────────────

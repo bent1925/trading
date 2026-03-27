@@ -1,0 +1,47 @@
+# Trade Log
+
+All trades placed by `claude_code/kalshi_sports_bot.py`.
+Prices are the limit-order ask price (YES bets) or `1 − bid` (NO bets).
+Model estimates and Kalshi implied probabilities are percentages for the YES outcome.
+
+> **Note on March 26 trades 2 & 3:** The daily log resets at midnight and was overwritten before model/edge data was saved. Kalshi mid is reconstructed from the settled market's `previous_yes_ask/bid`; model probability and exact fill price were not captured.
+
+---
+
+## 2026-03-27
+
+The original four MLB trades (placed with the early-season 0-record clamp bug) were **cancelled** and replaced with the four trades below. The model now requires ≥5 games before computing a win-rate; teams with fewer games are skipped.
+
+> **Note on trade 2 (ATP):** The live bot still includes ATP tennis. Like WTA, ESPN's rankings are current-only — this trade carries the same look-ahead bias caveat as the March 26 WTA trade.
+
+| # | Market | Sport | Bet | Amount | Model | Kalshi Mid | Edge | Result |
+|---|--------|-------|-----|--------|-------|-----------|------|--------|
+| 1 | Houston at Memphis Winner? | NBA | BUY YES (Memphis wins) | $9.88 (76 × 13¢) | 39.8% | 12.5¢ | +27.3 pp | pending |
+| 2 | Zverev vs Sinner (Semifinal) | ATP | BUY YES (Zverev wins) | $9.92 (62 × 16¢) | 40.6% | 15.0¢ | +25.6 pp | pending |
+| 3 | Chicago at Oklahoma City Winner? | NBA | BUY NO (OKC loses) | $9.96 (166 × 6¢) | 70.0% | 94.5¢ | −24.5 pp | pending |
+| 4 | Utah at Denver Winner? | NBA | BUY YES (Utah wins) | $9.96 (166 × 6¢) | 27.6% | 5.5¢ | +22.1 pp | pending |
+
+**Total wagered: $39.72**
+
+---
+
+## 2026-03-26
+
+| # | Market | Sport | Bet | Amount | Model | Kalshi Mid | Edge | Result |
+|---|--------|-------|-----|--------|-------|-----------|------|--------|
+| 1 | Sacramento at Orlando Winner? | NBA | BUY YES (Sacramento wins) | $10.00 (100 × 10¢) | 29% | 9.5¢ | +19.5 pp | ❌ NO — Sacramento lost |
+| 2 | Seattle at Tampa Bay Winner? | NHL | BUY NO (Tampa Bay loses) | ~$10.00 | — ¹ | 71.5¢ | — ¹ | ✅ NO — Tampa Bay lost |
+| 3 | Gauff vs Muchova (WTA Semifinal) | WTA | BUY NO (Muchova loses) | ~$10.00 | — ¹ | 48.5¢ | — ¹ | ✅ NO — Gauff won |
+
+**Total wagered: ~$30.00**
+
+¹ Model probability and edge not captured — daily log was overwritten at midnight before these could be recorded.
+
+---
+
+## Notes
+
+- **Fill status:** Orders are placed as limit orders. The bot logs `filled = 0` at placement time — actual fills depend on the Kalshi orderbook and may be partial or zero.
+- **Early-season MLB (March 27, original):** The original four trades were canceled — their edges were artifacts of the 0-record clamp bug (teams with <5 games got 5%/95% model probabilities). Fixed with a `w + l >= 5` guard.
+- **ATP/WTA tennis:** ESPN only exposes current rankings, not historical ones. Tennis trades carry look-ahead bias and backtest results exclude them (see `BACKTEST_SUMMARY.md`). The live bot still includes tennis markets.
+- **Log persistence:** Fixed March 27 — `kalshi_trades.json` now stores all days under separate date keys and no longer resets at midnight. March 26 trade details for trades 2 & 3 are partially reconstructed from Kalshi's settled market API.
