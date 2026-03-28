@@ -5,3 +5,4 @@ backtest_cache/
 __pycache__/
 *.pyc
 .env
+logs/*.log

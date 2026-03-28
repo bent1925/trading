@@ -16,8 +16,8 @@ Data flows between tasks via XCom (all values are plain JSON dicts/lists).
 
 import datetime
 import logging
-import os
 import sys
+import os
 
 import pendulum
 from airflow import DAG
@@ -26,13 +26,12 @@ from airflow.operators.python import PythonOperator
 # Make the kalshi package importable when Airflow runs this file
 sys.path.insert(0, os.path.dirname(__file__))
 
-from kalshi.client      import KalshiClient
-from kalshi.config      import (KALSHI_KEY_ID, KALSHI_KEY_FILE,
-                                 MAX_TRADES_PER_DAY, TRADES_MD,
-                                 MODEL_OUTPUTS_DIR)
-from kalshi.model       import ProbabilityModel, find_opportunities
-from kalshi.polymarket  import PolymarketSource
-from kalshi.trade_log   import load_today, save_today
+from kalshi.client     import KalshiClient
+from kalshi.config     import KALSHI_KEY_ID, KALSHI_KEY_FILE, MAX_TRADES_PER_DAY
+from kalshi.model      import ProbabilityModel, find_opportunities
+from kalshi.polymarket import PolymarketSource
+from kalshi.reporting  import write_model_output, update_trades_md
+from kalshi.trade_log  import load_today, save_today
 
 log = logging.getLogger(__name__)
 
@@ -84,67 +83,18 @@ def build_model(**context) -> dict:
 # ── Task 2: Log Model Output ──────────────────────────────────────────────────
 
 def log_model_output(ti=None, **context) -> None:
-    """
-    Writes today's model analysis to model_outputs/YYYY-MM-DD.md.
-    Captures all opportunities (above threshold) before any trades are placed.
-    """
+    """Writes today's model analysis to model_outputs/YYYY-MM-DD.md."""
     data = ti.xcom_pull(task_ids="build_model")
     if not data:
         raise ValueError("No data from build_model task.")
-
-    date_str  = data["date"]
-    opps      = data["opportunities"]
-    selected  = opps[:MAX_TRADES_PER_DAY]
-
-    os.makedirs(MODEL_OUTPUTS_DIR, exist_ok=True)
-    path = os.path.join(MODEL_OUTPUTS_DIR, f"{date_str}.md")
-
-    lines = [
-        f"# Model Output — {date_str}",
-        "",
-        f"**Run time (UTC):** {data['run_time']}",
-        f"**Account balance:** ${data['balance']:.2f}",
-        f"**Kalshi markets scanned:** {data['markets_found']}",
-        f"**ESPN games found:** {data['games_found']}",
-        f"**Polymarket markets loaded:** {data['polymarket_count']:,}",
-        "",
-    ]
-
-    if not opps:
-        lines += [
-            "## Result",
-            "",
-            "No opportunities above the edge threshold today.",
-        ]
-    else:
-        lines += [
-            f"## Opportunities Above Threshold (|edge| > 10 pp)",
-            "",
-            "| # | Market | Sport | Side | Model | ESPN | Kalshi Mid | Edge | Source |",
-            "|---|--------|-------|------|-------|------|-----------|------|--------|",
-        ]
-        for i, o in enumerate(opps, 1):
-            selected_marker = " ✓" if i <= MAX_TRADES_PER_DAY else ""
-            lines.append(
-                f"| {i}{selected_marker} "
-                f"| {o['title']} "
-                f"| {o['league'].upper()} "
-                f"| BUY {o['side'].upper()} "
-                f"| {o['model_prob']*100:.1f}% "
-                f"| {o['espn_prob']*100:.1f}% "
-                f"| {o['kalshi_mid']*100:.1f}¢ "
-                f"| {o['edge_pp']:+.1f} pp "
-                f"| {o['model_source']} |"
-            )
-        lines += [
-            "",
-            f"**Selected for trading:** {len(selected)} / {MAX_TRADES_PER_DAY} daily slots",
-        ]
-
-    with open(path, "w") as f:
-        f.write("\n".join(lines) + "\n")
-
-    log.info(f"Model output written to {path}")
+    write_model_output(
+        date_str   = data["date"],
+        balance    = data["balance"],
+        markets_n  = data["markets_found"],
+        games_n    = data["games_found"],
+        pm_count   = data["polymarket_count"],
+        opps       = data["opportunities"],
+    )
 
 
 # ── Task 3: Make Trades ───────────────────────────────────────────────────────
@@ -223,87 +173,11 @@ def make_trades(ti=None, **context) -> dict:
 # ── Task 4: Update Trade Log (TRADES.md) ─────────────────────────────────────
 
 def update_trade_log(ti=None, **context) -> None:
-    """
-    Inserts or replaces today's section in TRADES.md.
-    """
+    """Inserts or replaces today's section in TRADES.md."""
     result = ti.xcom_pull(task_ids="make_trades")
     if not result:
         raise ValueError("No data from make_trades task.")
-
-    date_str = result["date"]
-    trades   = result["trades"]
-
-    # Build today's markdown section
-    section_lines = [f"## {date_str}", ""]
-
-    if not trades:
-        section_lines += ["No trades placed today.", ""]
-    else:
-        section_lines += [
-            "| # | Market | Sport | Bet | Amount | ESPN | Model (blended) "
-            "| Kalshi Mid | Edge | Source | Result |",
-            "|---|--------|-------|-----|--------|------|-----------------|"
-            "-----------|------|--------|--------|",
-        ]
-        total_cost = 0.0
-        for i, t in enumerate(trades, 1):
-            yes_team = t.get("title", "")
-            side_str = f"BUY {t['side'].upper()}"
-            amount   = f"${t['cost_usd']:.2f} ({t['contracts']} × {t['price_cents']}¢)"
-            mid_str  = f"{t['kalshi_mid']*100:.1f}¢"
-            section_lines.append(
-                f"| {i} | {t['title']} | {t.get('league','').upper()} "
-                f"| {side_str} | {amount} "
-                f"| {t['espn_prob']*100:.1f}% "
-                f"| {t['model_prob']*100:.1f}% "
-                f"| {mid_str} "
-                f"| {t['edge_pp']:+.1f} pp "
-                f"| {t['model_source']} "
-                f"| pending |"
-            )
-            total_cost += t["cost_usd"]
-        section_lines += ["", f"**Total wagered: ${total_cost:.2f}**", ""]
-
-    section_lines.append("---")
-    section_lines.append("")
-    today_section = "\n".join(section_lines)
-
-    # Read existing TRADES.md and splice in today's section
-    if os.path.exists(TRADES_MD):
-        with open(TRADES_MD) as f:
-            content = f.read()
-    else:
-        content = _default_trades_header()
-
-    # Split on date-section boundaries (## YYYY-MM-DD)
-    import re
-    parts = re.split(r"(?=^## \d{4}-\d{2}-\d{2})", content, flags=re.MULTILINE)
-    header = parts[0]
-    dated  = parts[1:]
-
-    # Remove existing section for today if present
-    dated = [p for p in dated if not p.startswith(f"## {date_str}")]
-
-    # Insert today's section at the top (most recent first)
-    new_content = header + today_section + "".join(dated)
-
-    with open(TRADES_MD, "w") as f:
-        f.write(new_content)
-
-    log.info(f"TRADES.md updated with {len(trades)} trade(s) for {date_str}")
-
-
-def _default_trades_header() -> str:
-    return """\
-# Trade Log
-
-All trades placed by the Kalshi sports trading DAG (`claude_code/dags/trading_dag.py`).
-Prices are the limit-order ask price (YES bets) or `1 − bid` (NO bets).
-Model and ESPN probabilities are for the YES outcome.
-
----
-
-"""
+    update_trades_md(date_str=result["date"], trades=result["trades"])
 
 
 # ── DAG Definition ────────────────────────────────────────────────────────────

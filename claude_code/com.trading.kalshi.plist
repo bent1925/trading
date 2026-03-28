@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+    <!-- Unique label for this launchd job -->
+    <key>Label</key>
+    <string>com.trading.kalshi</string>
+
+    <!-- Script to run -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/benjaminthompson/code/trading/claude_code/run_daily.sh</string>
+    </array>
+
+    <!-- Run every day at 06:00 local time (PT) -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>6</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <!-- If the Mac was asleep at 06:00, run as soon as it wakes -->
+    <key>StartInterval</key>
+    <integer>0</integer>
+
+    <!-- Minimal PATH so launchd can find bash and git -->
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>/Users/benjaminthompson</string>
+        <key>PATH</key>
+        <string>/opt/homebrew/opt/python@3.13/libexec/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
+
+    <!-- Log stdout/stderr (run_daily.sh also appends to this file) -->
+    <key>StandardOutPath</key>
+    <string>/Users/benjaminthompson/code/trading/logs/run_daily.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/benjaminthompson/code/trading/logs/run_daily.log</string>
+
+    <!-- Automatically start on login -->
+    <key>RunAtLoad</key>
+    <false/>
+
+</dict>
+</plist>
