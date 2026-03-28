@@ -199,6 +199,16 @@ class PolymarketSource:
     """
     GAMMA_URL = "https://gamma-api.polymarket.com/markets"
 
+    # Words that disqualify a Polymarket market for a given league.
+    # Prevents cross-sport matches (e.g. NBA team names matching MLS draw markets).
+    _BLOCKLIST: dict = {
+        "nba":  {"draw", "soccer", "mls", "nhl", "hockey", "tennis", "wta", "atp", "baseball", "mlb", "nfl", "football"},
+        "nhl":  {"draw", "soccer", "mls", "nba", "basketball", "tennis", "wta", "atp", "baseball", "mlb", "nfl", "football"},
+        "mlb":  {"draw", "soccer", "mls", "nba", "basketball", "tennis", "wta", "atp", "nhl", "hockey", "nfl", "football"},
+        "wta":  {"draw", "soccer", "mls", "nba", "basketball", "nhl", "hockey", "baseball", "mlb", "nfl", "football"},
+        "atp":  {"draw", "soccer", "mls", "nba", "basketball", "nhl", "hockey", "baseball", "mlb", "nfl", "football"},
+    }
+
     def __init__(self):
         self._markets: Optional[list] = None
 
@@ -229,21 +239,28 @@ class PolymarketSource:
         self._markets = all_markets
         log.info(f"Polymarket: loaded {len(all_markets)} active markets")
 
-    def get_prob(self, yes_team: str, other_team: str) -> Optional[tuple]:
+    def get_prob(self, yes_team: str, other_team: str,
+                 league: str = "") -> Optional[tuple]:
         """
         Returns (prob_yes_team_wins: float, matched_question: str) or None.
         Fuzzy-matches both team names against Polymarket questions, then
         determines which Polymarket outcome corresponds to yes_team winning.
+        Markets containing keywords from incompatible sports are rejected.
         """
         self._load()
-        yes_w   = set(_words(yes_team))
-        other_w = set(_words(other_team))
+        yes_w     = set(_words(yes_team))
+        other_w   = set(_words(other_team))
+        blocklist = self._BLOCKLIST.get(league, set())
         if not yes_w or not other_w:
             return None
 
         best_m, best_score = None, 0
         for m in self._markets:
-            q_w   = set(_words(m.get("question", "")))
+            q       = m.get("question", "")
+            q_w     = set(_words(q))
+            # Reject markets that contain any blocklisted sport keyword
+            if blocklist & q_w:
+                continue
             y_hit = len(yes_w   & q_w)
             o_hit = len(other_w & q_w)
             if y_hit == 0 or o_hit == 0:
@@ -701,7 +718,8 @@ def find_opportunities(markets: list[dict], games: list[dict],
             a_overlap = _overlap(yes_team_name, g["away"])
             other_team = g["away"] if h_overlap >= a_overlap else g["home"]
 
-            pm_result = polymarket.get_prob(yes_team_name, other_team)
+            pm_result = polymarket.get_prob(yes_team_name, other_team,
+                                            league=g.get("league", ""))
             if pm_result is not None:
                 pm_prob, pm_q = pm_result
                 if espn_source == "espn_odds":

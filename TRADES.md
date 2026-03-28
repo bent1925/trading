@@ -8,6 +8,20 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-03-28
+
+> **Polymarket mismatch — trade 1:** Polymarket matched "Philadelphia 76ers" to an MLS soccer market (*Charlotte FC vs. Philadelphia Union — will it end in a draw?*) due to overlapping city names. The blended model probability (67.9%) is inflated by this bad match. The raw ESPN-only estimate was 46.6%, which still clears the 10pp threshold on its own (edge ≈ +15pp). The trade direction is unchanged but the stated edge is overstated. A sport-filtering fix is needed in `PolymarketSource`.
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|
+| 1 | Philadelphia at Charlotte Winner? | NBA | BUY YES (76ers win) | $9.92 (31 × 32¢) | 46.6% | 67.9% ⚠️ | 31.5¢ | +36.4 pp* | pending |
+
+*Edge overstated due to Polymarket sport mismatch; ESPN-only edge ≈ +15.1 pp.
+
+**Total wagered: $9.92**
+
+---
+
 ## 2026-03-27
 
 The original four MLB trades (placed with the early-season 0-record clamp bug) were **cancelled** and replaced with the four trades below. The model now requires ≥5 games before computing a win-rate; teams with fewer games are skipped.
