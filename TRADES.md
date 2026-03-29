@@ -8,6 +8,18 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-03-29
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
+| 1 | Will Timofey Skatov win the Pellegrino vs Skatov : Qualification Round 1 match? | ATP | BUY NO | $9.99 (333 × 3¢) | 47.8% | 81.7% | 98.0¢ | -16.3 pp | polymarket(75%)+ranking(#200 vs #128)(25%) | pending |
+| 2 | Houston at New Orleans Winner? | NBA | BUY YES | $9.90 (30 × 33¢) | 39.6% | 48.5% | 32.5¢ | +16.0 pp | polymarket(75%)+win_pct(25%) | pending |
+| 3 | Will Rei Sakamoto win the Jamji vs Sakamoto : Qualification Round 1 match? | ATP | BUY NO | $9.99 (333 × 3¢) | 50.0% | 85.4% | 98.0¢ | -12.6 pp | polymarket(75%)+ranking(#200 vs #200)(25%) | pending |
+| 4 | Will Joel Schwaerzler win the Haita vs Schwaerzler : Qualification Round 1 match? | ATP | BUY NO | $9.96 (166 × 6¢) | 50.0% | 83.9% | 95.0¢ | -11.1 pp | polymarket(75%)+ranking(#200 vs #200)(25%) | pending |
+
+**Total wagered: $39.84**
+
+---
 ## 2026-03-28
 
 > **Polymarket mismatch — trade 1:** Polymarket matched "Philadelphia 76ers" to an MLS soccer market (*Charlotte FC vs. Philadelphia Union — will it end in a draw?*) due to overlapping city names. The blended model probability (67.9%) is inflated by this bad match. The raw ESPN-only estimate was 46.6%, which still clears the 10pp threshold on its own (edge ≈ +15pp). The trade direction is unchanged but the stated edge is overstated. A sport-filtering fix is needed in `PolymarketSource`.
