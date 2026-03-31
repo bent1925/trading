@@ -8,6 +8,16 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-03-31
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
+| 1 | New Jersey at New York R Winner? | NHL | BUY NO | $9.72 (18 × 54¢) | 50.3% | 12.8% | 46.5¢ | -33.7 pp | polymarket(75%)+win_pct(25%) | pending |
+| 2 | Cleveland at Los Angeles L Winner? | NBA | BUY YES | $9.52 (17 × 56¢) | 55.0% | 66.3% | 55.5¢ | +10.8 pp | polymarket(75%)+win_pct(25%) | pending |
+
+**Total wagered: $19.24**
+
+---
 ## 2026-03-30
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
