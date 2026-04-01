@@ -8,6 +8,18 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-04-01
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
+| 1 | San Antonio at Golden State Winner? | NBA | BUY NO | $9.96 (83 × 12¢) | 57.3% | 40.8% | 88.5¢ | -47.7 pp | polymarket(75%)+win_pct(25%) | pending |
+| 2 | Philadelphia at Washington Winner? | NBA | BUY YES | $10.00 (125 × 8¢) | 33.3% | 29.7% | 7.5¢ | +22.2 pp | polymarket(75%)+win_pct(25%) | pending |
+| 3 | San Francisco vs San Diego Winner? | MLB | BUY NO | $9.89 (23 × 43¢) | 37.3% | 40.5% | 58.0¢ | -17.5 pp | polymarket(75%)+win_pct(25%) | pending |
+| 4 | Los Angeles A vs Chicago C Winner? | MLB | BUY YES | $9.84 (24 × 41¢) | 51.6% | 54.9% | 40.0¢ | +14.9 pp | polymarket(75%)+win_pct(25%) | pending |
+
+**Total wagered: $39.69**
+
+---
 ## 2026-03-31
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
