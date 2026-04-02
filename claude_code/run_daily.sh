@@ -20,6 +20,15 @@ echo "========================================"
 # ── Python path ──────────────────────────────────────────────────────────────
 export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
 
+# ── Activate virtual environment ─────────────────────────────────────────────
+VENV="$HOME/.venv"
+if [ -f "$VENV/bin/activate" ]; then
+    # shellcheck disable=SC1091
+    source "$VENV/bin/activate"
+else
+    echo "WARNING: virtualenv not found at $VENV — using system Python"
+fi
+
 # ── Kalshi credentials ───────────────────────────────────────────────────────
 # Load from .env if it exists (format: KEY=value, one per line)
 ENV_FILE="$TRADING_ROOT/.env"

@@ -21,7 +21,7 @@ import os
 
 import pendulum
 from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.providers.standard.operators.python import PythonOperator
 
 # Make the kalshi package importable when Airflow runs this file
 sys.path.insert(0, os.path.dirname(__file__))
@@ -185,7 +185,7 @@ def update_trade_log(ti=None, **context) -> None:
 with DAG(
     dag_id           = "kalshi_sports_trading",
     description      = "Daily Kalshi sports trading bot",
-    schedule_interval= "0 6 * * *",
+    schedule         = "0 6 * * *",
     start_date       = pendulum.datetime(2026, 3, 29, tz="America/Los_Angeles"),
     catchup          = False,
     default_args     = {

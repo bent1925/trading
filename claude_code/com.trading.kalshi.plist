@@ -24,10 +24,6 @@
         <integer>0</integer>
     </dict>
 
-    <!-- If the Mac was asleep at 06:00, run as soon as it wakes -->
-    <key>StartInterval</key>
-    <integer>0</integer>
-
     <!-- Minimal PATH so launchd can find bash and git -->
     <key>EnvironmentVariables</key>
     <dict>
