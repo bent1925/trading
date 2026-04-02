@@ -6,11 +6,17 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 > **Note on March 26 trades 2 & 3:** The daily log resets at midnight and was overwritten before model/edge data was saved. Kalshi mid is reconstructed from the settled market's `previous_yes_ask/bid`; model probability and exact fill price were not captured.
 
+> **Strategy change — Apr 2 through Apr 9:** Switching from "fade Kalshi" to "trust Kalshi". Instead of trading against the market when the model disagrees, the bot now bets *with* Kalshi's implied probability: when Kalshi prices YES higher than the model by >10pp, buy YES; when Kalshi prices YES lower, buy NO. Reverts to the original model-first strategy on Apr 10.
+
 ---
 
 ## 2026-04-02
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
+| 1 | Los Angeles L at Oklahoma City Winner? | NBA | BUY YES | $9.24 (12 × 77¢) | 58.6% | 24.0% | 76.0¢ | -52.0 pp | polymarket(75%)+win_pct(25%) | pending |
+
+**Total wagered: $9.24**
 
 ---
 ## 2026-04-01
