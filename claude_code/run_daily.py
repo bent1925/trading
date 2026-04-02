@@ -104,7 +104,14 @@ def main() -> None:
         if not selected:
             log.info("No opportunities to trade today.")
         else:
+            available = balance
             for opp in selected:
+                if opp["cost_usd"] > available:
+                    log.warning(
+                        f"Insufficient balance (${available:.2f}) for "
+                        f"{opp['ticker']} (${opp['cost_usd']:.2f}) — stopping."
+                    )
+                    break
                 try:
                     result = client.place_order(
                         ticker      = opp["ticker"],
@@ -142,6 +149,7 @@ def main() -> None:
                     "status":       status,
                 })
                 trade_log["count"] += 1
+                available -= opp["cost_usd"]
 
             save_today(trade_log)
             log.info(
