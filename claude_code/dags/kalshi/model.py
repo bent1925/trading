@@ -6,7 +6,7 @@ from typing import Optional
 
 import requests
 
-from .config import ESPN_BASE, SPORTS_SERIES, BUDGET_USD, MIN_EDGE_PP
+from .config import ESPN_BASE, SPORTS_SERIES, BUDGET_USD, MIN_EDGE_PP, TRUST_KALSHI_UNTIL
 from .polymarket import PolymarketSource
 from .utils import words, overlap
 
@@ -258,7 +258,16 @@ def find_opportunities(markets: list, games: list,
     Blending weights when Polymarket price is available:
       ESPN sportsbook odds  → 50% ESPN + 50% Polymarket
       ESPN win-rate/form    → 25% ESPN + 75% Polymarket
+
+    Strategy:
+      Default ("fade Kalshi"): edge_pp > 0 → BUY YES (model beats Kalshi mid)
+      Trust Kalshi (when today <= TRUST_KALSHI_UNTIL): edge_pp < 0 → BUY YES
+        (Kalshi prices YES higher than model → trust market, buy YES)
     """
+    trust_kalshi = (
+        TRUST_KALSHI_UNTIL is not None
+        and datetime.date.today() <= TRUST_KALSHI_UNTIL
+    )
     seen_events: set = set()
     opps: list       = []
 
@@ -311,7 +320,10 @@ def find_opportunities(markets: list, games: list,
         if abs(edge_pp) < MIN_EDGE_PP:
             continue
 
-        if edge_pp > 0:
+        # Fade Kalshi: buy YES when model > mid, NO when model < mid.
+        # Trust Kalshi: buy YES when Kalshi mid > model, NO otherwise.
+        buy_yes = (edge_pp < 0) if trust_kalshi else (edge_pp > 0)
+        if buy_yes:
             side, price_f = "yes", yes_ask_f
         else:
             side, price_f = "no",  1.0 - yes_bid_f
@@ -329,6 +341,7 @@ def find_opportunities(markets: list, games: list,
         opps.append({
             # Trade execution fields
             "ticker":       market["ticker"],
+            "strategy":     "trust_kalshi" if trust_kalshi else "fade_kalshi",
             "title":        market.get("title", ""),
             "side":         side,
             "price_cents":  price_cents,

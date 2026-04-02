@@ -137,6 +137,7 @@ def main() -> None:
                     "kalshi_mid":   opp["kalshi_mid"],
                     "edge_pp":      opp["edge_pp"],
                     "league":       opp["league"],
+                    "strategy":     opp["strategy"],
                     "order_id":     oid,
                     "status":       status,
                 })
