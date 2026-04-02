@@ -26,6 +26,15 @@ def save_today(log_data: dict) -> None:
         json.dump(all_logs, f, indent=2)
 
 
+def load_all() -> dict:
+    return _read_all()
+
+
+def save_all(all_logs: dict) -> None:
+    with open(TRADE_LOG_FILE, "w") as f:
+        json.dump(all_logs, f, indent=2)
+
+
 def _read_all() -> dict:
     if not os.path.exists(TRADE_LOG_FILE):
         return {}

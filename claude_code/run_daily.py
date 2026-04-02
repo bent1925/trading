@@ -5,6 +5,7 @@ Called by run_daily.sh, which is scheduled via launchd at 06:00 PT.
 
 Steps
 -----
+0. resolve_previous  — fetch Kalshi results for prior days' trades; update TRADES.md
 1. build_model       — fetch Kalshi markets, ESPN games, Polymarket prices
 2. log_model_output  — write model_outputs/YYYY-MM-DD.md
 3. make_trades       — execute orders on Kalshi, persist to kalshi_trades.json
@@ -24,11 +25,12 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "dag
 from kalshi.client     import KalshiClient
 from kalshi.config     import (KALSHI_KEY_ID, KALSHI_KEY_FILE,
                                 MAX_TRADES_PER_DAY, TRADING_ROOT,
-                                TRADES_MD, MODEL_OUTPUTS_DIR)
+                                TRADES_MD, MODEL_OUTPUTS_DIR, TRADE_LOG_FILE)
 from kalshi.model      import ProbabilityModel, find_opportunities
 from kalshi.polymarket import PolymarketSource
 from kalshi.reporting  import write_model_output, update_trades_md
-from kalshi.trade_log  import load_today, save_today
+from kalshi.resolve    import resolve_past_trades
+from kalshi.trade_log  import load_today, load_all, save_today
 
 logging.basicConfig(
     level   = logging.INFO,
@@ -44,12 +46,23 @@ def main() -> None:
     log.info(f"  Daily trading run — {date_str}")
     log.info(f"{'='*60}")
 
-    # ── Step 1: Build model ───────────────────────────────────────────────────
+    # ── Step 0: Resolve previous trades ──────────────────────────────────────
     if not KALSHI_KEY_ID or not KALSHI_KEY_FILE:
         log.error("KALSHI_KEY_ID and KALSHI_KEY_FILE must be set.")
         sys.exit(1)
 
-    client  = KalshiClient(KALSHI_KEY_ID, KALSHI_KEY_FILE)
+    client = KalshiClient(KALSHI_KEY_ID, KALSHI_KEY_FILE)
+
+    log.info("Resolving previous trades…")
+    updated_dates = resolve_past_trades(client)
+    if updated_dates:
+        all_logs = load_all()
+        for ds in sorted(updated_dates):
+            if ds != date_str:
+                update_trades_md(date_str=ds, trades=all_logs[ds]["trades"])
+        log.info(f"Rebuilt TRADES.md for {sorted(updated_dates)}")
+
+    # ── Step 1: Build model ───────────────────────────────────────────────────
     balance = client.get_balance_usd()
     log.info(f"Balance: ${balance:.2f}")
 

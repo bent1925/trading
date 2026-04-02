@@ -82,22 +82,46 @@ def update_trades_md(date_str: str, trades: list) -> None:
             "-----------|------|--------|--------|",
         ]
         total_cost = 0.0
+        total_pnl = 0.0
+        all_resolved = True
         for i, t in enumerate(trades, 1):
+            if t.get("resolved"):
+                filled = t.get("filled", 0)
+                pnl    = t.get("pnl_usd", 0.0)
+                total_pnl += pnl
+                won = (t["side"] == "yes" and t["market_result"] == "yes") or \
+                      (t["side"] == "no"  and t["market_result"] == "no")
+                if filled == 0:
+                    result_str = "— (unfilled)"
+                elif won:
+                    result_str = f"✅ WIN +${pnl:.2f}"
+                else:
+                    result_str = f"❌ LOSS −${abs(pnl):.2f}"
+            else:
+                result_str  = "pending"
+                all_resolved = False
+
+            espn_col = f"| {t['espn_prob']*100:.1f}% " if 'espn_prob' in t else "| — "
             section_lines.append(
                 f"| {i} "
                 f"| {t['title']} "
                 f"| {t.get('league', t.get('sport', '')).upper()} "
                 f"| BUY {t['side'].upper()} "
                 f"| ${t['cost_usd']:.2f} ({t['contracts']} × {t['price_cents']}¢) "
-                f"| {t['espn_prob']*100:.1f}% "
+                + espn_col +
                 f"| {t['model_prob']*100:.1f}% "
                 f"| {t['kalshi_mid']*100:.1f}¢ "
                 f"| {t['edge_pp']:+.1f} pp "
-                f"| {t['model_source']} "
-                f"| pending |"
+                f"| {t.get('model_source', '—')} "
+                f"| {result_str} |"
             )
             total_cost += t["cost_usd"]
-        section_lines += ["", f"**Total wagered: ${total_cost:.2f}**", ""]
+
+        summary = f"**Total wagered: ${total_cost:.2f}**"
+        if all_resolved:
+            pnl_sign = "+" if total_pnl >= 0 else "−"
+            summary += f"  |  **Net P&L: {pnl_sign}${abs(total_pnl):.2f}**"
+        section_lines += ["", summary, ""]
 
     section_lines += ["---", ""]
     today_section = "\n".join(section_lines)
