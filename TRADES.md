@@ -10,13 +10,25 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-04-04
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
+| 1 | Detroit at New York R Winner? | NHL | BUY YES | $9.68 (22 × 44¢) | 47.7% | 12.1% | 43.5¢ | -31.4 pp | polymarket(75%)+win_pct(25%) | pending |
+| 2 | Will Marco Trungelliti win the Darderi vs Trungelliti : Semifinal match? | ATP | BUY YES | $9.54 (18 × 53¢) | 38.6% | 31.8% | 52.5¢ | -20.7 pp | polymarket(75%)+ranking(#117 vs #19)(25%) | pending |
+| 3 | Will Cristian Garin win the Garin vs De Jong : Qualification match? | ATP | BUY YES | $9.90 (10 × 99¢) | 50.0% | 86.6% | 98.5¢ | -11.9 pp | polymarket(75%)+ranking(#99 vs #100)(25%) | pending |
+| 4 | Boston at Tampa Bay Winner? | NHL | BUY YES | $9.45 (15 × 63¢) | 55.9% | 51.5% | 62.0¢ | -10.5 pp | polymarket(75%)+win_pct(25%) | pending |
+
+**Total wagered: $38.57**
+
+---
 ## 2026-04-03
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
-| 1 | Chicago at New York Winner? | NBA | BUY YES | $9.20 (10 × 92¢) | 66.5% | 16.9% | 91.5¢ | -74.7 pp | polymarket(75%)+win_pct(25%) | pending |
+| 1 | Chicago at New York Winner? | NBA | BUY YES | $9.20 (10 × 92¢) | 66.5% | 16.9% | 91.5¢ | -74.7 pp | polymarket(75%)+win_pct(25%) | ✅ WIN +$0.80 |
 
-**Total wagered: $9.20**
+**Total wagered: $9.20**  |  **Net P&L: +$0.80**
 
 ---
 ## 2026-04-02
