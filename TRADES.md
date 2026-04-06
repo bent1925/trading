@@ -10,16 +10,26 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-04-06
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
+| 1 | Philadelphia at San Antonio Winner? | NBA | BUY YES | $3.85 (5 × 77¢) | 61.8% | 51.8% | 76.5¢ | +24.7 pp | polymarket(75%)+win_pct(25%) | pending |
+| 2 | Will Dalma Galfi win the Parks vs Galfi : Round Of 32 match? | WTA | BUY YES | $9.12 (12 × 76¢) | 49.5% | 64.9% | 75.5¢ | +10.6 pp | polymarket(75%)+ranking(#103 vs #93)(25%) | pending |
+
+**Total wagered: $12.97**
+
+---
 ## 2026-04-05
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
-| 1 | Houston at Golden State Winner? | NBA | BUY YES | $9.76 (16 × 61¢) | 53.1% | 41.0% | 60.5¢ | -19.5 pp | polymarket(75%)+win_pct(25%) | pending |
-| 2 | Will Mariano Navone win the Navone vs Merida : Final match? | ATP | BUY YES | $9.24 (12 × 77¢) | 54.5% | 61.2% | 76.5¢ | -15.3 pp | polymarket(75%)+ranking(#136 vs #60)(25%) | pending |
-| 3 | Will Alexandre Muller win the Arnaldi vs Muller : Qualification Final match? | ATP | BUY YES | $9.90 (11 × 90¢) | 50.7% | 77.2% | 89.0¢ | -11.8 pp | polymarket(75%)+ranking(#94 vs #107)(25%) | pending |
-| 4 | Will Donna Vekic win the Monnet vs Vekic : Qualification Round 1 match? | WTA | BUY YES | $9.90 (10 × 99¢) | 52.7% | 87.7% | 98.0¢ | -10.3 pp | polymarket(75%)+ranking(#115 vs #200)(25%) | pending |
+| 1 | Houston at Golden State Winner? | NBA | BUY YES | $9.76 (16 × 61¢) | 53.1% | 41.0% | 60.5¢ | -19.5 pp | polymarket(75%)+win_pct(25%) | ✅ WIN +$6.24 |
+| 2 | Will Mariano Navone win the Navone vs Merida : Final match? | ATP | BUY YES | $9.24 (12 × 77¢) | 54.5% | 61.2% | 76.5¢ | -15.3 pp | polymarket(75%)+ranking(#136 vs #60)(25%) | ✅ WIN +$2.76 |
+| 3 | Will Alexandre Muller win the Arnaldi vs Muller : Qualification Final match? | ATP | BUY YES | $9.90 (11 × 90¢) | 50.7% | 77.2% | 89.0¢ | -11.8 pp | polymarket(75%)+ranking(#94 vs #107)(25%) | ✅ WIN +$1.10 |
+| 4 | Will Donna Vekic win the Monnet vs Vekic : Qualification Round 1 match? | WTA | BUY YES | $9.90 (10 × 99¢) | 52.7% | 87.7% | 98.0¢ | -10.3 pp | polymarket(75%)+ranking(#115 vs #200)(25%) | ✅ WIN +$0.10 |
 
-**Total wagered: $38.80**
+**Total wagered: $38.80**  |  **Net P&L: +$10.20**
 
 ---
 ## 2026-04-04
