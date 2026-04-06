@@ -5,9 +5,10 @@ Kalshi Sports Trading Bot
 - Finds sports game markets (NBA, MLB, NHL, WTA, ATP) closing today
 - Builds an independent win-probability model from ESPN's public API
   (consensus sportsbook money-lines when available; season-record ratio otherwise)
-- Buys "yes" when model_prob > kalshi_mid + 10pp
-- Buys "no"  when model_prob < kalshi_mid - 10pp
-- Max 4 trades/day, $10 per trade (as many contracts as $10 allows)
+- Only trades when Polymarket has a matching market (cross-market arb signal)
+- Buys "yes" when Polymarket > kalshi_mid + 10pp (Kalshi underprices relative to Polymarket)
+- Buys "no"  when Polymarket < kalshi_mid - 10pp
+- Max 10 trades/day, proportional sizing ($10 at 10pp edge → $20 at 20pp+)
 - Logs every execution to kalshi_trades.json
 
 Usage:
@@ -38,9 +39,14 @@ KALSHI_BASE_URL = "https://api.elections.kalshi.com"
 KALSHI_KEY_ID   = os.environ.get("KALSHI_KEY_ID", "")
 KALSHI_KEY_FILE = os.environ.get("KALSHI_KEY_FILE", "")
 
-MAX_TRADES_PER_DAY = 4
-BUDGET_USD         = 10.00     # dollars allocated per trade
-MIN_EDGE_PP        = 10.0      # minimum edge in percentage points to trade
+MAX_TRADES_PER_RUN = 10
+MIN_EDGE_PP          = 10.0    # minimum |kalshi_mid - model_prob| in pp to trade
+TRADE_HORIZON_HOURS  = 3      # only trade events starting within this many hours
+
+# Inverse sizing: budget scales down as edge grows (large edge = model likely wrong)
+BASE_BUDGET        = 20.00
+BASE_EDGE_PP       = 5.0
+MIN_BUDGET         = 1.00
 
 TRADE_LOG_FILE     = "kalshi_trades.json"
 
@@ -209,45 +215,29 @@ class PolymarketSource:
         "atp":  {"draw", "soccer", "mls", "nba", "basketball", "nhl", "hockey", "baseball", "mlb", "nfl", "football"},
     }
 
-    def __init__(self):
-        self._markets: Optional[list] = None
-
-    def _load(self) -> None:
-        if self._markets is not None:
-            return
-        all_markets: list = []
-        offset = 0
-        while True:
-            try:
-                r = requests.get(
-                    self.GAMMA_URL,
-                    params={"active": "true", "closed": "false",
-                            "limit": 500, "offset": offset},
-                    timeout=15,
-                )
-                r.raise_for_status()
-                batch = r.json()
-            except Exception as e:
-                log.warning(f"Polymarket fetch failed (offset={offset}): {e}")
-                break
-            if not isinstance(batch, list) or not batch:
-                break
-            all_markets.extend(batch)
-            if len(batch) < 500:
-                break
-            offset += 500
-        self._markets = all_markets
-        log.info(f"Polymarket: loaded {len(all_markets)} active markets")
+    def _search(self, query: str) -> list:
+        """Search Polymarket for markets matching query."""
+        try:
+            r = requests.get(
+                self.GAMMA_URL,
+                params={"active": "true", "closed": "false",
+                        "limit": 50, "q": query},
+                timeout=15,
+            )
+            r.raise_for_status()
+            batch = r.json()
+            return batch if isinstance(batch, list) else []
+        except Exception as e:
+            log.warning(f"Polymarket search ('{query}'): {e}")
+            return []
 
     def get_prob(self, yes_team: str, other_team: str,
                  league: str = "") -> Optional[tuple]:
         """
         Returns (prob_yes_team_wins: float, matched_question: str) or None.
-        Fuzzy-matches both team names against Polymarket questions, then
-        determines which Polymarket outcome corresponds to yes_team winning.
-        Markets containing keywords from incompatible sports are rejected.
+        Searches Polymarket with each team name, applies blocklist filtering,
+        then selects the best fuzzy match across both result sets.
         """
-        self._load()
         yes_w     = set(_words(yes_team))
         other_w   = set(_words(other_team))
         blocklist = self._BLOCKLIST.get(league, set())
@@ -255,19 +245,23 @@ class PolymarketSource:
             return None
 
         best_m, best_score = None, 0
-        for m in self._markets:
-            q       = m.get("question", "")
-            q_w     = set(_words(q))
-            # Reject markets that contain any blocklisted sport keyword
-            if blocklist & q_w:
-                continue
-            y_hit = len(yes_w   & q_w)
-            o_hit = len(other_w & q_w)
-            if y_hit == 0 or o_hit == 0:
-                continue
-            score = y_hit + o_hit
-            if score > best_score:
-                best_score, best_m = score, m
+        seen: set = set()
+        for search_term in [yes_team, other_team]:
+            for m in self._search(search_term):
+                mid = m.get("id") or m.get("conditionId", "")
+                if mid in seen:
+                    continue
+                seen.add(mid)
+                q_w = set(_words(m.get("question", "")))
+                if blocklist & q_w:
+                    continue
+                y_hit = len(yes_w   & q_w)
+                o_hit = len(other_w & q_w)
+                if y_hit == 0 or o_hit == 0:
+                    continue
+                score = y_hit + o_hit
+                if score > best_score:
+                    best_score, best_m = score, m
 
         if best_m is None or best_score < 2:
             return None
@@ -400,7 +394,8 @@ class ProbabilityModel:
                     return dict(home=home_name, away=away_name,
                                 prob_home=hi/total, prob_away=ai/total,
                                 sport=sport, league=league,
-                                source="espn_odds")
+                                source="espn_odds",
+                                start_time=comp.get("date", ""))
 
         # 2. Fallback: season win-rate blended with recent form + home advantage
         h_season = self._record_win_pct(home)
@@ -430,8 +425,8 @@ class ProbabilityModel:
         source = "win_pct+form" if (h_form is not None or a_form is not None) else "win_pct"
         return dict(home=home_name, away=away_name,
                     prob_home=p_home, prob_away=1.0 - p_home,
-                    sport=sport, league=league,
-                    source=source)
+                    sport=sport, league=league, source=source,
+                    start_time=comp.get("date", ""))
 
     # ── Tennis: ranking-based model ─────────────────────────────────────────
 
@@ -504,6 +499,7 @@ class ProbabilityModel:
                         prob_home=p_p1, prob_away=1.0 - p_p1,
                         sport="tennis", league=league,
                         source=f"ranking(#{r1} vs #{r2})",
+                        start_time=comp.get("date", ""),
                     ))
         return games
 
@@ -554,8 +550,8 @@ def _parse_ticker_date(series: str, ticker: str) -> Optional[datetime.date]:
 # ─── Team-Name Matching ─────────────────────────────────────────────────────
 
 def _words(name: str) -> list[str]:
-    """Lower-case words longer than 2 chars."""
-    return [w for w in re.split(r"\W+", name.lower()) if len(w) > 2]
+    """Lower-case words longer than 3 chars (filters 'san', 'los', 'new', etc.)."""
+    return [w for w in re.split(r"\W+", name.lower()) if len(w) > 3]
 
 def _overlap(title: str, team: str) -> int:
     tw = set(_words(title))
@@ -705,34 +701,49 @@ def find_opportunities(markets: list[dict], games: list[dict],
         if not match:
             continue
 
+        start_time_str = match["game"].get("start_time", "")
+        if not start_time_str:
+            continue
+        try:
+            now      = datetime.datetime.now(datetime.timezone.utc)
+            start_dt = datetime.datetime.fromisoformat(
+                           start_time_str.replace("Z", "+00:00"))
+            hours_until = (start_dt - now).total_seconds() / 3600
+        except ValueError:
+            continue
+        if hours_until < 0 or hours_until > TRADE_HORIZON_HOURS:
+            continue
+
         espn_prob    = match["prob_yes"]
         espn_source  = match["game"]["source"]
         model_prob   = espn_prob
         model_source = f"espn:{espn_source}"
 
-        # Enrich with Polymarket when available
-        if polymarket is not None:
-            yes_team_name = match["info"].replace("yes=", "")
-            g = match["game"]
-            h_overlap = _overlap(yes_team_name, g["home"])
-            a_overlap = _overlap(yes_team_name, g["away"])
-            other_team = g["away"] if h_overlap >= a_overlap else g["home"]
+        # Require a Polymarket match — it is the primary signal
+        if polymarket is None:
+            continue
+        yes_team_name = match["info"].replace("yes=", "")
+        g = match["game"]
+        h_overlap = _overlap(yes_team_name, g["home"])
+        a_overlap = _overlap(yes_team_name, g["away"])
+        other_team = g["away"] if h_overlap >= a_overlap else g["home"]
 
-            pm_result = polymarket.get_prob(yes_team_name, other_team,
-                                            league=g.get("league", ""))
-            if pm_result is not None:
-                pm_prob, pm_q = pm_result
-                if espn_source == "espn_odds":
-                    model_prob   = 0.5 * espn_prob + 0.5 * pm_prob
-                    model_source = f"espn_odds(50%)+polymarket(50%)"
-                else:
-                    model_prob   = 0.25 * espn_prob + 0.75 * pm_prob
-                    model_source = f"polymarket(75%)+{espn_source}(25%)"
-                log.info(
-                    f"Polymarket enriched [{yes_team_name}]: "
-                    f"ESPN={espn_prob:.3f} PM={pm_prob:.3f} "
-                    f"blended={model_prob:.3f}  '{pm_q[:60]}'"
-                )
+        pm_result = polymarket.get_prob(yes_team_name, other_team,
+                                        league=g.get("league", ""))
+        if pm_result is None:
+            continue
+        pm_prob, pm_q = pm_result
+        if espn_source == "espn_odds":
+            model_prob   = 0.5 * espn_prob + 0.5 * pm_prob
+            model_source = "espn_odds(50%)+polymarket(50%)"
+        else:
+            model_prob   = pm_prob
+            model_source = "polymarket"
+        log.info(
+            f"Polymarket [{yes_team_name}]: "
+            f"ESPN={espn_prob:.3f} PM={pm_prob:.3f} "
+            f"blended={model_prob:.3f}  '{pm_q[:60]}'"
+        )
 
         kalshi_mid = (yes_ask_f + yes_bid_f) / 2.0
         edge_pp    = (model_prob - kalshi_mid) * 100.0
@@ -740,7 +751,7 @@ def find_opportunities(markets: list[dict], games: list[dict],
         if abs(edge_pp) < MIN_EDGE_PP:
             continue
 
-        # Decide side and price
+        # Fade Kalshi: buy YES when Polymarket > Kalshi mid, NO otherwise.
         if edge_pp > 0:
             side        = "yes"
             price_f     = yes_ask_f
@@ -753,7 +764,8 @@ def find_opportunities(markets: list[dict], games: list[dict],
         if price_cents < 1 or price_cents > 99:
             continue
 
-        contracts = int(BUDGET_USD / price_f)
+        budget    = max(MIN_BUDGET, min(BASE_BUDGET, BASE_BUDGET * abs(edge_pp) / BASE_EDGE_PP))
+        contracts = int(budget / price_f)
         if contracts < 1:
             continue
 
@@ -810,7 +822,6 @@ def print_trade_report(opp: dict, order_result: Optional[dict],
     print(f"  Edge                     : {ep:+.1f} pp  →  BUY {opp['side'].upper()}")
     print()
     print(f"  Price per contract : {opp['price_cents']}¢  (${opp['price_f']:.2f})")
-    print(f"  Budget             : ${BUDGET_USD:.2f}")
     print(f"  Contracts          : {opp['contracts']} × {opp['price_cents']}¢"
           f" = ${opp['cost_usd']:.2f}")
 
@@ -829,10 +840,6 @@ def print_trade_report(opp: dict, order_result: Optional[dict],
 def run_bot(dry_run: bool = False) -> None:
     trade_log = load_trade_log()
     trades_done = trade_log["count"]
-
-    if trades_done >= MAX_TRADES_PER_DAY:
-        print(f"Already executed {MAX_TRADES_PER_DAY} trades today. Nothing to do.")
-        return
 
     # Auth client
     if not KALSHI_KEY_ID or not KALSHI_KEY_FILE:
@@ -868,15 +875,13 @@ def run_bot(dry_run: bool = False) -> None:
         return
 
     # Fetch Polymarket prices for ensemble blending
-    log.info("Fetching Polymarket market prices for ensemble model…")
+    log.info("Fetching Polymarket prices per game…")
     polymarket = PolymarketSource()
-    polymarket._load()   # pre-load so per-game lookups are instant
 
     # Find trading opportunities
     opps = find_opportunities(markets, games, polymarket=polymarket)
 
-    trades_remaining = MAX_TRADES_PER_DAY - trades_done
-    selected         = opps[:trades_remaining]
+    selected = opps[:MAX_TRADES_PER_RUN]
 
     # ── Header ──────────────────────────────────────────────────────────────
     print()
@@ -885,7 +890,7 @@ def run_bot(dry_run: bool = False) -> None:
     print("=" * 68)
     print(f"  Date             : {datetime.date.today()}")
     print(f"  Account balance  : ${balance:.2f}")
-    print(f"  Trades today     : {trades_done}/{MAX_TRADES_PER_DAY}")
+    print(f"  Trades today     : {trades_done} placed so far")
     print(f"  Kalshi markets   : {len(markets)}")
     print(f"  ESPN games       : {len(games)}")
     print(f"  Edges >{MIN_EDGE_PP:.0f}pp found : {len(opps)}")
@@ -939,7 +944,7 @@ def run_bot(dry_run: bool = False) -> None:
         print(f"  DRY RUN — no orders placed.")
     else:
         print(f"  Trades executed : {executed}/{len(selected)}")
-        print(f"  Daily total     : {trade_log['count']}/{MAX_TRADES_PER_DAY}")
+        print(f"  Daily total     : {trade_log['count']}")
         save_trade_log(trade_log)
         print(f"  Log saved to    : {TRADE_LOG_FILE}")
     print("=" * 68)

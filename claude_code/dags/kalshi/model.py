@@ -6,7 +6,8 @@ from typing import Optional
 
 import requests
 
-from .config import ESPN_BASE, SPORTS_SERIES, BUDGET_USD, MIN_EDGE_PP, TRUST_KALSHI_UNTIL
+from .config import (ESPN_BASE, SPORTS_SERIES, MIN_EDGE_PP,
+                     BASE_BUDGET, BASE_EDGE_PP, MIN_BUDGET, TRADE_HORIZON_HOURS)
 from .polymarket import PolymarketSource
 from .utils import words, overlap
 
@@ -97,7 +98,8 @@ class ProbabilityModel:
                     return dict(home=home_name, away=away_name,
                                 prob_home=hi/total, prob_away=ai/total,
                                 sport=sport, league=league,
-                                source="espn_odds")
+                                source="espn_odds",
+                                start_time=comp.get("date", ""))
 
         # 2. Season win-rate + recent form
         h_season = self._season_win_pct(home)
@@ -127,7 +129,8 @@ class ProbabilityModel:
                  else "win_pct"
         return dict(home=home_name, away=away_name,
                     prob_home=p_home, prob_away=1.0 - p_home,
-                    sport=sport, league=league, source=source)
+                    sport=sport, league=league, source=source,
+                    start_time=comp.get("date", ""))
 
     def _fetch_tennis_rankings(self, league: str) -> dict:
         url = f"{ESPN_BASE}/tennis/{league}/rankings"
@@ -182,6 +185,7 @@ class ProbabilityModel:
                         prob_home=p_p1, prob_away=1.0 - p_p1,
                         sport="tennis", league=league,
                         source=f"ranking(#{r1} vs #{r2})",
+                        start_time=comp.get("date", ""),
                     ))
         return games
 
@@ -259,15 +263,16 @@ def find_opportunities(markets: list, games: list,
       ESPN sportsbook odds  → 50% ESPN + 50% Polymarket
       ESPN win-rate/form    → 25% ESPN + 75% Polymarket
 
-    Strategy:
-      Default ("fade Kalshi"): edge_pp > 0 → BUY YES (model beats Kalshi mid)
-      Trust Kalshi (when today <= TRUST_KALSHI_UNTIL): edge_pp < 0 → BUY YES
-        (Kalshi prices YES higher than model → trust market, buy YES)
+    Only trades when Polymarket has a matching market — Polymarket is the
+    primary signal. ESPN sportsbook odds are blended 50/50 when available;
+    ESPN win-rate is ignored (too noisy compared to a liquid market price).
+
+    Strategy: Fade Kalshi — cross-market arb against Polymarket.
+      edge_pp = (model_prob − kalshi_mid) × 100
+      edge_pp > 0 → BUY YES (Polymarket prices YES higher than Kalshi)
+      edge_pp < 0 → BUY NO  (Polymarket prices YES lower than Kalshi)
+    Sizing: proportional to edge — bigger spread, bigger bet.
     """
-    trust_kalshi = (
-        TRUST_KALSHI_UNTIL is not None
-        and datetime.date.today() <= TRUST_KALSHI_UNTIL
-    )
     seen_events: set = set()
     opps: list       = []
 
@@ -287,32 +292,47 @@ def find_opportunities(markets: list, games: list,
         if not match:
             continue
 
+        start_time_str = match["game"].get("start_time", "")
+        if not start_time_str:
+            continue
+        try:
+            now      = datetime.datetime.now(datetime.timezone.utc)
+            start_dt = datetime.datetime.fromisoformat(
+                           start_time_str.replace("Z", "+00:00"))
+            hours_until = (start_dt - now).total_seconds() / 3600
+        except ValueError:
+            continue
+        if hours_until < 0 or hours_until > TRADE_HORIZON_HOURS:
+            continue
+
         espn_prob    = match["prob_yes"]
         espn_source  = match["game"]["source"]
         model_prob   = espn_prob
         model_source = f"espn:{espn_source}"
 
-        if polymarket is not None:
-            yes_team  = match["info"].replace("yes=", "")
-            g         = match["game"]
-            h_ov      = overlap(yes_team, g["home"])
-            a_ov      = overlap(yes_team, g["away"])
-            other     = g["away"] if h_ov >= a_ov else g["home"]
-            pm_result = polymarket.get_prob(yes_team, other,
-                                            league=g.get("league", ""))
-            if pm_result is not None:
-                pm_prob, pm_q = pm_result
-                if espn_source == "espn_odds":
-                    model_prob   = 0.5 * espn_prob + 0.5 * pm_prob
-                    model_source = "espn_odds(50%)+polymarket(50%)"
-                else:
-                    model_prob   = 0.25 * espn_prob + 0.75 * pm_prob
-                    model_source = f"polymarket(75%)+{espn_source}(25%)"
-                log.info(
-                    f"Polymarket [{yes_team}]: ESPN={espn_prob:.3f} "
-                    f"PM={pm_prob:.3f} blended={model_prob:.3f} "
-                    f"'{pm_q[:55]}'"
-                )
+        if polymarket is None:
+            continue
+        yes_team  = match["info"].replace("yes=", "")
+        g         = match["game"]
+        h_ov      = overlap(yes_team, g["home"])
+        a_ov      = overlap(yes_team, g["away"])
+        other     = g["away"] if h_ov >= a_ov else g["home"]
+        pm_result = polymarket.get_prob(yes_team, other,
+                                        league=g.get("league", ""))
+        if pm_result is None:
+            continue
+        pm_prob, pm_q = pm_result
+        if espn_source == "espn_odds":
+            model_prob   = 0.5 * espn_prob + 0.5 * pm_prob
+            model_source = "espn_odds(50%)+polymarket(50%)"
+        else:
+            model_prob   = pm_prob
+            model_source = "polymarket"
+        log.info(
+            f"Polymarket [{yes_team}]: ESPN={espn_prob:.3f} "
+            f"PM={pm_prob:.3f} blended={model_prob:.3f} "
+            f"'{pm_q[:55]}'"
+        )
 
         kalshi_mid = (yes_ask_f + yes_bid_f) / 2.0
         edge_pp    = (model_prob - kalshi_mid) * 100.0
@@ -320,10 +340,8 @@ def find_opportunities(markets: list, games: list,
         if abs(edge_pp) < MIN_EDGE_PP:
             continue
 
-        # Fade Kalshi: buy YES when model > mid, NO when model < mid.
-        # Trust Kalshi: buy YES when Kalshi mid > model, NO otherwise.
-        buy_yes = (edge_pp < 0) if trust_kalshi else (edge_pp > 0)
-        if buy_yes:
+        # Fade Kalshi: buy YES when model (Polymarket) > Kalshi mid, NO otherwise.
+        if edge_pp > 0:
             side, price_f = "yes", yes_ask_f
         else:
             side, price_f = "no",  1.0 - yes_bid_f
@@ -332,7 +350,8 @@ def find_opportunities(markets: list, games: list,
         if price_cents < 1 or price_cents > 99:
             continue
 
-        contracts = int(BUDGET_USD / price_f)
+        budget    = max(MIN_BUDGET, min(BASE_BUDGET, BASE_BUDGET * abs(edge_pp) / BASE_EDGE_PP))
+        contracts = int(budget / price_f)
         if contracts < 1:
             continue
 
@@ -341,7 +360,7 @@ def find_opportunities(markets: list, games: list,
         opps.append({
             # Trade execution fields
             "ticker":       market["ticker"],
-            "strategy":     "trust_kalshi" if trust_kalshi else "fade_kalshi",
+            "strategy":     "fade_kalshi",
             "title":        market.get("title", ""),
             "side":         side,
             "price_cents":  price_cents,

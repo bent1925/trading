@@ -1,21 +1,38 @@
 # Probability Model
 
-The bot estimates each team's win probability from multiple independent sources, then compares that estimate against Kalshi's implied probability (the mid-price) to find edges worth trading.
+The bot compares Polymarket's implied probability against Kalshi's mid-price to find cross-market pricing discrepancies. When the two markets disagree by more than 10pp, it bets on Kalshi to converge toward Polymarket.
 
 ---
 
 ## Overview
 
-For each Kalshi sports game market, three independent signals are gathered and blended into a single model probability. The weight each signal gets depends on what is available:
+For each Kalshi sports game market, Polymarket is the primary signal. A trade is only placed when a Polymarket match is found. ESPN sportsbook money-lines are blended in when available (both are liquid market prices); ESPN win-rate data is ignored as it is too noisy relative to a live market price.
 
-| Scenario | ESPN sportsbook | Polymarket | Weight split |
+| Scenario | ESPN sportsbook | Polymarket | Model |
 |----------|:-:|:-:|---|
 | Both available | ✅ | ✅ | 50% ESPN sportsbook + 50% Polymarket |
-| Sportsbook only | ✅ | ❌ | 100% ESPN sportsbook |
-| Polymarket only | ❌ | ✅ | 75% Polymarket + 25% ESPN win-rate |
-| Neither | ❌ | ❌ | 100% ESPN win-rate (+ recent form if available) |
+| Polymarket only | ❌ | ✅ | 100% Polymarket |
+| No Polymarket | — | ❌ | Skip — no trade |
 
-A trade is placed when `|model_prob − kalshi_mid| > 10 pp`.
+A trade is placed when all of the following hold:
+- A Polymarket match is found for the game
+- The game starts within **3 hours** of the run (uses ESPN's scheduled start time)
+- `|model_prob − kalshi_mid| > 10 pp`
+
+**Edge direction (fade Kalshi):**
+
+| Edge | Action |
+|------|--------|
+| `model_prob > kalshi_mid + 10pp` | BUY YES — Kalshi underprices relative to Polymarket |
+| `model_prob < kalshi_mid − 10pp` | BUY NO — Kalshi overprices relative to Polymarket |
+
+**Sizing (proportional to spread):**
+
+| Edge | Budget |
+|------|--------|
+| 10pp | $10 |
+| 15pp | $15 |
+| 20pp+ | $20 (max) |
 
 ---
 
@@ -112,33 +129,23 @@ where $r_1$ and $r_2$ are the world rankings of player 1 and player 2 (lower ran
 
 ## Edge Calculation
 
-Once a model probability is assembled, it is compared against Kalshi's mid-price:
-
 $$\text{edge} = (\text{model\_prob} - \text{kalshi\_mid}) \times 100\ \text{pp}$$
 
 where `kalshi_mid = (yes_ask + yes_bid) / 2`.
 
-| Edge | Action |
-|------|--------|
-| `edge > +10 pp` | BUY YES — model says contract is underpriced |
-| `edge < −10 pp` | BUY NO — model says contract is overpriced |
-| `|edge| ≤ 10 pp` | No trade |
+A positive edge means Polymarket prices YES higher than Kalshi — the bot buys YES on Kalshi expecting convergence. A negative edge means Polymarket prices YES lower — the bot buys NO.
 
 ---
 
-## Source Priority and Labeling
+## Source Labels
 
-The `model_source` field logged with each trade shows exactly which signals were blended:
+The `model_source` field logged with each trade shows which signals were blended:
 
 | Label | Meaning |
 |-------|---------|
-| `espn_odds(50%)+polymarket(50%)` | ESPN sportsbook + Polymarket |
-| `polymarket(75%)+win_pct(25%)` | Polymarket + season win-rate (no ESPN lines) |
-| `polymarket(75%)+win_pct+form(25%)` | Polymarket + blended season/recent win-rate |
-| `espn:espn_odds` | ESPN sportsbook only (no Polymarket match) |
-| `espn:win_pct` | Season win-rate only |
-| `espn:win_pct+form` | Season win-rate blended with last-10 form |
-| `ranking(#N vs #M)` | Tennis log-rank model |
+| `espn_odds(50%)+polymarket(50%)` | ESPN sportsbook + Polymarket (both market prices) |
+| `polymarket` | Polymarket only (no ESPN sportsbook lines available) |
+| `ranking(#N vs #M)` | Tennis log-rank model (Polymarket match also required) |
 
 ---
 
@@ -146,14 +153,15 @@ The `model_source` field logged with each trade shows exactly which signals were
 
 | Issue | Detail |
 |-------|--------|
-| Tennis look-ahead bias | ESPN rankings are current-only; backtests exclude ATP/WTA |
-| Early-season records | Teams with <5 games are skipped (win-rate is too noisy) |
+| No Polymarket match = no trade | Markets without a Polymarket counterpart are skipped entirely |
 | Polymarket matching | Fuzzy word-overlap; low-quality matches (score < 2) are discarded |
 | Polymarket framing | Yes/No outcome framing is inferred heuristically; edge cases may misidentify the YES team |
+| Polymarket liquidity | Prices are used regardless of market volume — thin markets may have stale prices |
+| Tennis look-ahead bias | ESPN rankings are current-only; backtests exclude ATP/WTA |
 | Kalshi mid as fair value | The mid-price is used as the market's probability estimate, ignoring spread |
 
 ---
 
 ## Relationship to Backtests
 
-Backtests (`BACKTEST_SUMMARY.md`) use only the ESPN win-rate model with NBA and NHL data. Polymarket and recent-form signals are **live-only** additions and have not been backtested. The backtest finding that "trusting the market beats trusting the ESPN model" motivates the heavy weighting toward Polymarket in the ensemble (75% when ESPN sportsbook lines are unavailable).
+Backtests (`BACKTEST_SUMMARY.md`) used the ESPN win-rate model with NBA and NHL data. The current live strategy (Polymarket as primary signal, fade Kalshi) has not been formally backtested — Polymarket historical price data is not readily available. The theoretical basis is cross-market arbitrage: two liquid markets pricing the same binary event should converge at settlement.

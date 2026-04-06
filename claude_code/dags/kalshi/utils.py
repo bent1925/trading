@@ -11,8 +11,8 @@ _MONTH_MAP = {
 
 
 def words(name: str) -> list:
-    """Lower-case words longer than 2 chars."""
-    return [w for w in re.split(r"\W+", name.lower()) if len(w) > 2]
+    """Lower-case words longer than 3 chars (filters 'san', 'los', 'new', etc.)."""
+    return [w for w in re.split(r"\W+", name.lower()) if len(w) > 3]
 
 
 def overlap(text: str, team: str) -> int:

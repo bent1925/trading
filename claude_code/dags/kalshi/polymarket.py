@@ -11,8 +11,9 @@ log = logging.getLogger(__name__)
 
 class PolymarketSource:
     """
-    Fetches active market prices from Polymarket's public Gamma API (no API key).
-    Used as a second market-consensus signal alongside the ESPN model.
+    Fetches Polymarket prices via targeted per-game searches against the Gamma API.
+    Uses the API's `q` search parameter so only relevant markets are fetched,
+    rather than bulk-loading all 48,000+ active markets.
     """
     GAMMA_URL = "https://gamma-api.polymarket.com/markets"
 
@@ -31,48 +32,30 @@ class PolymarketSource:
                 "baseball", "mlb", "nfl", "football"},
     }
 
-    def __init__(self):
-        self._markets: Optional[list] = None
-
-    def load(self) -> int:
-        """Fetch all active markets. Returns count loaded. Idempotent."""
-        if self._markets is not None:
-            return len(self._markets)
-        all_markets: list = []
-        offset = 0
-        while True:
-            try:
-                r = requests.get(
-                    self.GAMMA_URL,
-                    params={"active": "true", "closed": "false",
-                            "limit": 500, "offset": offset},
-                    timeout=15,
-                )
-                r.raise_for_status()
-                batch = r.json()
-            except Exception as e:
-                log.warning(f"Polymarket fetch failed (offset={offset}): {e}")
-                break
-            if not isinstance(batch, list) or not batch:
-                break
-            all_markets.extend(batch)
-            if len(batch) < 500:
-                break
-            offset += 500
-        self._markets = all_markets
-        log.info(f"Polymarket: loaded {len(all_markets)} active markets")
-        return len(all_markets)
+    def _search(self, query: str) -> list:
+        """Search Polymarket for markets matching query. Returns list of markets."""
+        try:
+            r = requests.get(
+                self.GAMMA_URL,
+                params={"active": "true", "closed": "false",
+                        "limit": 50, "q": query},
+                timeout=15,
+            )
+            r.raise_for_status()
+            batch = r.json()
+            return batch if isinstance(batch, list) else []
+        except Exception as e:
+            log.warning(f"Polymarket search ('{query}'): {e}")
+            return []
 
     def get_prob(self, yes_team: str, other_team: str,
                  league: str = "") -> Optional[tuple]:
         """
         Returns (prob_yes_team_wins: float, matched_question: str) or None.
 
-        Fuzzy-matches both team names against Polymarket questions.
-        Markets containing blocklisted sport keywords are rejected.
-        Outcome framing is determined by team name labels or question word order.
+        Searches Polymarket for markets matching each team name, applies
+        blocklist filtering, then selects the best fuzzy match.
         """
-        self.load()
         yes_w     = set(words(yes_team))
         other_w   = set(words(other_team))
         blocklist = self._BLOCKLIST.get(league, set())
@@ -80,17 +63,24 @@ class PolymarketSource:
             return None
 
         best_m, best_score = None, 0
-        for m in self._markets:
-            q_w = set(words(m.get("question", "")))
-            if blocklist & q_w:
-                continue
-            y_hit = len(yes_w   & q_w)
-            o_hit = len(other_w & q_w)
-            if y_hit == 0 or o_hit == 0:
-                continue
-            score = y_hit + o_hit
-            if score > best_score:
-                best_score, best_m = score, m
+        seen: set = set()
+
+        for search_term in [yes_team, other_team]:
+            for m in self._search(search_term):
+                mid = m.get("id") or m.get("conditionId", "")
+                if mid in seen:
+                    continue
+                seen.add(mid)
+                q_w = set(words(m.get("question", "")))
+                if blocklist & q_w:
+                    continue
+                y_hit = len(yes_w   & q_w)
+                o_hit = len(other_w & q_w)
+                if y_hit == 0 or o_hit == 0:
+                    continue
+                score = y_hit + o_hit
+                if score > best_score:
+                    best_score, best_m = score, m
 
         if best_m is None or best_score < 2:
             return None

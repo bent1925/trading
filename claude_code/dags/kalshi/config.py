@@ -1,4 +1,3 @@
-import datetime
 import os
 
 # ── Kalshi API ────────────────────────────────────────────────────────────────
@@ -7,15 +6,14 @@ KALSHI_KEY_ID      = os.environ.get("KALSHI_KEY_ID", "")
 KALSHI_KEY_FILE    = os.environ.get("KALSHI_KEY_FILE", "")
 
 # ── Trading parameters ────────────────────────────────────────────────────────
-MAX_TRADES_PER_DAY = 4
-BUDGET_USD         = 10.00   # dollars per trade
-MIN_EDGE_PP        = 10.0    # minimum |model_prob - kalshi_mid| in pp to trade
+MAX_TRADES_PER_RUN = 10
+MIN_EDGE_PP         = 10.0   # minimum |kalshi_mid - model_prob| in pp to trade
+TRADE_HORIZON_HOURS = 3      # only trade events starting within this many hours
 
-# ── Strategy override ─────────────────────────────────────────────────────────
-# When set, the bot bets WITH Kalshi's implied probability rather than the
-# independent model through this date (inclusive). Set to None to always use
-# the model-first ("fade Kalshi") strategy.
-TRUST_KALSHI_UNTIL = datetime.date(2026, 4, 9)
+# Inverse sizing: budget scales down as edge grows (large edges = model is wrong)
+BASE_BUDGET        = 20.00   # dollars at BASE_EDGE_PP
+BASE_EDGE_PP       = 20.0
+MIN_BUDGET         = 1.00
 
 # ── Data sources ──────────────────────────────────────────────────────────────
 ESPN_BASE = "http://site.api.espn.com/apis/site/v2/sports"

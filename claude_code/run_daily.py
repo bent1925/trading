@@ -24,7 +24,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "dag
 
 from kalshi.client     import KalshiClient
 from kalshi.config     import (KALSHI_KEY_ID, KALSHI_KEY_FILE,
-                                MAX_TRADES_PER_DAY, TRADING_ROOT,
+                                MAX_TRADES_PER_RUN, TRADING_ROOT,
                                 TRADES_MD, MODEL_OUTPUTS_DIR, TRADE_LOG_FILE)
 from kalshi.model      import ProbabilityModel, find_opportunities
 from kalshi.polymarket import PolymarketSource
@@ -74,9 +74,8 @@ def main() -> None:
     games = ProbabilityModel().get_todays_games()
     log.info(f"ESPN returned {len(games)} games")
 
-    log.info("Fetching Polymarket prices…")
-    pm       = PolymarketSource()
-    pm_count = pm.load()
+    log.info("Fetching Polymarket prices per game…")
+    pm = PolymarketSource()
 
     log.info("Finding opportunities…")
     opps = find_opportunities(markets, games, polymarket=pm)
@@ -89,7 +88,6 @@ def main() -> None:
         balance   = balance,
         markets_n = len(markets),
         games_n   = len(games),
-        pm_count  = pm_count,
         opps      = opps,
     )
 
@@ -97,65 +95,62 @@ def main() -> None:
     trade_log = load_today(date_str)
     already   = trade_log["count"]
 
-    if already >= MAX_TRADES_PER_DAY:
-        log.info(f"Already placed {already} trades today — skipping.")
+    selected = opps[:MAX_TRADES_PER_RUN]
+    if not selected:
+        log.info("No opportunities found this run.")
     else:
-        selected = opps[:MAX_TRADES_PER_DAY - already]
-        if not selected:
-            log.info("No opportunities to trade today.")
-        else:
-            available = balance
-            for opp in selected:
-                if opp["cost_usd"] > available:
-                    log.warning(
-                        f"Insufficient balance (${available:.2f}) for "
-                        f"{opp['ticker']} (${opp['cost_usd']:.2f}) — stopping."
-                    )
-                    break
-                try:
-                    result = client.place_order(
-                        ticker      = opp["ticker"],
-                        side        = opp["side"],
-                        price_cents = opp["price_cents"],
-                        count       = opp["contracts"],
-                    )
-                    order  = result.get("order", {})
-                    status = order.get("status", "unknown")
-                    oid    = order.get("order_id")
-                    log.info(
-                        f"Order {status}: {opp['ticker']} {opp['side'].upper()} "
-                        f"×{opp['contracts']} @ {opp['price_cents']}¢  id={oid}"
-                    )
-                except Exception as e:
-                    log.error(f"Order failed for {opp['ticker']}: {e}")
-                    status, oid = "failed", None
+        available = balance
+        for opp in selected:
+            if opp["cost_usd"] > available:
+                log.warning(
+                    f"Insufficient balance (${available:.2f}) for "
+                    f"{opp['ticker']} (${opp['cost_usd']:.2f}) — stopping."
+                )
+                break
+            try:
+                result = client.place_order(
+                    ticker      = opp["ticker"],
+                    side        = opp["side"],
+                    price_cents = opp["price_cents"],
+                    count       = opp["contracts"],
+                )
+                order  = result.get("order", {})
+                status = order.get("status", "unknown")
+                oid    = order.get("order_id")
+                log.info(
+                    f"Order {status}: {opp['ticker']} {opp['side'].upper()} "
+                    f"×{opp['contracts']} @ {opp['price_cents']}¢  id={oid}"
+                )
+            except Exception as e:
+                log.error(f"Order failed for {opp['ticker']}: {e}")
+                status, oid = "failed", None
 
-                trade_log["trades"].append({
-                    "timestamp":    datetime.datetime.utcnow().isoformat() + "Z",
-                    "ticker":       opp["ticker"],
-                    "title":        opp["title"],
-                    "side":         opp["side"],
-                    "price_cents":  opp["price_cents"],
-                    "contracts":    opp["contracts"],
-                    "cost_usd":     opp["cost_usd"],
-                    "model_prob":   opp["model_prob"],
-                    "espn_prob":    opp["espn_prob"],
-                    "model_source": opp["model_source"],
-                    "kalshi_mid":   opp["kalshi_mid"],
-                    "edge_pp":      opp["edge_pp"],
-                    "league":       opp["league"],
-                    "strategy":     opp["strategy"],
-                    "order_id":     oid,
-                    "status":       status,
-                })
-                trade_log["count"] += 1
-                available -= opp["cost_usd"]
+            trade_log["trades"].append({
+                "timestamp":    datetime.datetime.utcnow().isoformat() + "Z",
+                "ticker":       opp["ticker"],
+                "title":        opp["title"],
+                "side":         opp["side"],
+                "price_cents":  opp["price_cents"],
+                "contracts":    opp["contracts"],
+                "cost_usd":     opp["cost_usd"],
+                "model_prob":   opp["model_prob"],
+                "espn_prob":    opp["espn_prob"],
+                "model_source": opp["model_source"],
+                "kalshi_mid":   opp["kalshi_mid"],
+                "edge_pp":      opp["edge_pp"],
+                "league":       opp["league"],
+                "strategy":     opp["strategy"],
+                "order_id":     oid,
+                "status":       status,
+            })
+            trade_log["count"] += 1
+            available -= opp["cost_usd"]
 
-            save_today(trade_log)
-            log.info(
-                f"Placed {trade_log['count'] - already} trades; "
-                f"daily total {trade_log['count']}/{MAX_TRADES_PER_DAY}"
-            )
+        save_today(trade_log)
+        log.info(
+            f"Placed {trade_log['count'] - already} trades this run; "
+            f"daily total {trade_log['count']}"
+        )
 
     # ── Step 4: Update TRADES.md ──────────────────────────────────────────────
     log.info("Updating TRADES.md…")

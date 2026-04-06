@@ -15,14 +15,18 @@
         <string>/Users/benjaminthompson/code/trading/claude_code/run_daily.sh</string>
     </array>
 
-    <!-- Run every day at 06:00 local time (PT) -->
+    <!-- Run every 3 hours: 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00 PT -->
     <key>StartCalendarInterval</key>
-    <dict>
-        <key>Hour</key>
-        <integer>6</integer>
-        <key>Minute</key>
-        <integer>0</integer>
-    </dict>
+    <array>
+        <dict><key>Hour</key><integer>0</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>3</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>15</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>18</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>0</integer></dict>
+    </array>
 
     <!-- Minimal PATH so launchd can find bash and git -->
     <key>EnvironmentVariables</key>
@@ -39,9 +43,9 @@
     <key>StandardErrorPath</key>
     <string>/Users/benjaminthompson/code/trading/logs/run_daily.log</string>
 
-    <!-- Automatically start on login -->
+    <!-- Run immediately when the plist is loaded/reloaded -->
     <key>RunAtLoad</key>
-    <false/>
+    <true/>
 
 </dict>
 </plist>
