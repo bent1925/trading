@@ -6,7 +6,9 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 > **Note on March 26 trades 2 & 3:** The daily log resets at midnight and was overwritten before model/edge data was saved. Kalshi mid is reconstructed from the settled market's `previous_yes_ask/bid`; model probability and exact fill price were not captured.
 
-> **Strategy change — Apr 2 through Apr 9:** Switching from "fade Kalshi" to "trust Kalshi". Instead of trading against the market when the model disagrees, the bot now bets *with* Kalshi's implied probability: when Kalshi prices YES higher than the model by >10pp, buy YES; when Kalshi prices YES lower, buy NO. Reverts to the original model-first strategy on Apr 10.
+> **Strategy change — Apr 2 through Apr 6:** Switched from "fade Kalshi" to "trust Kalshi" with inverse sizing. See backtest notes in `BACKTEST_SUMMARY.md`.
+
+> **Strategy change — Apr 7 onward:** Switching to cross-market arb (fade Kalshi). The model is now Polymarket's implied probability (+ 50% ESPN sportsbook odds when available). The bot only trades when a Polymarket market matches the game. Edge = `model_prob − kalshi_mid`; when Polymarket prices a side higher than Kalshi, buy that side. Sizing is proportional to the spread: $10 at 10pp, $20 at 20pp+.
 
 ---
 
@@ -15,9 +17,10 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
 | 1 | Philadelphia at San Antonio Winner? | NBA | BUY YES | $3.85 (5 × 77¢) | 61.8% | 51.8% | 76.5¢ | +24.7 pp | polymarket(75%)+win_pct(25%) | pending |
-| 2 | Will Dalma Galfi win the Parks vs Galfi : Round Of 32 match? | WTA | BUY YES | $9.12 (12 × 76¢) | 49.5% | 64.9% | 75.5¢ | +10.6 pp | polymarket(75%)+ranking(#103 vs #93)(25%) | pending |
+| 2 | Will Dalma Galfi win the Parks vs Galfi : Round Of 32 match? | WTA | BUY YES | $9.12 (12 × 76¢) | 49.5% | 64.9% | 75.5¢ | +10.6 pp | polymarket(75%)+ranking(#103 vs #93)(25%) | ✅ WIN +$2.88 |
+| 3 | Philadelphia at San Antonio Winner? | NBA | BUY NO | $19.92 (83 × 24¢) | 61.8% | 48.5% | 76.5¢ | -28.0 pp | polymarket | pending |
 
-**Total wagered: $12.97**
+**Total wagered: $32.89**
 
 ---
 ## 2026-04-05
