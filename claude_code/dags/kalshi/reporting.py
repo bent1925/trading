@@ -6,19 +6,19 @@ import logging
 import os
 import re
 
-from .config import MAX_TRADES_PER_DAY, MODEL_OUTPUTS_DIR, TRADES_MD
+from .config import MAX_TRADES_PER_RUN, MODEL_OUTPUTS_DIR, TRADES_MD
 
 log = logging.getLogger(__name__)
 
 
 def write_model_output(date_str: str, balance: float, markets_n: int,
-                       games_n: int, pm_count: int, opps: list) -> str:
+                       games_n: int, opps: list) -> str:
     """
     Write today's model analysis to model_outputs/YYYY-MM-DD.md.
     Returns the path written.
     """
     import datetime
-    selected = opps[:MAX_TRADES_PER_DAY]
+    selected = opps[:MAX_TRADES_PER_RUN]
 
     lines = [
         f"# Model Output — {date_str}",
@@ -27,7 +27,6 @@ def write_model_output(date_str: str, balance: float, markets_n: int,
         f"**Account balance:** ${balance:.2f}",
         f"**Kalshi markets scanned:** {markets_n}",
         f"**ESPN games found:** {games_n}",
-        f"**Polymarket markets loaded:** {pm_count:,}",
         "",
     ]
 
@@ -41,7 +40,7 @@ def write_model_output(date_str: str, balance: float, markets_n: int,
             "|---|--------|-------|------|-------|------|-----------|------|--------|",
         ]
         for i, o in enumerate(opps, 1):
-            marker = " ✓" if i <= MAX_TRADES_PER_DAY else ""
+            marker = " ✓" if i <= MAX_TRADES_PER_RUN else ""
             lines.append(
                 f"| {i}{marker} "
                 f"| {o['title']} "
@@ -55,7 +54,7 @@ def write_model_output(date_str: str, balance: float, markets_n: int,
             )
         lines += [
             "",
-            f"**Selected for trading:** {len(selected)} / {MAX_TRADES_PER_DAY} daily slots",
+            f"**Selected for trading:** {len(selected)} / {MAX_TRADES_PER_RUN} daily slots",
         ]
 
     os.makedirs(MODEL_OUTPUTS_DIR, exist_ok=True)
