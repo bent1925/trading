@@ -24,8 +24,9 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "dag
 
 from kalshi.client     import KalshiClient
 from kalshi.config     import (KALSHI_KEY_ID, KALSHI_KEY_FILE,
-                                MAX_TRADES_PER_RUN, TRADING_ROOT,
-                                TRADES_MD, MODEL_OUTPUTS_DIR, TRADE_LOG_FILE)
+                                MAX_TRADES_PER_RUN, MIN_BALANCE_TO_TRADE,
+                                TRADING_ROOT, TRADES_MD, MODEL_OUTPUTS_DIR,
+                                TRADE_LOG_FILE)
 from kalshi.model      import ProbabilityModel, find_opportunities
 from kalshi.polymarket import PolymarketSource
 from kalshi.reporting  import write_model_output, update_trades_md
@@ -98,15 +99,19 @@ def main() -> None:
     selected = opps[:MAX_TRADES_PER_RUN]
     if not selected:
         log.info("No opportunities found this run.")
+    elif balance < MIN_BALANCE_TO_TRADE:
+        log.info(
+            f"Balance ${balance:.2f} is below minimum ${MIN_BALANCE_TO_TRADE:.2f} — skipping trades."
+        )
     else:
         available = balance
         for opp in selected:
             if opp["cost_usd"] > available:
                 log.warning(
                     f"Insufficient balance (${available:.2f}) for "
-                    f"{opp['ticker']} (${opp['cost_usd']:.2f}) — stopping."
+                    f"{opp['ticker']} (${opp['cost_usd']:.2f}) — skipping."
                 )
-                break
+                continue
             try:
                 result = client.place_order(
                     ticker      = opp["ticker"],
