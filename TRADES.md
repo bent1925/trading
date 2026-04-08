@@ -17,18 +17,20 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
 | 1 | Will Andrey Rublev win the Rublev vs Bergs : Round Of 32 match? | ATP | BUY NO | $12.00 (40 × 30¢) | 58.3% | 58.3% | 70.5¢ | -12.2 pp | espn:ranking(#47 vs #15) | ✅ WIN +$28.00 |
-| 2 | Will Arthur Rinderknech win the Fonseca vs Rinderknech : Round Of 32 match? | ATP | BUY YES | $20.00 (80 × 25¢) | 52.7% | 52.7% | 24.5¢ | +28.2 pp | espn:ranking(#27 vs #40) | pending |
+| 2 | Will Arthur Rinderknech win the Fonseca vs Rinderknech : Round Of 32 match? | ATP | BUY YES | $20.00 (80 × 25¢) | 52.7% | 52.7% | 24.5¢ | +28.2 pp | espn:ranking(#27 vs #40) | ❌ LOSS −$20.00 |
 | 3 | Will Tomas Martin Etcheverry win the Etcheverry vs Atmane : Round Of 32 match? | ATP | BUY NO | $18.56 (64 × 29¢) | 52.7% | 52.7% | 71.5¢ | -18.8 pp | espn:ranking(#45 vs #30) | pending |
-| 4 | Will Tomas Machac win the Cerundolo vs Machac : Round Of 32 match? | ATP | BUY YES | $16.20 (60 × 27¢) | 42.9% | 42.9% | 26.5¢ | +16.4 pp | espn:ranking(#53 vs #19) | pending |
+| 4 | Will Tomas Machac win the Cerundolo vs Machac : Round Of 32 match? | ATP | BUY YES | $16.20 (60 × 27¢) | 42.9% | 42.9% | 26.5¢ | +16.4 pp | espn:ranking(#53 vs #19) | ✅ WIN +$43.80 |
 | 5 | Will Casper Ruud win the Moutet vs Ruud : Round Of 32 match? | ATP | BUY NO | $14.84 (53 × 28¢) | 57.5% | 57.5% | 72.5¢ | -15.0 pp | espn:ranking(#12 vs #31) | pending |
-| 6 | Will Alexander Zverev win the Garin vs Zverev : Round Of 32 match? | ATP | BUY NO | $11.16 (93 × 12¢) | 77.2% | 77.2% | 88.5¢ | -11.3 pp | espn:ranking(#3 vs #109) | pending |
-| 7 | Will Jelena Ostapenko win the Ostapenko vs Eala : Round Of 16 match? | WTA | BUY NO | $10.50 (30 × 35¢) | 54.8% | 54.8% | 65.5¢ | -10.7 pp | espn:ranking(#46 vs #23) | pending |
+| 6 | Will Alexander Zverev win the Garin vs Zverev : Round Of 32 match? | ATP | BUY NO | $11.16 (93 × 12¢) | 77.2% | 77.2% | 88.5¢ | -11.3 pp | espn:ranking(#3 vs #109) | ❌ LOSS −$11.16 |
+| 7 | Will Jelena Ostapenko win the Ostapenko vs Eala : Round Of 16 match? | WTA | BUY NO | $10.50 (30 × 35¢) | 54.8% | 54.8% | 65.5¢ | -10.7 pp | espn:ranking(#46 vs #23) | ❌ LOSS −$10.50 |
 | 8 | Will Panna Udvardy win the Kalinina vs Udvardy : Round Of 32 match? | WTA | BUY YES | $19.78 (86 × 23¢) | 52.9% | 52.9% | 22.5¢ | +30.4 pp | espn:ranking(#71 vs #120) | pending |
 | 9 | Will Tomas Martin Etcheverry win the Etcheverry vs Atmane : Round Of 32 match? | ATP | BUY NO | $18.56 (64 × 29¢) | 52.7% | 52.7% | 71.5¢ | -18.8 pp | espn:ranking(#45 vs #30) | pending |
-| 10 | Will Tomas Machac win the Cerundolo vs Machac : Round Of 32 match? | ATP | BUY YES | $17.16 (66 × 26¢) | 42.9% | 42.9% | 25.5¢ | +17.4 pp | espn:ranking(#53 vs #19) | pending |
+| 10 | Will Tomas Machac win the Cerundolo vs Machac : Round Of 32 match? | ATP | BUY YES | $17.16 (66 × 26¢) | 42.9% | 42.9% | 25.5¢ | +17.4 pp | espn:ranking(#53 vs #19) | ✅ WIN +$48.84 |
 | 11 | Will Casper Ruud win the Moutet vs Ruud : Round Of 32 match? | ATP | BUY NO | $15.93 (59 × 27¢) | 57.5% | 57.5% | 73.5¢ | -16.0 pp | espn:ranking(#12 vs #31) | pending |
+| 12 | Will Sloane Stephens win the Andreeva vs Stephens : Round Of 16 match? | WTA | BUY YES | $20.00 (250 × 8¢) | 31.1% | 31.1% | 7.5¢ | +23.6 pp | espn:ranking(#200 vs #10) | pending |
+| 13 | Will Dalma Galfi win the Galfi vs Cirstea : Round Of 16 match? | WTA | BUY YES | $18.72 (78 × 24¢) | 42.3% | 42.3% | 23.5¢ | +18.8 pp | espn:ranking(#29 vs #103) | pending |
 
-**Total wagered: $174.69**
+**Total wagered: $213.41**
 
 ---
 ## 2026-04-07
