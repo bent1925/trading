@@ -14,7 +14,11 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## 2026-04-08
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
+| 1 | Will Andrey Rublev win the Rublev vs Bergs : Round Of 32 match? | ATP | BUY NO | $12.00 (40 × 30¢) | 58.3% | 58.3% | 70.5¢ | -12.2 pp | espn:ranking(#47 vs #15) | pending |
+
+**Total wagered: $12.00**
 
 ---
 ## 2026-04-07
