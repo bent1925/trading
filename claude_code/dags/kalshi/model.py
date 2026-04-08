@@ -149,25 +149,26 @@ class ProbabilityModel:
                     out[name] = int(rank)
         return out
 
-    def _get_todays_tennis_matches(self, league: str) -> list:
-        rankings = self._fetch_tennis_rankings(league)
-        today    = datetime.date.today().isoformat()
-        url      = f"{ESPN_BASE}/tennis/{league}/scoreboard"
+    def _get_tennis_matches(self, league: str,
+                            fetch_date: datetime.date) -> list:
+        rankings  = self._fetch_tennis_rankings(league)
+        date_iso  = fetch_date.isoformat()
+        url       = f"{ESPN_BASE}/tennis/{league}/scoreboard"
         try:
             r = requests.get(url,
-                             params={"dates": today.replace("-", "")},
+                             params={"dates": date_iso.replace("-", "")},
                              timeout=10)
             r.raise_for_status()
             events = r.json().get("events", [])
         except Exception as e:
-            log.warning(f"Tennis scoreboard ({league}) failed: {e}")
+            log.warning(f"Tennis scoreboard ({league} {date_iso}) failed: {e}")
             return []
 
         games = []
         for event in events:
             for group in event.get("groupings", []):
                 for comp in group.get("competitions", []):
-                    if comp.get("date", "")[:10] != today:
+                    if comp.get("date", "")[:10] != date_iso:
                         continue
                     competitors = comp.get("competitors", [])
                     if len(competitors) < 2:
@@ -190,16 +191,33 @@ class ProbabilityModel:
         return games
 
     def get_todays_games(self) -> list:
-        date_str = datetime.date.today().strftime("%Y%m%d")
-        games    = []
-        for series, (sport, league) in SPORTS_SERIES.items():
-            if league in ("wta", "atp"):
-                games.extend(self._get_todays_tennis_matches(league))
-            else:
-                for ev in self._fetch_scoreboard(sport, league, date_str):
-                    rec = self._parse_event(ev, sport, league)
-                    if rec:
-                        games.append(rec)
+        """
+        Fetches ESPN games for today AND yesterday (UTC).  Fetching yesterday
+        covers late US evening games that start after UTC midnight (e.g. 9 pm ET
+        = 01:00 UTC next day) but whose ESPN date is still the previous day.
+        Duplicate games (same matchup and start_time) are deduplicated.
+        """
+        today     = datetime.date.today()
+        yesterday = today - datetime.timedelta(days=1)
+        games: list       = []
+        seen_keys: set    = set()
+        for fetch_date in (yesterday, today):
+            date_str = fetch_date.strftime("%Y%m%d")
+            for series, (sport, league) in SPORTS_SERIES.items():
+                if league in ("wta", "atp"):
+                    for g in self._get_tennis_matches(league, fetch_date):
+                        key = (g["home"], g["away"], g["start_time"])
+                        if key not in seen_keys:
+                            seen_keys.add(key)
+                            games.append(g)
+                else:
+                    for ev in self._fetch_scoreboard(sport, league, date_str):
+                        rec = self._parse_event(ev, sport, league)
+                        if rec:
+                            key = (rec["home"], rec["away"], rec["start_time"])
+                            if key not in seen_keys:
+                                seen_keys.add(key)
+                                games.append(rec)
         return games
 
 
@@ -310,29 +328,32 @@ def find_opportunities(markets: list, games: list,
         model_prob   = espn_prob
         model_source = f"espn:{espn_source}"
 
-        if polymarket is None:
-            continue
-        yes_team  = match["info"].replace("yes=", "")
-        g         = match["game"]
-        h_ov      = overlap(yes_team, g["home"])
-        a_ov      = overlap(yes_team, g["away"])
-        other     = g["away"] if h_ov >= a_ov else g["home"]
-        pm_result = polymarket.get_prob(yes_team, other,
-                                        league=g.get("league", ""))
-        if pm_result is None:
-            continue
-        pm_prob, pm_q = pm_result
-        if espn_source == "espn_odds":
-            model_prob   = 0.5 * espn_prob + 0.5 * pm_prob
-            model_source = "espn_odds(50%)+polymarket(50%)"
-        else:
-            model_prob   = pm_prob
-            model_source = "polymarket"
-        log.info(
-            f"Polymarket [{yes_team}]: ESPN={espn_prob:.3f} "
-            f"PM={pm_prob:.3f} blended={model_prob:.3f} "
-            f"'{pm_q[:55]}'"
-        )
+        if polymarket is not None:
+            yes_team  = match["info"].replace("yes=", "")
+            g         = match["game"]
+            h_ov      = overlap(yes_team, g["home"])
+            a_ov      = overlap(yes_team, g["away"])
+            other     = g["away"] if h_ov >= a_ov else g["home"]
+            pm_result = polymarket.get_prob(yes_team, other,
+                                            league=g.get("league", ""))
+            if pm_result is not None:
+                pm_prob, pm_q = pm_result
+                if espn_source == "espn_odds":
+                    model_prob   = 0.5 * espn_prob + 0.5 * pm_prob
+                    model_source = "espn_odds(50%)+polymarket(50%)"
+                else:
+                    model_prob   = pm_prob
+                    model_source = "polymarket"
+                log.info(
+                    f"Polymarket [{yes_team}]: ESPN={espn_prob:.3f} "
+                    f"PM={pm_prob:.3f} blended={model_prob:.3f} "
+                    f"'{pm_q[:55]}'"
+                )
+            else:
+                log.info(
+                    f"No Polymarket match for [{yes_team}] — "
+                    f"falling back to ESPN ({espn_source}): {espn_prob:.3f}"
+                )
 
         kalshi_mid = (yes_ask_f + yes_bid_f) / 2.0
         edge_pp    = (model_prob - kalshi_mid) * 100.0

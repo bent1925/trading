@@ -12,11 +12,13 @@ For each Kalshi sports game market, Polymarket is the primary signal. A trade is
 |----------|:-:|:-:|---|
 | Both available | ✅ | ✅ | 50% ESPN sportsbook + 50% Polymarket |
 | Polymarket only | ❌ | ✅ | 100% Polymarket |
-| No Polymarket | — | ❌ | Skip — no trade |
+| No Polymarket match | ✅ | ❌ | 100% ESPN sportsbook (fallback) |
+| No Polymarket, no ESPN odds | — | ❌ | ESPN win-rate/form (weakest signal) |
+
+Polymarket is the preferred signal. When no Polymarket market can be matched, the bot falls back to ESPN rather than skipping the game entirely. This ensures liquid, well-covered games are still traded even when Polymarket has not yet listed them.
 
 A trade is placed when all of the following hold:
-- A Polymarket match is found for the game
-- The game starts within **3 hours** of the run (uses ESPN's scheduled start time)
+- The game starts within **3.5 hours** of the run (uses ESPN's scheduled start time)
 - `|model_prob − kalshi_mid| > 10 pp`
 
 **Edge direction (fade Kalshi):**
@@ -99,7 +101,7 @@ $$p_{\text{home,final}} = \text{clip}(p_{\text{home}} + 0.04,\ 0.05,\ 0.95)$$
 
 Polymarket is a decentralized prediction market. Its prices reflect the collective wisdom of real-money bettors and are generally well-calibrated for popular sporting events.
 
-All active, non-closed markets are fetched at startup (paginated, up to ~2,000 markets). For each game, both team names are matched against market questions using word-overlap scoring. A match is accepted only if at least one word from each team name appears in the question.
+For each game, both team names are searched against Polymarket via the Gamma API's `q` parameter (targeted per-game searches rather than bulk loading). A match is accepted only if at least one word (≥4 chars) from each team name appears in the question.
 
 ### Determining outcome framing
 
@@ -145,6 +147,10 @@ The `model_source` field logged with each trade shows which signals were blended
 |-------|---------|
 | `espn_odds(50%)+polymarket(50%)` | ESPN sportsbook + Polymarket (both market prices) |
 | `polymarket` | Polymarket only (no ESPN sportsbook lines available) |
+| `espn:espn_odds` | ESPN sportsbook only (no Polymarket match found) |
+| `espn:win_pct+form` | ESPN win-rate + recent form (no Polymarket match, no sportsbook lines) |
+| `espn:win_pct` | ESPN season win-rate only (weakest signal) |
+| `espn:ranking(#N vs #M)` | Tennis log-rank model, no Polymarket match |
 | `ranking(#N vs #M)` | Tennis log-rank model (Polymarket match also required) |
 
 ---
@@ -153,12 +159,24 @@ The `model_source` field logged with each trade shows which signals were blended
 
 | Issue | Detail |
 |-------|--------|
-| No Polymarket match = no trade | Markets without a Polymarket counterpart are skipped entirely |
 | Polymarket matching | Fuzzy word-overlap; low-quality matches (score < 2) are discarded |
+| Polymarket fallback | When no Polymarket match is found, the bot falls back to ESPN signals — weaker but still directional |
 | Polymarket framing | Yes/No outcome framing is inferred heuristically; edge cases may misidentify the YES team |
 | Polymarket liquidity | Prices are used regardless of market volume — thin markets may have stale prices |
 | Tennis look-ahead bias | ESPN rankings are current-only; backtests exclude ATP/WTA |
 | Kalshi mid as fair value | The mid-price is used as the market's probability estimate, ignoring spread |
+
+---
+
+## Scheduling and UTC Date Handling
+
+The bot runs every 3 hours at UTC 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00. Each run uses a **3.5-hour lookahead window**, so consecutive runs overlap by 30 minutes — guaranteeing full 24-hour coverage with no gaps.
+
+### UTC midnight boundary
+
+US evening games (e.g. 9 pm ET tipoffs) start at 01:00–04:00 UTC the following calendar day. Kalshi tickers and ESPN schedules for these games are dated the **previous** day (US date). If the bot only fetched "today" (UTC), the 00:00 and 03:00 UTC runs would miss them entirely.
+
+To handle this, both Kalshi market fetching and ESPN game fetching use a **two-day window: yesterday and today (UTC)**. Duplicates are deduplicated by `(home, away, start_time)`. This ensures late US evening games are visible to overnight runs without double-counting.
 
 ---
 

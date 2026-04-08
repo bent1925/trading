@@ -8,7 +8,7 @@ KALSHI_KEY_FILE    = os.environ.get("KALSHI_KEY_FILE", "")
 # ── Trading parameters ────────────────────────────────────────────────────────
 MAX_TRADES_PER_RUN = 10
 MIN_EDGE_PP         = 10.0   # minimum |kalshi_mid - model_prob| in pp to trade
-TRADE_HORIZON_HOURS = 3      # only trade events starting within this many hours
+TRADE_HORIZON_HOURS = 3.5    # lookahead window per run; 0.5h overlap gives full 24h coverage
 
 # Inverse sizing: budget scales down as edge grows (large edges = model is wrong)
 BASE_BUDGET        = 20.00   # dollars at BASE_EDGE_PP

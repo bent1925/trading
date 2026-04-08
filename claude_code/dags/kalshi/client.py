@@ -86,9 +86,14 @@ class KalshiClient:
 
     def get_todays_game_markets(self) -> list:
         """
-        Returns all open Kalshi sports game markets whose ticker date is today.
+        Returns all open Kalshi sports game markets whose ticker date is today
+        or yesterday (UTC).  Fetching yesterday covers late US evening games
+        that start after UTC midnight (e.g. 9 pm ET = 01:00 UTC next day) but
+        whose Kalshi ticker is still dated the previous calendar day.
         """
-        today   = datetime.date.today()
+        today     = datetime.date.today()
+        yesterday = today - datetime.timedelta(days=1)
+        valid_dates = {today, yesterday}
         markets = []
         for series_ticker in SPORTS_SERIES:
             cursor = None
@@ -104,7 +109,7 @@ class KalshiClient:
                 for m in data.get("markets", []):
                     game_date = parse_ticker_date(series_ticker,
                                                   m.get("ticker", ""))
-                    if game_date == today:
+                    if game_date in valid_dates:
                         m["_series"] = series_ticker
                         markets.append(m)
                 cursor = data.get("cursor")
