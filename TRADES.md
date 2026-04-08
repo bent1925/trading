@@ -17,8 +17,14 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
 | 1 | Will Andrey Rublev win the Rublev vs Bergs : Round Of 32 match? | ATP | BUY NO | $12.00 (40 × 30¢) | 58.3% | 58.3% | 70.5¢ | -12.2 pp | espn:ranking(#47 vs #15) | pending |
+| 2 | Will Arthur Rinderknech win the Fonseca vs Rinderknech : Round Of 32 match? | ATP | BUY YES | $20.00 (80 × 25¢) | 52.7% | 52.7% | 24.5¢ | +28.2 pp | espn:ranking(#27 vs #40) | pending |
+| 3 | Will Tomas Martin Etcheverry win the Etcheverry vs Atmane : Round Of 32 match? | ATP | BUY NO | $18.56 (64 × 29¢) | 52.7% | 52.7% | 71.5¢ | -18.8 pp | espn:ranking(#45 vs #30) | pending |
+| 4 | Will Tomas Machac win the Cerundolo vs Machac : Round Of 32 match? | ATP | BUY YES | $16.20 (60 × 27¢) | 42.9% | 42.9% | 26.5¢ | +16.4 pp | espn:ranking(#53 vs #19) | pending |
+| 5 | Will Casper Ruud win the Moutet vs Ruud : Round Of 32 match? | ATP | BUY NO | $14.84 (53 × 28¢) | 57.5% | 57.5% | 72.5¢ | -15.0 pp | espn:ranking(#12 vs #31) | pending |
+| 6 | Will Alexander Zverev win the Garin vs Zverev : Round Of 32 match? | ATP | BUY NO | $11.16 (93 × 12¢) | 77.2% | 77.2% | 88.5¢ | -11.3 pp | espn:ranking(#3 vs #109) | pending |
+| 7 | Will Jelena Ostapenko win the Ostapenko vs Eala : Round Of 16 match? | WTA | BUY NO | $10.50 (30 × 35¢) | 54.8% | 54.8% | 65.5¢ | -10.7 pp | espn:ranking(#46 vs #23) | pending |
 
-**Total wagered: $12.00**
+**Total wagered: $103.26**
 
 ---
 ## 2026-04-07
