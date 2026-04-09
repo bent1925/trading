@@ -40,11 +40,11 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 12 | Will Sloane Stephens win the Andreeva vs Stephens : Round Of 16 match? | WTA | BUY YES | $20.00 (250 × 8¢) | 31.1% | 31.1% | 7.5¢ | +23.6 pp | espn:ranking(#200 vs #10) | ❌ LOSS −$20.00 |
 | 13 | Will Dalma Galfi win the Galfi vs Cirstea : Round Of 16 match? | WTA | BUY YES | $18.72 (78 × 24¢) | 42.3% | 42.3% | 23.5¢ | +18.8 pp | espn:ranking(#29 vs #103) | ❌ LOSS −$18.72 |
 | 14 | Will Dalma Galfi win the Galfi vs Cirstea : Round Of 16 match? | WTA | BUY YES | $9.66 (42 × 23¢) | 42.3% | 42.3% | 22.5¢ | +19.8 pp | espn:ranking(#29 vs #103) | ❌ LOSS −$9.66 |
-| 15 | Milwaukee at Detroit Winner? | NBA | BUY YES | $10.00 (200 × 5¢) | 31.2% | 31.2% | 4.5¢ | +26.7 pp | espn:win_pct | pending |
-| 16 | Minnesota at Orlando Winner? | NBA | BUY NO | $9.90 (45 × 22¢) | 51.8% | 51.8% | 78.5¢ | -26.7 pp | espn:win_pct | pending |
-| 17 | Washington at Toronto Winner? | NHL | BUY NO | $5.04 (12 × 42¢) | 48.7% | 48.7% | 59.0¢ | -10.3 pp | espn:win_pct | pending |
+| 15 | Milwaukee at Detroit Winner? | NBA | BUY YES | $10.00 (200 × 5¢) | 31.2% | 31.2% | 4.5¢ | +26.7 pp | espn:win_pct | ❌ LOSS −$10.00 |
+| 16 | Minnesota at Orlando Winner? | NBA | BUY NO | $9.90 (45 × 22¢) | 51.8% | 51.8% | 78.5¢ | -26.7 pp | espn:win_pct | ❌ LOSS −$9.90 |
+| 17 | Washington at Toronto Winner? | NHL | BUY NO | $5.04 (12 × 42¢) | 48.7% | 48.7% | 59.0¢ | -10.3 pp | espn:win_pct | ❌ LOSS −$5.04 |
 
-**Total wagered: $248.01**
+**Total wagered: $248.01**  |  **Net P&L: −$75.05**
 
 ---
 ## 2026-04-07
