@@ -272,7 +272,8 @@ def match_market_to_game(market: dict, games: list) -> Optional[dict]:
 # ── Opportunity Finder ────────────────────────────────────────────────────────
 
 def find_opportunities(markets: list, games: list,
-                       polymarket: Optional[PolymarketSource] = None) -> list:
+                       polymarket: Optional[PolymarketSource] = None,
+                       already_traded_events: set = None) -> list:
     """
     Returns all tradeable opportunities sorted by |edge| descending.
     Each opportunity is a flat, JSON-serializable dict.
@@ -291,7 +292,7 @@ def find_opportunities(markets: list, games: list,
       edge_pp < 0 → BUY NO  (Polymarket prices YES lower than Kalshi)
     Sizing: proportional to edge — bigger spread, bigger bet.
     """
-    seen_events: set = set()
+    seen_events: set = set(already_traded_events or [])
     opps: list       = []
 
     for market in markets:
@@ -351,9 +352,9 @@ def find_opportunities(markets: list, games: list,
                 )
             else:
                 log.info(
-                    f"No Polymarket match for [{yes_team}] — "
-                    f"falling back to ESPN ({espn_source}): {espn_prob:.3f}"
+                    f"No Polymarket match for [{yes_team}] — skipping."
                 )
+                continue
 
         kalshi_mid = (yes_ask_f + yes_bid_f) / 2.0
         edge_pp    = (model_prob - kalshi_mid) * 100.0
@@ -380,7 +381,8 @@ def find_opportunities(markets: list, games: list,
         g = match["game"]
         opps.append({
             # Trade execution fields
-            "ticker":       market["ticker"],
+            "ticker":        market["ticker"],
+            "event_ticker":  event_ticker,
             "strategy":     "fade_kalshi",
             "title":        market.get("title", ""),
             "side":         side,

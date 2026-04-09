@@ -16,6 +16,7 @@ Steps
 import datetime
 import logging
 import os
+import re
 import subprocess
 import sys
 
@@ -78,8 +79,19 @@ def main() -> None:
     log.info("Fetching Polymarket prices per game…")
     pm = PolymarketSource()
 
+    # Load today's already-traded event tickers to skip in this run
+    trade_log_pre = load_today(date_str)
+    already_traded_events = {
+        re.sub(r"-(YES|NO)$", "", t.get("event_ticker", t.get("ticker", "")),
+               flags=re.IGNORECASE)
+        for t in trade_log_pre["trades"]
+    }
+    if already_traded_events:
+        log.info(f"Skipping {len(already_traded_events)} already-traded event(s) this run")
+
     log.info("Finding opportunities…")
-    opps = find_opportunities(markets, games, polymarket=pm)
+    opps = find_opportunities(markets, games, polymarket=pm,
+                              already_traded_events=already_traded_events)
     log.info(f"Found {len(opps)} opportunities above threshold")
 
     # ── Step 2: Log model output ──────────────────────────────────────────────
@@ -93,7 +105,7 @@ def main() -> None:
     )
 
     # ── Step 3: Make trades ───────────────────────────────────────────────────
-    trade_log = load_today(date_str)
+    trade_log = trade_log_pre
     already   = trade_log["count"]
 
     selected = opps[:MAX_TRADES_PER_RUN]
@@ -133,6 +145,7 @@ def main() -> None:
             trade_log["trades"].append({
                 "timestamp":    datetime.datetime.utcnow().isoformat() + "Z",
                 "ticker":       opp["ticker"],
+                "event_ticker": opp.get("event_ticker", ""),
                 "title":        opp["title"],
                 "side":         opp["side"],
                 "price_cents":  opp["price_cents"],
