@@ -16,10 +16,10 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
-| 1 | Memphis at Denver Winner? | NBA | BUY YES | $9.99 (333 × 3¢) | 28.9% | 28.9% | 2.5¢ | +26.4 pp | espn:win_pct | pending |
-| 2 | Dallas at Phoenix Winner? | NBA | BUY NO | $9.00 (60 × 15¢) | 67.2% | 67.2% | 85.5¢ | -18.3 pp | espn:win_pct | pending |
+| 1 | Memphis at Denver Winner? | NBA | BUY YES | $9.99 (333 × 3¢) | 28.9% | 28.9% | 2.5¢ | +26.4 pp | espn:win_pct | ❌ LOSS −$9.99 |
+| 2 | Dallas at Phoenix Winner? | NBA | BUY NO | $9.00 (60 × 15¢) | 67.2% | 67.2% | 85.5¢ | -18.3 pp | espn:win_pct | ❌ LOSS −$9.00 |
 
-**Total wagered: $18.99**
+**Total wagered: $18.99**  |  **Net P&L: −$18.99**
 
 ---
 ## 2026-04-08
