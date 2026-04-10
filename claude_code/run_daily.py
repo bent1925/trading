@@ -26,6 +26,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "dag
 from kalshi.client     import KalshiClient
 from kalshi.config     import (KALSHI_KEY_ID, KALSHI_KEY_FILE,
                                 MAX_TRADES_PER_RUN, MIN_BALANCE_TO_TRADE,
+                                TRADING_PAUSED_UNTIL,
                                 TRADING_ROOT, TRADES_MD, MODEL_OUTPUTS_DIR,
                                 TRADE_LOG_FILE)
 from kalshi.model      import ProbabilityModel, find_opportunities
@@ -108,6 +109,13 @@ def main() -> None:
     # ── Step 3: Make trades ───────────────────────────────────────────────────
     trade_log = trade_log_pre
     already   = trade_log["count"]
+
+    if TRADING_PAUSED_UNTIL and date_str < TRADING_PAUSED_UNTIL:
+        log.info(f"Trading paused until {TRADING_PAUSED_UNTIL} — skipping order placement.")
+        update_trades_md(date_str=date_str, trades=trade_log["trades"])
+        _git_push(date_str, trade_log["count"])
+        log.info("Done.")
+        return
 
     selected = opps[:MAX_TRADES_PER_RUN]
     if not selected:

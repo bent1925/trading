@@ -5,6 +5,9 @@ KALSHI_BASE_URL    = "https://api.elections.kalshi.com"
 KALSHI_KEY_ID      = os.environ.get("KALSHI_KEY_ID", "")
 KALSHI_KEY_FILE    = os.environ.get("KALSHI_KEY_FILE", "")
 
+# ── Trading pause ─────────────────────────────────────────────────────────────
+TRADING_PAUSED_UNTIL = "2026-04-14"  # resume on this date (inclusive)
+
 # ── Trading parameters ────────────────────────────────────────────────────────
 MAX_TRADES_PER_RUN   = 5
 MIN_BALANCE_TO_TRADE = 10.00  # skip all trading if balance is below this
