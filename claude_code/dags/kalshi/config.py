@@ -6,26 +6,23 @@ KALSHI_KEY_ID      = os.environ.get("KALSHI_KEY_ID", "")
 KALSHI_KEY_FILE    = os.environ.get("KALSHI_KEY_FILE", "")
 
 # ── Trading parameters ────────────────────────────────────────────────────────
-MAX_TRADES_PER_RUN  = 5
+MAX_TRADES_PER_RUN   = 5
 MIN_BALANCE_TO_TRADE = 10.00  # skip all trading if balance is below this
 MIN_EDGE_PP          = 2.0    # minimum |kalshi_mid - model_prob| in pp to trade
-TRADE_HORIZON_HOURS = 3.5    # lookahead window per run; 0.5h overlap gives full 24h coverage
+TRADE_HORIZON_HOURS  = 3.5   # lookahead window per run; 0.5h overlap gives full 24h coverage
 
-# Inverse sizing: budget scales down as edge grows (large edges = model is wrong)
-BASE_BUDGET        = 10.00   # dollars at BASE_EDGE_PP
-BASE_EDGE_PP       = 20.0
-MIN_BUDGET         = 1.00
+# Kelly criterion sizing
+KELLY_FRACTION = 0.25   # quarter-Kelly — standard conservative fraction
+MAX_BET        = 20.00  # hard cap per trade in dollars
 
 # ── Data sources ──────────────────────────────────────────────────────────────
 ESPN_BASE = "http://site.api.espn.com/apis/site/v2/sports"
 
 # Kalshi series ticker → (ESPN sport path, ESPN league path)
 SPORTS_SERIES = {
-    "KXNBAGAME":  ("basketball", "nba"),
-    "KXMLBGAME":  ("baseball",   "mlb"),
-    "KXNHLGAME":  ("hockey",     "nhl"),
-    "KXWTAMATCH": ("tennis",     "wta"),
-    "KXATPMATCH": ("tennis",     "atp"),
+    "KXNBAGAME": ("basketball", "nba"),
+    "KXMLBGAME": ("baseball",   "mlb"),
+    "KXNHLGAME": ("hockey",     "nhl"),
 }
 
 # ── File paths ────────────────────────────────────────────────────────────────

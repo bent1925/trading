@@ -91,7 +91,8 @@ def main() -> None:
 
     log.info("Finding opportunities…")
     opps = find_opportunities(markets, games, polymarket=pm,
-                              already_traded_events=already_traded_events)
+                              already_traded_events=already_traded_events,
+                              balance=balance)
     log.info(f"Found {len(opps)} opportunities above threshold")
 
     # ── Step 2: Log model output ──────────────────────────────────────────────

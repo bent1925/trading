@@ -7,7 +7,7 @@ from typing import Optional
 import requests
 
 from .config import (ESPN_BASE, SPORTS_SERIES, MIN_EDGE_PP,
-                     BASE_BUDGET, BASE_EDGE_PP, MIN_BUDGET, TRADE_HORIZON_HOURS)
+                     KELLY_FRACTION, MAX_BET, TRADE_HORIZON_HOURS)
 from .polymarket import PolymarketSource
 from .utils import words, overlap
 
@@ -273,24 +273,26 @@ def match_market_to_game(market: dict, games: list) -> Optional[dict]:
 
 def find_opportunities(markets: list, games: list,
                        polymarket: Optional[PolymarketSource] = None,
-                       already_traded_events: set = None) -> list:
+                       already_traded_events: set = None,
+                       balance: float = 0.0) -> list:
     """
     Returns all tradeable opportunities sorted by |edge| descending.
     Each opportunity is a flat, JSON-serializable dict.
 
-    Blending weights when Polymarket price is available:
-      ESPN sportsbook odds  → 50% ESPN + 50% Polymarket
-      ESPN win-rate/form    → 25% ESPN + 75% Polymarket
+    Model hierarchy (best available signal used):
+      1. Polymarket + ESPN sportsbook odds (50/50 blend)
+      2. Polymarket alone
+      3. ESPN sportsbook odds alone
+      4. ESPN win-rate / recent form
 
-    Only trades when Polymarket has a matching market — Polymarket is the
-    primary signal. ESPN sportsbook odds are blended 50/50 when available;
-    ESPN win-rate is ignored (too noisy compared to a liquid market price).
-
-    Strategy: Fade Kalshi — cross-market arb against Polymarket.
+    Strategy: Fade Kalshi — bet on convergence toward model probability.
       edge_pp = (model_prob − kalshi_mid) × 100
-      edge_pp > 0 → BUY YES (Polymarket prices YES higher than Kalshi)
-      edge_pp < 0 → BUY NO  (Polymarket prices YES lower than Kalshi)
-    Sizing: proportional to edge — bigger spread, bigger bet.
+      edge_pp > 0 → BUY YES  edge_pp < 0 → BUY NO
+
+    Sizing: fractional Kelly criterion (quarter-Kelly).
+      For YES at ask price p:  kelly_f = (model_prob - p) / (1 - p)
+      For NO  at ask price p:  kelly_f = ((1-model_prob) - p) / (1 - p)
+      bet = kelly_f * KELLY_FRACTION * balance, capped at MAX_BET.
     """
     seen_events: set = set(already_traded_events or [])
     opps: list       = []
@@ -352,9 +354,9 @@ def find_opportunities(markets: list, games: list,
                 )
             else:
                 log.info(
-                    f"No Polymarket match for [{yes_team}] — skipping."
+                    f"No Polymarket match for [{yes_team}] — "
+                    f"using ESPN ({espn_source}): {espn_prob:.3f}"
                 )
-                continue
 
         kalshi_mid = (yes_ask_f + yes_bid_f) / 2.0
         edge_pp    = (model_prob - kalshi_mid) * 100.0
@@ -372,7 +374,12 @@ def find_opportunities(markets: list, games: list,
         if price_cents < 1 or price_cents > 99:
             continue
 
-        budget    = max(MIN_BUDGET, min(BASE_BUDGET, BASE_BUDGET * abs(edge_pp) / BASE_EDGE_PP))
+        # Fractional Kelly sizing
+        # kelly_f = edge / (1 - price) for both YES and NO
+        # (for NO, edge = (1-model_prob) - p_no and 1-p_no = yes_bid,
+        #  but since we already flipped signs, |edge|/(1-price_f) works uniformly)
+        kelly_f  = abs(edge_pp) / 100.0 / (1.0 - price_f) if price_f < 1.0 else 0.0
+        budget   = min(MAX_BET, kelly_f * KELLY_FRACTION * balance)
         contracts = int(budget / price_f)
         if contracts < 1:
             continue
