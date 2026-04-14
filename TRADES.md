@@ -19,8 +19,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 1 | Los Angeles at Seattle Winner? | NHL | BUY YES | $1.56 (4 × 39¢) | 50.9% | 50.9% | 38.5¢ | +12.4 pp | espn:win_pct | ❌ LOSS −$1.56 |
 | 2 | Buffalo at Chicago Winner? | NHL | BUY YES | $0.72 (2 × 36¢) | 42.4% | 42.4% | 35.5¢ | +6.9 pp | espn:win_pct | ❌ LOSS −$0.72 |
 | 3 | Winnipeg at Vegas Winner? | NHL | BUY YES | $0.76 (2 × 38¢) | 43.1% | 43.1% | 37.5¢ | +5.6 pp | espn:win_pct | ❌ LOSS −$0.76 |
+| 4 | Montreal at Philadelphia Winner? | NHL | BUY YES | $10.20 (34 × 30¢) | 51.4% | 51.4% | 29.5¢ | +21.9 pp | espn:win_pct | pending |
+| 5 | Miami at Charlotte Winner? | NBA | BUY YES | $6.82 (22 × 31¢) | 45.4% | 45.4% | 30.5¢ | +14.9 pp | espn:win_pct | pending |
+| 6 | Anaheim at Minnesota Winner? | NHL | BUY YES | $7.92 (18 × 44¢) | 57.5% | 57.5% | 43.5¢ | +14.0 pp | espn:win_pct | pending |
+| 7 | San Francisco vs Cincinnati Winner? | MLB | BUY NO | $8.32 (16 × 52¢) | 36.0% | 36.0% | 48.5¢ | -12.5 pp | espn:win_pct | pending |
+| 8 | Carolina at New York I Winner? | NHL | BUY NO | $5.74 (14 × 41¢) | 48.6% | 48.6% | 59.5¢ | -10.9 pp | espn:win_pct | pending |
 
-**Total wagered: $3.04**  |  **Net P&L: −$3.04**
+**Total wagered: $42.04**
 
 ---
 ## 2026-04-13
