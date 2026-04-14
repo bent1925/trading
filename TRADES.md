@@ -12,6 +12,17 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-04-14
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
+| 1 | Los Angeles at Seattle Winner? | NHL | BUY YES | $1.56 (4 × 39¢) | 50.9% | 50.9% | 38.5¢ | +12.4 pp | espn:win_pct | pending |
+| 2 | Buffalo at Chicago Winner? | NHL | BUY YES | $0.72 (2 × 36¢) | 42.4% | 42.4% | 35.5¢ | +6.9 pp | espn:win_pct | pending |
+| 3 | Winnipeg at Vegas Winner? | NHL | BUY YES | $0.76 (2 × 38¢) | 43.1% | 43.1% | 37.5¢ | +5.6 pp | espn:win_pct | pending |
+
+**Total wagered: $3.04**
+
+---
 ## 2026-04-13
 
 No trades placed today.
