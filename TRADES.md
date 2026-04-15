@@ -14,7 +14,14 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## 2026-04-15
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Detroit at Florida Winner? | NHL | BUY YES | $6.56 (16 × 41¢) | 50.7% | 50.7% | 40.5¢ | +10.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Dallas at Buffalo Winner? | NHL | BUY NO | $6.60 (15 × 44¢) | 46.9% | 46.9% | 56.5¢ | -9.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Toronto at Ottawa Winner? | NHL | BUY YES | $2.52 (7 × 36¢) | 39.7% | 39.7% | 35.5¢ | +4.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | New York R at Tampa Bay Winner? | NHL | BUY YES | $2.44 (4 × 61¢) | 63.3% | 63.3% | 60.5¢ | +2.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $18.12**
 
 ---
 ## 2026-04-14
