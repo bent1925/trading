@@ -14,15 +14,7 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## 2026-04-15
 
-| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Source | Result |
-|---|--------|-------|-----|--------|------|-----------------|-----------|------|--------|--------|
-| 1 | Pittsburgh at St. Louis Winner? | NHL | BUY NO | $5.78 (17 × 34¢) | 48.9% | 48.9% | 66.5¢ | -17.6 pp | espn:win_pct | pending |
-| 2 | Seattle vs San Diego Winner? | MLB | BUY NO | $5.76 (12 × 48¢) | 39.0% | 39.0% | 52.5¢ | -13.6 pp | espn:win_pct | pending |
-| 3 | Seattle vs San Diego Winner? | MLB | BUY NO | $4.59 (9 × 51¢) | 39.0% | 39.0% | 50.0¢ | -11.1 pp | espn:win_pct | pending |
-| 4 | Colorado vs Houston Winner? | MLB | BUY NO | $3.80 (10 × 38¢) | 52.5% | 52.5% | 63.5¢ | -11.0 pp | espn:win_pct | pending |
-| 5 | Winnipeg at Utah Winner? | NHL | BUY YES | $2.80 (8 × 35¢) | 43.6% | 43.6% | 34.5¢ | +9.1 pp | espn:win_pct | pending |
-
-**Total wagered: $22.73**
+No trades placed today.
 
 ---
 ## 2026-04-14
