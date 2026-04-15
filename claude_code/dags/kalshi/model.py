@@ -197,7 +197,8 @@ class ProbabilityModel:
         = 01:00 UTC next day) but whose ESPN date is still the previous day.
         Duplicate games (same matchup and start_time) are deduplicated.
         """
-        today     = datetime.date.today()
+        et        = datetime.timezone(datetime.timedelta(hours=-4), name="ET")
+        today     = datetime.datetime.now(et).date()
         yesterday = today - datetime.timedelta(days=1)
         games: list       = []
         seen_keys: set    = set()

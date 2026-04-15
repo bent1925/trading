@@ -87,11 +87,19 @@ class KalshiClient:
     def get_todays_game_markets(self) -> list:
         """
         Returns all open Kalshi sports game markets whose ticker date is today
-        or yesterday (UTC).  Fetching yesterday covers late US evening games
-        that start after UTC midnight (e.g. 9 pm ET = 01:00 UTC next day) but
-        whose Kalshi ticker is still dated the previous calendar day.
+        or yesterday in US Eastern time.
+
+        Kalshi dates its tickers by the ET calendar date of the game.  Using ET
+        here (rather than UTC) prevents the midnight-UTC cron run from seeing
+        "tomorrow's" markets four hours early, which caused the bot to trade
+        next-day games while it was still the previous evening in the US.
+
+        We still include yesterday-ET to cover games whose ticker was issued the
+        prior ET calendar day but whose start time falls after UTC midnight
+        (e.g. a 9 pm ET game = 01:00 UTC the next UTC day).
         """
-        today     = datetime.date.today()
+        et = datetime.timezone(datetime.timedelta(hours=-4), name="ET")  # EDT; use -5 in winter
+        today     = datetime.datetime.now(et).date()
         yesterday = today - datetime.timedelta(days=1)
         valid_dates = {today, yesterday}
         markets = []
