@@ -16,9 +16,9 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Seattle at Vegas Winner? | NHL | BUY NO | $7.54 (29 × 26¢) | 58.7% | 58.7% | 74.5¢ | -15.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Seattle at Vegas Winner? | NHL | BUY NO | $7.54 (29 × 26¢) | 58.7% | 58.7% | 74.5¢ | -15.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$7.54 |
 
-**Total wagered: $7.54**
+**Total wagered: $7.54**  |  **Net P&L: −$7.54**
 
 ---
 ## 2026-04-15
