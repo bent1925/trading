@@ -12,6 +12,16 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-04-17
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Los Angeles at Calgary Winner? | NHL | BUY NO | $5.20 (13 × 40¢) | 51.6% | 51.6% | 60.5¢ | -8.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Vancouver at Edmonton Winner? | NHL | BUY YES | $3.64 (14 × 26¢) | 33.5% | 33.5% | 25.5¢ | +8.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $8.84**
+
+---
 ## 2026-04-16
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
