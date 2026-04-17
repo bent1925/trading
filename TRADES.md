@@ -19,8 +19,12 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 1 | Los Angeles at Calgary Winner? | NHL | BUY NO | $5.20 (13 × 40¢) | 51.6% | 51.6% | 60.5¢ | -8.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$7.80 |
 | 2 | Vancouver at Edmonton Winner? | NHL | BUY YES | $3.64 (14 × 26¢) | 33.5% | 33.5% | 25.5¢ | +8.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$3.64 |
 | 3 | New York M vs Chicago C Winner? | MLB | BUY NO | $2.36 (4 × 59¢) | 38.4% | 38.4% | 41.5¢ | -3.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | San Francisco vs Washington Winner? | MLB | BUY YES | $11.61 (27 × 43¢) | 60.2% | 60.2% | 42.5¢ | +17.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Charlotte at Orlando Winner? | NBA | BUY YES | $8.40 (20 × 42¢) | 54.6% | 54.6% | 41.5¢ | +13.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 6 | Detroit vs Boston Winner? | MLB | BUY YES | $4.70 (10 × 47¢) | 53.5% | 53.5% | 46.5¢ | +7.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 7 | Atlanta vs Philadelphia Winner? | MLB | BUY NO | $2.08 (4 × 52¢) | 45.3% | 45.3% | 48.5¢ | -3.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $11.20**
+**Total wagered: $37.99**
 
 ---
 ## 2026-04-16
