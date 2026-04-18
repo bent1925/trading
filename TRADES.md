@@ -16,13 +16,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Los Angeles D vs Colorado Winner? | MLB | BUY NO | $4.05 (15 × 27¢) | 63.9% | 63.9% | 73.5¢ | -9.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | San Diego vs Los Angeles A Winner? | MLB | BUY YES | $4.60 (10 × 46¢) | 53.8% | 53.8% | 45.5¢ | +8.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 3 | St. Louis vs Houston Winner? | MLB | BUY YES | $4.23 (9 × 47¢) | 54.1% | 54.1% | 46.5¢ | +7.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 4 | Texas vs Seattle Winner? | MLB | BUY YES | $4.14 (9 × 46¢) | 52.8% | 52.8% | 45.5¢ | +7.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 5 | Toronto vs Arizona Winner? | MLB | BUY NO | $5.13 (9 × 57¢) | 36.2% | 36.2% | 43.5¢ | -7.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Los Angeles D vs Colorado Winner? | MLB | BUY NO | $4.05 (15 × 27¢) | 63.9% | 63.9% | 73.5¢ | -9.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$4.05 |
+| 2 | San Diego vs Los Angeles A Winner? | MLB | BUY YES | $4.60 (10 × 46¢) | 53.8% | 53.8% | 45.5¢ | +8.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$4.60 |
+| 3 | St. Louis vs Houston Winner? | MLB | BUY YES | $4.23 (9 × 47¢) | 54.1% | 54.1% | 46.5¢ | +7.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$4.77 |
+| 4 | Texas vs Seattle Winner? | MLB | BUY YES | $4.14 (9 × 46¢) | 52.8% | 52.8% | 45.5¢ | +7.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$4.86 |
+| 5 | Toronto vs Arizona Winner? | MLB | BUY NO | $5.13 (9 × 57¢) | 36.2% | 36.2% | 43.5¢ | -7.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$3.87 |
 
-**Total wagered: $22.15**
+**Total wagered: $22.15**  |  **Net P&L: +$4.85**
 
 ---
 ## 2026-04-17
