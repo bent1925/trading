@@ -22,8 +22,9 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 4 | Texas vs Seattle Winner? | MLB | BUY YES | $4.14 (9 × 46¢) | 52.8% | 52.8% | 45.5¢ | +7.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$4.86 |
 | 5 | Toronto vs Arizona Winner? | MLB | BUY NO | $5.13 (9 × 57¢) | 36.2% | 36.2% | 43.5¢ | -7.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$3.87 |
 | 6 | Toronto at Cleveland Winner? | NBA | BUY YES | $9.84 (41 × 24¢) | 42.9% | 42.9% | 23.5¢ | +19.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 7 | Minnesota at Denver Winner? | NBA | BUY YES | $7.54 (26 × 29¢) | 43.6% | 43.6% | 28.5¢ | +15.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $31.99**
+**Total wagered: $39.53**
 
 ---
 ## 2026-04-17
