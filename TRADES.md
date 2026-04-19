@@ -18,8 +18,10 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Houston at Los Angeles L Winner? | NBA | BUY YES | $6.16 (14 × 44¢) | 54.5% | 54.5% | 43.5¢ | +11.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$7.84 |
 | 2 | Game 1: Philadelphia at Boston Winner? | NBA | BUY YES | $11.44 (88 × 13¢) | 40.6% | 40.6% | 12.5¢ | +28.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 1: Phoenix at Oklahoma City Winner? | NBA | BUY YES | $10.00 (100 × 10¢) | 37.3% | 37.3% | 9.5¢ | +27.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Game 1: Los Angeles at Colorado Winner? | NHL | BUY YES | $3.90 (13 × 30¢) | 38.1% | 38.1% | 29.5¢ | +8.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $17.60**
+**Total wagered: $31.50**
 
 ---
 ## 2026-04-18
