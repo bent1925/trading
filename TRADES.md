@@ -16,9 +16,9 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Houston at Los Angeles L Winner? | NBA | BUY YES | $6.16 (14 × 44¢) | 54.5% | 54.5% | 43.5¢ | +11.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Houston at Los Angeles L Winner? | NBA | BUY YES | $6.16 (14 × 44¢) | 54.5% | 54.5% | 43.5¢ | +11.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$7.84 |
 
-**Total wagered: $6.16**
+**Total wagered: $6.16**  |  **Net P&L: +$7.84**
 
 ---
 ## 2026-04-18
