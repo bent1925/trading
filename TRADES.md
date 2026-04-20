@@ -30,11 +30,11 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 2 | Game 1: Philadelphia at Boston Winner? | NBA | BUY YES | $11.44 (88 × 13¢) | 40.6% | 40.6% | 12.5¢ | +28.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$11.44 |
 | 3 | Game 1: Phoenix at Oklahoma City Winner? | NBA | BUY YES | $10.00 (100 × 10¢) | 37.3% | 37.3% | 9.5¢ | +27.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$10.00 |
 | 4 | Game 1: Los Angeles at Colorado Winner? | NHL | BUY YES | $3.90 (13 × 30¢) | 38.1% | 38.1% | 29.5¢ | +8.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$3.90 |
-| 5 | Game 1: Orlando at Detroit Winner? | NBA | BUY YES | $5.98 (26 × 23¢) | 38.9% | 38.9% | 22.5¢ | +16.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 6 | Game 1: Montreal at Tampa Bay Winner? | NHL | BUY NO | $3.80 (10 × 38¢) | 53.7% | 53.7% | 62.5¢ | -8.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 7 | Game 1: Boston at Buffalo Winner? | NHL | BUY NO | $1.23 (3 × 41¢) | 56.3% | 56.3% | 59.5¢ | -3.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Game 1: Orlando at Detroit Winner? | NBA | BUY YES | $5.98 (26 × 23¢) | 38.9% | 38.9% | 22.5¢ | +16.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$20.02 |
+| 6 | Game 1: Montreal at Tampa Bay Winner? | NHL | BUY NO | $3.80 (10 × 38¢) | 53.7% | 53.7% | 62.5¢ | -8.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$6.20 |
+| 7 | Game 1: Boston at Buffalo Winner? | NHL | BUY NO | $1.23 (3 × 41¢) | 56.3% | 56.3% | 59.5¢ | -3.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.23 |
 
-**Total wagered: $42.51**
+**Total wagered: $42.51**  |  **Net P&L: +$7.49**
 
 ---
 ## 2026-04-18
