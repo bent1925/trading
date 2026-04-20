@@ -16,10 +16,10 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Game 1: Portland at San Antonio Winner? | NBA | BUY NO | $6.12 (36 × 17¢) | 63.6% | 63.6% | 83.5¢ | -19.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Game 1: Utah at Vegas Winner? | NHL | BUY NO | $1.64 (4 × 41¢) | 55.5% | 55.5% | 59.5¢ | -4.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Game 1: Portland at San Antonio Winner? | NBA | BUY NO | $6.12 (36 × 17¢) | 63.6% | 63.6% | 83.5¢ | -19.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$6.12 |
+| 2 | Game 1: Utah at Vegas Winner? | NHL | BUY NO | $1.64 (4 × 41¢) | 55.5% | 55.5% | 59.5¢ | -4.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.64 |
 
-**Total wagered: $7.76**
+**Total wagered: $7.76**  |  **Net P&L: −$7.76**
 
 ---
 ## 2026-04-19
