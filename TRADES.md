@@ -12,6 +12,17 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-04-21
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Game 2: Minnesota at Denver Winner? | NBA | BUY YES | $5.04 (18 × 28¢) | 43.6% | 43.6% | 27.5¢ | +16.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Toronto vs Los Angeles A Winner? | MLB | BUY NO | $4.50 (9 × 50¢) | 40.3% | 40.3% | 50.5¢ | -10.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 1: Anaheim at Edmonton Winner? | NHL | BUY NO | $3.33 (9 × 37¢) | 54.5% | 54.5% | 63.5¢ | -9.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $12.87**
+
+---
 ## 2026-04-20
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
