@@ -16,11 +16,11 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Game 2: Minnesota at Denver Winner? | NBA | BUY YES | $5.04 (18 × 28¢) | 43.6% | 43.6% | 27.5¢ | +16.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Toronto vs Los Angeles A Winner? | MLB | BUY NO | $4.50 (9 × 50¢) | 40.3% | 40.3% | 50.5¢ | -10.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 3 | Game 1: Anaheim at Edmonton Winner? | NHL | BUY NO | $3.33 (9 × 37¢) | 54.5% | 54.5% | 63.5¢ | -9.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Game 2: Minnesota at Denver Winner? | NBA | BUY YES | $5.04 (18 × 28¢) | 43.6% | 43.6% | 27.5¢ | +16.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$12.96 |
+| 2 | Toronto vs Los Angeles A Winner? | MLB | BUY NO | $4.50 (9 × 50¢) | 40.3% | 40.3% | 50.5¢ | -10.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$4.50 |
+| 3 | Game 1: Anaheim at Edmonton Winner? | NHL | BUY NO | $3.33 (9 × 37¢) | 54.5% | 54.5% | 63.5¢ | -9.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$3.33 |
 
-**Total wagered: $12.87**
+**Total wagered: $12.87**  |  **Net P&L: +$5.13**
 
 ---
 ## 2026-04-20
