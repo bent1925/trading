@@ -7,8 +7,12 @@ from typing import Optional
 import requests
 
 from .config import (ESPN_BASE, SPORTS_SERIES, MIN_EDGE_PP,
-                     KELLY_FRACTION, MAX_BET, TRADE_HORIZON_HOURS)
+                     KELLY_FRACTION, MAX_BET, TRADE_HORIZON_HOURS,
+                     SOS_MULTIPLIER, OPPONENT_STRENGTH_FILE,
+                     INJURY_ADJUSTMENT_PP, INJURY_ADJUSTMENT_MAX_PP)
 from .polymarket import PolymarketSource
+from .opponent_strength import OpponentStrengthDB
+from .injury_data import ESPNInjurySource
 from .utils import words, overlap
 
 log = logging.getLogger(__name__)
@@ -23,8 +27,14 @@ class ProbabilityModel:
     Priority per game:
       1. Consensus sportsbook money-line odds embedded in ESPN response
       2. Season win-rate blended with last-10-game form + home advantage
+         (optionally adjusted by strength-of-schedule)
       3. Log-rank model (tennis only)
     """
+
+    def __init__(self, opp_strength_db: Optional[OpponentStrengthDB] = None,
+                 injury_source: Optional[ESPNInjurySource] = None):
+        self.opp_strength_db = opp_strength_db or OpponentStrengthDB(OPPONENT_STRENGTH_FILE)
+        self.injury_source   = injury_source
 
     def _fetch_scoreboard(self, sport: str, league: str,
                           date_str: str) -> list:
@@ -42,6 +52,78 @@ class ProbabilityModel:
         if ml > 0:
             return 100.0 / (ml + 100.0)
         return abs(ml) / (abs(ml) + 100.0)
+
+    def _apply_sos_adjustment(self, home_pct: float, away_pct: float,
+                               home_name: str, away_name: str) -> tuple:
+        """
+        Adjust win-rate probabilities based on opponent strength.
+
+        If opponent is weak (low win %), boost our prob.
+        If opponent is strong (high win %), dampen our prob.
+
+        Returns: (adjusted_home_pct, adjusted_away_pct)
+        """
+        if SOS_MULTIPLIER <= 0:
+            return (home_pct, away_pct)
+
+        # Get opponent strength (win rate when facing them)
+        away_strength = self.opp_strength_db.get_opponent_strength(home_name, away_name)
+        home_strength = self.opp_strength_db.get_opponent_strength(away_name, home_name)
+
+        # Adjustment = (0.5 - opponent_strength) * multiplier
+        # Example: if away team is weak (0.4), adjustment = (0.5 - 0.4) * 0.2 = +0.02
+        home_adjustment = (0.5 - away_strength) * SOS_MULTIPLIER
+        away_adjustment = (0.5 - home_strength) * SOS_MULTIPLIER
+
+        # Apply multiplicative adjustment to maintain probabilities in [0, 1]
+        h_pct_adjusted = home_pct * (1.0 + home_adjustment)
+        a_pct_adjusted = away_pct * (1.0 + away_adjustment)
+
+        # Clamp to [0.05, 0.95]
+        h_pct_adjusted = min(0.95, max(0.05, h_pct_adjusted))
+        a_pct_adjusted = min(0.95, max(0.05, a_pct_adjusted))
+
+        # Normalize to sum to 1
+        total = h_pct_adjusted + a_pct_adjusted
+        if total > 0:
+            h_pct_adjusted /= total
+            a_pct_adjusted /= total
+        else:
+            h_pct_adjusted = 0.5
+            a_pct_adjusted = 0.5
+
+        log.debug(
+            f"SOS adjustment: {home_name} vs {away_name} — "
+            f"home {home_pct:.3f} → {h_pct_adjusted:.3f} "
+            f"(away_strength={away_strength:.3f}, adj={home_adjustment:.3f})"
+        )
+
+        return (h_pct_adjusted, a_pct_adjusted)
+
+    def _injury_adjustment(self, team: str, league: str) -> float:
+        """
+        Returns a negative probability adjustment (0.0 to -INJURY_ADJUSTMENT_MAX_PP/100)
+        based on Out/Questionable players for the team.
+
+        Only called for the win-rate fallback — sportsbook odds and Polymarket
+        already reflect injury information.
+        """
+        if self.injury_source is None:
+            return 0.0
+        unavailable = self.injury_source.get_unavailable(team, league)
+        out_pp = sum(
+            INJURY_ADJUSTMENT_PP if any(s in status for s in ("out", "injured reserve",
+                                                                "physically unable", "suspended"))
+            else INJURY_ADJUSTMENT_PP * 0.33
+            for status in unavailable.values()
+        )
+        capped = min(out_pp, INJURY_ADJUSTMENT_MAX_PP)
+        if capped > 0:
+            log.debug(
+                f"Injury adjustment {team} ({league}): "
+                f"{len(unavailable)} player(s) → -{capped:.1f}pp"
+            )
+        return -capped / 100.0
 
     @staticmethod
     def _season_win_pct(competitor: dict) -> Optional[float]:
@@ -125,10 +207,29 @@ class ProbabilityModel:
         p_home = (h_pct / total) if total > 0 else 0.5
         HOME_EDGE = 0.04 if league not in ("wta", "atp") else 0.0
         p_home = min(0.95, max(0.05, p_home + HOME_EDGE))
+
+        # Apply strength-of-schedule adjustment (win-rate fallback only)
+        if SOS_MULTIPLIER > 0:
+            p_home, p_away = self._apply_sos_adjustment(p_home, 1.0 - p_home,
+                                                         home_name, away_name)
+        else:
+            p_away = 1.0 - p_home
+
+        # Apply injury adjustment (win-rate fallback only)
+        if self.injury_source is not None:
+            h_inj = self._injury_adjustment(home_name, league)
+            a_inj = self._injury_adjustment(away_name, league)
+            p_home = min(0.95, max(0.05, p_home + h_inj))
+            p_away = min(0.95, max(0.05, p_away + a_inj))
+            total  = p_home + p_away
+            if total > 0:
+                p_home /= total
+                p_away  = 1.0 - p_home
+
         source = "win_pct+form" if (h_form is not None or a_form is not None) \
                  else "win_pct"
         return dict(home=home_name, away=away_name,
-                    prob_home=p_home, prob_away=1.0 - p_home,
+                    prob_home=p_home, prob_away=p_away,
                     sport=sport, league=league, source=source,
                     start_time=comp.get("date", ""))
 

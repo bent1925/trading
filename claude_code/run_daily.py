@@ -26,14 +26,16 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "dag
 from kalshi.client     import KalshiClient
 from kalshi.config     import (KALSHI_KEY_ID, KALSHI_KEY_FILE,
                                 MAX_TRADES_PER_RUN, MIN_BALANCE_TO_TRADE,
-                                TRADING_PAUSED_UNTIL,
+                                TRADING_PAUSED_UNTIL, INJURY_DATA_ENABLED,
                                 TRADING_ROOT, TRADES_MD, MODEL_OUTPUTS_DIR,
-                                TRADE_LOG_FILE)
+                                TRADE_LOG_FILE, OPPONENT_STRENGTH_FILE)
 from kalshi.model      import ProbabilityModel, find_opportunities
 from kalshi.polymarket import PolymarketSource
 from kalshi.reporting  import write_model_output, update_trades_md
 from kalshi.resolve    import resolve_past_trades
 from kalshi.trade_log  import load_today, load_all, save_today
+from kalshi.opponent_strength import OpponentStrengthDB, bootstrap_daily
+from kalshi.injury_data import ESPNInjurySource
 
 logging.basicConfig(
     level   = logging.INFO,
@@ -73,8 +75,21 @@ def main() -> None:
     markets = client.get_todays_game_markets()
     log.info(f"Found {len(markets)} game markets")
 
+    # Refresh opponent strength (skips if already done today)
+    log.info("Refreshing opponent strength…")
+    opp_db = OpponentStrengthDB(OPPONENT_STRENGTH_FILE)
+    bootstrap_daily(opp_db)
+
+    # Set up injury source (ESPN public API, no key needed)
+    injury_source = ESPNInjurySource() if INJURY_DATA_ENABLED else None
+    if injury_source:
+        log.info("Injury data enabled (ESPN public API)")
+
     log.info("Building ESPN probability model…")
-    games = ProbabilityModel().get_todays_games()
+    games = ProbabilityModel(
+        opp_strength_db=opp_db,
+        injury_source=injury_source,
+    ).get_todays_games()
     log.info(f"ESPN returned {len(games)} games")
 
     log.info("Fetching Polymarket prices per game…")
