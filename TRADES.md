@@ -32,13 +32,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 1 | Game 2: Minnesota at Denver Winner? | NBA | BUY YES | $5.04 (18 × 28¢) | 43.6% | 43.6% | 27.5¢ | +16.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$12.96 |
 | 2 | Toronto vs Los Angeles A Winner? | MLB | BUY NO | $4.50 (9 × 50¢) | 40.3% | 40.3% | 50.5¢ | -10.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$4.50 |
 | 3 | Game 1: Anaheim at Edmonton Winner? | NHL | BUY NO | $3.33 (9 × 37¢) | 54.5% | 54.5% | 63.5¢ | -9.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$3.33 |
-| 4 | Game 2: Philadelphia at Boston Winner? | NBA | BUY YES | $10.66 (82 × 13¢) | 40.6% | 40.6% | 12.5¢ | +28.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 5 | Game 2: Portland at San Antonio Winner? | NBA | BUY NO | $8.16 (51 × 16¢) | 63.6% | 63.6% | 84.5¢ | -20.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 6 | Minnesota vs New York M Winner? | MLB | BUY NO | $9.02 (22 × 41¢) | 42.9% | 42.9% | 59.5¢ | -16.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 7 | Game 2: Montreal at Tampa Bay Winner? | NHL | BUY NO | $4.56 (12 × 38¢) | 53.7% | 53.7% | 62.5¢ | -8.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 8 | New York Y vs Boston Winner? | MLB | BUY YES | $5.17 (11 × 47¢) | 55.1% | 55.1% | 46.5¢ | +8.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Game 2: Philadelphia at Boston Winner? | NBA | BUY YES | $10.66 (82 × 13¢) | 40.6% | 40.6% | 12.5¢ | +28.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$71.34 |
+| 5 | Game 2: Portland at San Antonio Winner? | NBA | BUY NO | $8.16 (51 × 16¢) | 63.6% | 63.6% | 84.5¢ | -20.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$42.84 |
+| 6 | Minnesota vs New York M Winner? | MLB | BUY NO | $9.02 (22 × 41¢) | 42.9% | 42.9% | 59.5¢ | -16.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$12.98 |
+| 7 | Game 2: Montreal at Tampa Bay Winner? | NHL | BUY NO | $4.56 (12 × 38¢) | 53.7% | 53.7% | 62.5¢ | -8.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$4.56 |
+| 8 | New York Y vs Boston Winner? | MLB | BUY YES | $5.17 (11 × 47¢) | 55.1% | 55.1% | 46.5¢ | +8.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$5.83 |
 
-**Total wagered: $50.44**
+**Total wagered: $50.44**  |  **Net P&L: +$133.56**
 
 ---
 ## 2026-04-20
