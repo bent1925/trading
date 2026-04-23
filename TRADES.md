@@ -32,10 +32,10 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 3 | Chicago WS vs Arizona Winner? | MLB | BUY NO | $4.13 (7 × 59¢) | 34.1% | 34.1% | 41.5¢ | -7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$4.13 |
 | 4 | Los Angeles D vs San Francisco Winner? | MLB | BUY YES | $0.76 (2 × 38¢) | 40.0% | 40.0% | 37.5¢ | +2.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.24 |
 | 5 | San Diego vs Colorado Winner? | MLB | BUY YES | $0.58 (1 × 58¢) | 59.5% | 59.5% | 57.5¢ | +2.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.42 |
-| 6 | Game 2: Orlando at Detroit Winner? | NBA | BUY YES | $5.52 (24 × 23¢) | 37.2% | 37.2% | 22.5¢ | +14.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 7 | Game 3: Pittsburgh at Philadelphia Winner? | NHL | BUY NO | $1.02 (2 × 51¢) | 47.0% | 47.0% | 49.5¢ | -2.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 6 | Game 2: Orlando at Detroit Winner? | NBA | BUY YES | $5.52 (24 × 23¢) | 37.2% | 37.2% | 22.5¢ | +14.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$5.52 |
+| 7 | Game 3: Pittsburgh at Philadelphia Winner? | NHL | BUY NO | $1.02 (2 × 51¢) | 47.0% | 47.0% | 49.5¢ | -2.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.98 |
 
-**Total wagered: $22.19**
+**Total wagered: $22.19**  |  **Net P&L: +$4.81**
 
 ---
 ## 2026-04-21
