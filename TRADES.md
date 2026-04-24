@@ -17,8 +17,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Game 3: Colorado at Los Angeles Winner? | NHL | BUY YES | $2.40 (6 × 40¢) | 45.2% | 45.2% | 39.5¢ | +5.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$2.40 |
+| 2 | Game 3: Boston at Philadelphia Winner? | NBA | BUY YES | $8.58 (33 × 26¢) | 47.2% | 47.2% | 25.5¢ | +21.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 3: Los Angeles L at Houston Winner? | NBA | BUY YES | $7.83 (29 × 27¢) | 46.6% | 46.6% | 26.5¢ | +20.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Philadelphia vs Atlanta Winner? | MLB | BUY NO | $12.39 (21 × 59¢) | 23.7% | 23.7% | 41.5¢ | -17.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Colorado vs New York M Winner? | MLB | BUY NO | $6.65 (19 × 35¢) | 50.7% | 50.7% | 65.5¢ | -14.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 6 | Detroit vs Cincinnati Winner? | MLB | BUY NO | $5.88 (12 × 49¢) | 40.9% | 40.9% | 51.5¢ | -10.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $2.40**  |  **Net P&L: −$2.40**
+**Total wagered: $43.73**
 
 ---
 ## 2026-04-23
