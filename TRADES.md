@@ -28,10 +28,10 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 1 | Game 2: Phoenix at Oklahoma City Winner? | NBA | BUY YES | $8.19 (91 × 9¢) | 35.4% | 35.4% | 8.5¢ | +26.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$8.19 |
 | 2 | Game 2: Anaheim at Edmonton Winner? | NHL | BUY NO | $4.07 (11 × 37¢) | 53.9% | 53.9% | 63.5¢ | -9.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$6.93 |
 | 3 | Game 3: Dallas at Minnesota Winner? | NHL | BUY NO | $1.35 (3 × 45¢) | 52.1% | 52.1% | 55.5¢ | -3.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.65 |
-| 4 | Game 3: Cleveland at Toronto Winner? | NBA | BUY YES | $3.44 (8 × 43¢) | 49.9% | 49.9% | 42.5¢ | +7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 5 | Game 3: Carolina at Ottawa Winner? | NHL | BUY NO | $1.44 (3 × 48¢) | 49.3% | 49.3% | 52.5¢ | -3.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Game 3: Cleveland at Toronto Winner? | NBA | BUY YES | $3.44 (8 × 43¢) | 49.9% | 49.9% | 42.5¢ | +7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$4.56 |
+| 5 | Game 3: Carolina at Ottawa Winner? | NHL | BUY NO | $1.44 (3 × 48¢) | 49.3% | 49.3% | 52.5¢ | -3.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.56 |
 
-**Total wagered: $18.49**
+**Total wagered: $18.49**  |  **Net P&L: +$6.51**
 
 ---
 ## 2026-04-22
