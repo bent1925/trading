@@ -12,6 +12,19 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-04-25
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Seattle vs St. Louis Winner? | MLB | BUY YES | $6.16 (14 × 44¢) | 62.5% | 62.5% | 43.5¢ | +19.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Game 3: Edmonton at Anaheim Winner? | NHL | BUY NO | $3.08 (7 × 44¢) | 46.7% | 46.7% | 56.5¢ | -9.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 3: San Antonio at Portland Winner? | NBA | BUY NO | $1.20 (3 × 40¢) | 55.8% | 55.8% | 60.5¢ | -4.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Game 3: Vegas at Utah Winner? | NHL | BUY NO | $0.98 (2 × 49¢) | 48.0% | 48.0% | 51.5¢ | -3.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Miami vs San Francisco Winner? | MLB | BUY YES | $1.00 (2 × 50¢) | 52.5% | 52.5% | 49.5¢ | +3.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $12.42**
+
+---
 ## 2026-04-24
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
