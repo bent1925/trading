@@ -18,8 +18,10 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Game 4: Denver at Minnesota Winner? | NBA | BUY YES | $1.96 (4 × 49¢) | 52.1% | 52.1% | 48.5¢ | +3.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$2.04 |
 | 2 | Game 4: Cleveland at Toronto Winner? | NBA | BUY YES | $5.20 (13 × 40¢) | 48.9% | 48.9% | 39.5¢ | +9.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 4: San Antonio at Portland Winner? | NBA | BUY NO | $4.55 (13 × 35¢) | 55.8% | 55.8% | 65.5¢ | -9.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Game 4: Colorado at Los Angeles Winner? | NHL | BUY YES | $3.90 (10 × 39¢) | 45.9% | 45.9% | 38.5¢ | +7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $7.16**
+**Total wagered: $15.61**
 
 ---
 ## 2026-04-25
