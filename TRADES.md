@@ -31,12 +31,12 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Game 4: Edmonton at Anaheim Winner? | NHL | BUY NO | $4.14 (9 × 46¢) | 46.7% | 46.7% | 54.5¢ | -7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$4.86 |
 | 2 | Game 4: Los Angeles L at Houston Winner? | NBA | BUY YES | $1.35 (3 × 45¢) | 47.0% | 47.0% | 44.5¢ | +2.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.35 |
-| 3 | Game 4: Detroit at Orlando Winner? | NBA | BUY YES | $2.46 (6 × 41¢) | 45.6% | 45.6% | 40.5¢ | +5.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 4 | Seattle vs Minnesota Winner? | MLB | BUY NO | $2.30 (5 × 46¢) | 49.7% | 49.7% | 54.5¢ | -4.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 5 | Tampa Bay vs Cleveland Winner? | MLB | BUY YES | $2.25 (5 × 45¢) | 48.6% | 48.6% | 44.5¢ | +4.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 6 | St. Louis vs Pittsburgh Winner? | MLB | BUY NO | $2.16 (4 × 54¢) | 43.0% | 43.0% | 46.5¢ | -3.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 4: Detroit at Orlando Winner? | NBA | BUY YES | $2.46 (6 × 41¢) | 45.6% | 45.6% | 40.5¢ | +5.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$3.54 |
+| 4 | Seattle vs Minnesota Winner? | MLB | BUY NO | $2.30 (5 × 46¢) | 49.7% | 49.7% | 54.5¢ | -4.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$2.70 |
+| 5 | Tampa Bay vs Cleveland Winner? | MLB | BUY YES | $2.25 (5 × 45¢) | 48.6% | 48.6% | 44.5¢ | +4.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$2.75 |
+| 6 | St. Louis vs Pittsburgh Winner? | MLB | BUY NO | $2.16 (4 × 54¢) | 43.0% | 43.0% | 46.5¢ | -3.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$2.16 |
 
-**Total wagered: $14.66**
+**Total wagered: $14.66**  |  **Net P&L: +$10.34**
 
 ---
 ## 2026-04-26
