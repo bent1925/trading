@@ -12,6 +12,16 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-05-01
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Game 6: Denver at Minnesota Winner? | NBA | BUY YES | $6.67 (23 × 29¢) | 49.8% | 49.8% | 28.5¢ | +21.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Game 6: Edmonton at Anaheim Winner? | NHL | BUY NO | $3.22 (7 × 46¢) | 46.7% | 46.7% | 54.5¢ | -7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $9.89**
+
+---
 ## 2026-04-30
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
