@@ -28,11 +28,11 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Game 5: Houston at Los Angeles L Winner? | NBA | BUY NO | $1.60 (4 × 40¢) | 55.7% | 55.7% | 60.5¢ | -4.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$2.40 |
 | 2 | Game 5: Utah at Vegas Winner? | NHL | BUY NO | $1.23 (3 × 41¢) | 56.1% | 56.1% | 59.5¢ | -3.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.23 |
-| 3 | Game 6: Boston at Philadelphia Winner? | NBA | BUY YES | $6.08 (19 × 32¢) | 47.8% | 47.8% | 31.5¢ | +16.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 4 | Toronto vs Minnesota Winner? | MLB | BUY NO | $3.15 (7 × 45¢) | 48.8% | 48.8% | 55.5¢ | -6.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 5 | Game 6: New York at Atlanta Winner? | NBA | BUY NO | $2.58 (6 × 43¢) | 51.1% | 51.1% | 57.5¢ | -6.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 6: Boston at Philadelphia Winner? | NBA | BUY YES | $6.08 (19 × 32¢) | 47.8% | 47.8% | 31.5¢ | +16.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$12.92 |
+| 4 | Toronto vs Minnesota Winner? | MLB | BUY NO | $3.15 (7 × 45¢) | 48.8% | 48.8% | 55.5¢ | -6.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$3.85 |
+| 5 | Game 6: New York at Atlanta Winner? | NBA | BUY NO | $2.58 (6 × 43¢) | 51.1% | 51.1% | 57.5¢ | -6.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$2.58 |
 
-**Total wagered: $14.64**
+**Total wagered: $14.64**  |  **Net P&L: +$15.36**
 
 ---
 ## 2026-04-29
