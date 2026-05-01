@@ -19,8 +19,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 1 | Game 6: Denver at Minnesota Winner? | NBA | BUY YES | $6.67 (23 × 29¢) | 49.8% | 49.8% | 28.5¢ | +21.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$16.33 |
 | 2 | Game 6: Edmonton at Anaheim Winner? | NHL | BUY NO | $3.22 (7 × 46¢) | 46.7% | 46.7% | 54.5¢ | -7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$3.78 |
 | 3 | Arizona vs Chicago C Winner? | MLB | BUY YES | $1.74 (3 × 58¢) | 60.2% | 60.2% | 57.5¢ | +2.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Game 6: Cleveland at Toronto Winner? | NBA | BUY YES | $6.84 (19 × 36¢) | 48.9% | 48.9% | 35.5¢ | +13.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Philadelphia vs Miami Winner? | MLB | BUY NO | $8.00 (16 × 50¢) | 38.5% | 38.5% | 50.5¢ | -12.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 6 | Milwaukee vs Washington Winner? | MLB | BUY YES | $4.20 (10 × 42¢) | 48.7% | 48.7% | 41.5¢ | +7.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 7 | Cincinnati vs Pittsburgh Winner? | MLB | BUY NO | $4.14 (9 × 46¢) | 47.7% | 47.7% | 54.5¢ | -6.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 8 | Game 6: Tampa Bay at Montreal Winner? | NHL | BUY NO | $4.41 (9 × 49¢) | 44.8% | 44.8% | 51.5¢ | -6.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $11.63**
+**Total wagered: $39.22**
 
 ---
 ## 2026-04-30
