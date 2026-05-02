@@ -21,8 +21,9 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 | 3 | Game 6: Los Angeles L at Houston Winner? | NBA | BUY YES | $3.28 (8 × 41¢) | 47.9% | 47.9% | 40.5¢ | +7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$4.72 |
 | 4 | Chicago WS vs San Diego Winner? | MLB | BUY YES | $3.48 (6 × 58¢) | 63.6% | 63.6% | 57.5¢ | +6.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$3.48 |
 | 5 | Atlanta vs Colorado Winner? | MLB | BUY YES | $1.52 (4 × 38¢) | 41.5% | 41.5% | 37.5¢ | +4.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.52 |
+| 6 | Game 1: Philadelphia at Carolina Winner? | NHL | BUY YES | $4.16 (13 × 32¢) | 40.5% | 40.5% | 31.5¢ | +9.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $19.05**  |  **Net P&L: −$0.05**
+**Total wagered: $23.21**
 
 ---
 ## 2026-05-01
