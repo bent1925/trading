@@ -46,6 +46,11 @@ TRADE_LOG_FILE    = os.path.join(TRADING_ROOT, "kalshi_trades.json")
 TRADES_MD         = os.path.join(TRADING_ROOT, "TRADES.md")
 MODEL_OUTPUTS_DIR = os.path.join(TRADING_ROOT, "model_outputs")
 OPPONENT_STRENGTH_FILE = os.path.join(TRADING_ROOT, "opponent_strength.json")
+BALANCE_LOG_FILE  = os.path.join(TRADING_ROOT, "kalshi_balance_log.json")
+
+# Maximum rows shown in the Account Balance table in TRADES.md
+# (the JSON file keeps the full history regardless)
+BALANCE_LOG_DISPLAY_ROWS = 100
 
 # ── Injury data ────────────────────────────────────────────────────────────
 # Uses ESPN's free public API — no API key required.

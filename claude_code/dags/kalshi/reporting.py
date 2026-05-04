@@ -2,11 +2,13 @@
 Shared reporting helpers used by both trading_dag.py (Airflow)
 and run_daily.py (standalone). No Airflow dependency.
 """
+import json
 import logging
 import os
 import re
 
-from .config import MAX_TRADES_PER_RUN, MODEL_OUTPUTS_DIR, TRADES_MD
+from .config import (BALANCE_LOG_DISPLAY_ROWS, BALANCE_LOG_FILE,
+                     MAX_TRADES_PER_RUN, MODEL_OUTPUTS_DIR, TRADES_MD)
 
 log = logging.getLogger(__name__)
 
@@ -65,6 +67,26 @@ def write_model_output(date_str: str, balance: float, markets_n: int,
     return path
 
 
+def _strategy_desc(model_source: str) -> str:
+    """Convert a model_source label into a human-readable strategy description."""
+    s = (model_source or "").strip()
+    if not s or s == "—":
+        return "unknown"
+    if s == "espn_odds(50%)+polymarket(50%)":
+        return "Fade Kalshi → 50% ESPN sportsbook + 50% Polymarket"
+    if s == "polymarket":
+        return "Fade Kalshi → Polymarket"
+    if s == "espn:espn_odds":
+        return "Fade Kalshi → ESPN sportsbook odds (no Polymarket match)"
+    if s.startswith("espn:win_pct+form"):
+        return "Fade Kalshi → ESPN win-rate + recent form (no Polymarket or ESPN odds)"
+    if s.startswith("espn:win_pct"):
+        return "Fade Kalshi → ESPN season win-rate (weakest fallback)"
+    if "ranking" in s:
+        return f"Fade Kalshi → tennis ranking model ({s})"
+    return s
+
+
 def update_trades_md(date_str: str, trades: list) -> None:
     """
     Insert or replace today's section in TRADES.md (most-recent-first order).
@@ -76,9 +98,9 @@ def update_trades_md(date_str: str, trades: list) -> None:
     else:
         section_lines += [
             "| # | Market | Sport | Bet | Amount | ESPN | Model (blended) "
-            "| Kalshi Mid | Edge | Source | Result |",
+            "| Kalshi Mid | Edge | Strategy | Result |",
             "|---|--------|-------|-----|--------|------|-----------------|"
-            "-----------|------|--------|--------|",
+            "-----------|------|----------|--------|",
         ]
         total_cost = 0.0
         total_pnl = 0.0
@@ -101,6 +123,7 @@ def update_trades_md(date_str: str, trades: list) -> None:
                 all_resolved = False
 
             espn_col = f"| {t['espn_prob']*100:.1f}% " if 'espn_prob' in t else "| — "
+            strategy = _strategy_desc(t.get("model_source", ""))
             section_lines.append(
                 f"| {i} "
                 f"| {t['title']} "
@@ -111,7 +134,7 @@ def update_trades_md(date_str: str, trades: list) -> None:
                 f"| {t['model_prob']*100:.1f}% "
                 f"| {t['kalshi_mid']*100:.1f}¢ "
                 f"| {t['edge_pp']:+.1f} pp "
-                f"| {t.get('model_source', '—')} "
+                f"| {strategy} "
                 f"| {result_str} |"
             )
             total_cost += t["cost_usd"]
@@ -152,3 +175,86 @@ Model and ESPN probabilities are for the YES outcome.
 ---
 
 """
+
+
+# ── Balance log ─────────────────────────────────────────────────────────────
+
+def _load_balance_log() -> list:
+    """Return the full balance history, or [] if the file does not exist."""
+    if not os.path.exists(BALANCE_LOG_FILE):
+        return []
+    with open(BALANCE_LOG_FILE) as f:
+        return json.load(f)
+
+
+def _save_balance_log(entries: list) -> None:
+    with open(BALANCE_LOG_FILE, "w") as f:
+        json.dump(entries, f, indent=2)
+
+
+def _render_balance_section(entries: list) -> str:
+    """Build the markdown for the `## Account Balance` section."""
+    if not entries:
+        return ""
+
+    latest      = entries[-1]
+    latest_bal  = latest["balance_usd"]
+    latest_when = latest["timestamp"].replace("T", " ").rstrip("Z")[:16]
+    first_bal   = entries[0]["balance_usd"]
+    delta       = latest_bal - first_bal
+    delta_sign  = "+" if delta >= 0 else "−"
+
+    lines = [
+        "## Account Balance",
+        "",
+        f"**Current cash balance:** ${latest_bal:.2f} "
+        f"(as of {latest_when} UTC) "
+        f"&nbsp;·&nbsp; **Since first log:** {delta_sign}${abs(delta):.2f}",
+        "",
+        "Cash balance only — does not include the value of open limit orders or unsettled positions. "
+        f"Showing the most recent {BALANCE_LOG_DISPLAY_ROWS} of {len(entries)} entries.",
+        "",
+        "| Timestamp (UTC) | Cash Balance |",
+        "|-----------------|-------------:|",
+    ]
+    for e in reversed(entries[-BALANCE_LOG_DISPLAY_ROWS:]):
+        ts = e["timestamp"].replace("T", " ").rstrip("Z")[:16]
+        lines.append(f"| {ts} | ${e['balance_usd']:.2f} |")
+
+    lines += ["", "---", ""]
+    return "\n".join(lines) + "\n"
+
+
+def update_balance_log(balance: float, when_iso: str) -> None:
+    """
+    Append a balance entry to the JSON log and rewrite the
+    `## Account Balance` section in TRADES.md.
+    """
+    entries = _load_balance_log()
+    entries.append({"timestamp": when_iso, "balance_usd": round(balance, 2)})
+    _save_balance_log(entries)
+
+    section = _render_balance_section(entries)
+
+    if os.path.exists(TRADES_MD):
+        with open(TRADES_MD) as f:
+            content = f.read()
+    else:
+        content = _default_header()
+
+    # Replace existing section or insert before the first dated section
+    bal_re = re.compile(
+        r"(?ms)^## Account Balance\b.*?(?=^## |\Z)"
+    )
+    if bal_re.search(content):
+        new_content = bal_re.sub(section, content, count=1)
+    else:
+        date_match = re.search(r"^## \d{4}-\d{2}-\d{2}", content, flags=re.MULTILINE)
+        if date_match:
+            new_content = content[:date_match.start()] + section + content[date_match.start():]
+        else:
+            new_content = content + section
+
+    with open(TRADES_MD, "w") as f:
+        f.write(new_content)
+    log.info(f"Balance log updated: ${balance:.2f} ({len(entries)} entries total)")

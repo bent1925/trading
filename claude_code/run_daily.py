@@ -31,7 +31,7 @@ from kalshi.config     import (KALSHI_KEY_ID, KALSHI_KEY_FILE,
                                 TRADE_LOG_FILE, OPPONENT_STRENGTH_FILE)
 from kalshi.model      import ProbabilityModel, find_opportunities
 from kalshi.polymarket import PolymarketSource
-from kalshi.reporting  import write_model_output, update_trades_md
+from kalshi.reporting  import write_model_output, update_trades_md, update_balance_log
 from kalshi.resolve    import resolve_past_trades
 from kalshi.trade_log  import load_today, load_all, save_today
 from kalshi.opponent_strength import OpponentStrengthDB, bootstrap_daily
@@ -70,6 +70,10 @@ def main() -> None:
     # ── Step 1: Build model ───────────────────────────────────────────────────
     balance = client.get_balance_usd()
     log.info(f"Balance: ${balance:.2f}")
+
+    # Append this run's balance to the persistent balance log + TRADES.md.
+    run_started_iso = datetime.datetime.utcnow().isoformat() + "Z"
+    update_balance_log(balance=balance, when_iso=run_started_iso)
 
     log.info("Fetching Kalshi markets…")
     markets = client.get_todays_game_markets()
@@ -216,8 +220,9 @@ def _git_push(date_str: str, n_trades: int) -> None:
             log.warning(result.stderr.strip())
         return result.returncode
 
-    # Stage markdown files and model outputs
+    # Stage markdown files, model outputs, and balance log
     run(["git", "add", "TRADES.md",
+         "kalshi_balance_log.json",
          os.path.relpath(MODEL_OUTPUTS_DIR, TRADING_ROOT)])
 
     # Check if there's anything staged

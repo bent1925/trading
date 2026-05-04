@@ -2,10 +2,14 @@
 Fetches market results and order fills for unresolved trades.
 Enriches each trade record in kalshi_trades.json with:
   filled, market_result, pnl_usd, resolved=True
+
+Also updates opponent strength tracking based on resolved game results.
 """
 import logging
 
 from .trade_log import load_all, save_all
+from .opponent_strength import OpponentStrengthDB
+from .config import OPPONENT_STRENGTH_FILE
 
 log = logging.getLogger(__name__)
 
@@ -73,5 +77,27 @@ def resolve_past_trades(client) -> set:
     if updated_dates:
         save_all(all_logs)
         log.info(f"Resolved trades for {sorted(updated_dates)}; kalshi_trades.json saved.")
+
+        # Update opponent strength based on resolved trades
+        opp_db = OpponentStrengthDB(OPPONENT_STRENGTH_FILE)
+        for date_str in updated_dates:
+            for trade in all_logs[date_str]["trades"]:
+                if not trade.get("resolved"):
+                    continue
+                market_result = trade.get("market_result")
+                if not market_result:
+                    continue
+
+                # Determine which team won
+                game = {
+                    "home": trade.get("game_home", ""),
+                    "away": trade.get("game_away", ""),
+                }
+                if game["home"] and game["away"]:
+                    winner = "home" if market_result == "yes" else "away"
+                    opp_db.update_from_trade_result(game, winner)
+
+        opp_db.save()
+        log.info("Opponent strength database updated.")
 
     return updated_dates

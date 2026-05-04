@@ -1,5 +1,5 @@
 #!/bin/bash
-# Wrapper called by launchd. Sets up the environment then runs the daily bot.
+# Wrapper called by cron. Sets up the environment then runs the daily bot.
 # Logs are written to ../logs/run_daily.log (relative to this script).
 
 set -euo pipefail
@@ -18,7 +18,7 @@ echo "  run_daily.sh started: $(date)"
 echo "========================================"
 
 # ── Python path ──────────────────────────────────────────────────────────────
-export PATH="/opt/homebrew/opt/python@3.13/libexec/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin"
+export PATH="/usr/local/bin:/usr/bin:/bin"
 
 # ── Activate virtual environment ─────────────────────────────────────────────
 VENV="$HOME/.venv"
@@ -43,15 +43,6 @@ fi
 if [ -z "${KALSHI_KEY_ID:-}" ] || [ -z "${KALSHI_KEY_FILE:-}" ]; then
     echo "ERROR: KALSHI_KEY_ID and KALSHI_KEY_FILE must be set in $ENV_FILE"
     exit 1
-fi
-
-# ── SSH agent (needed for git push) ──────────────────────────────────────────
-# On macOS, keys added with `ssh-add --apple-use-keychain` are accessible
-# to launchd agents via the system SSH agent socket.
-export SSH_AUTH_SOCK="$HOME/Library/Containers/com.apple.security.keychain-access/Data/.ssh-agent-socket"
-# Fallback: try the standard macOS agent socket path
-if [ ! -S "$SSH_AUTH_SOCK" ]; then
-    export SSH_AUTH_SOCK="$(launchctl getenv SSH_AUTH_SOCK 2>/dev/null || true)"
 fi
 
 # ── Run the bot ───────────────────────────────────────────────────────────────
