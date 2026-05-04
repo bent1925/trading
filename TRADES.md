@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $123.38 (as of 2026-05-04 18:00 UTC) &nbsp;·&nbsp; **Since first log:** +$0.00
+**Current cash balance:** $123.38 (as of 2026-05-04 21:00 UTC) &nbsp;·&nbsp; **Since first log:** +$0.00
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 7 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 8 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-04 21:00 | $123.38 |
 | 2026-05-04 18:00 | $123.38 |
 | 2026-05-04 15:00 | $123.38 |
 | 2026-05-04 12:00 | $123.38 |
@@ -32,7 +33,15 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 ## 2026-05-04
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | New York M vs Colorado Winner? | MLB | BUY NO | $8.80 (20 × 44¢) | 40.3% | 40.3% | 56.5¢ | -16.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Boston vs Detroit Winner? | MLB | BUY YES | $8.64 (18 × 48¢) | 62.8% | 62.8% | 47.5¢ | +15.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 1: Philadelphia at New York Winner? | NBA | BUY YES | $5.10 (17 × 30¢) | 41.5% | 41.5% | 29.5¢ | +12.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Game 2: Philadelphia at Carolina Winner? | NHL | BUY YES | $4.03 (13 × 31¢) | 40.0% | 40.0% | 30.5¢ | +9.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Toronto vs Tampa Bay Winner? | MLB | BUY NO | $5.94 (11 × 54¢) | 37.5% | 37.5% | 46.5¢ | -8.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $32.51**
 
 ---
 ## 2026-05-03
