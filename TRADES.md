@@ -12,6 +12,11 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ---
 
+## 2026-05-04
+
+No trades placed today.
+
+---
 ## 2026-05-03
 
 No trades placed today.
