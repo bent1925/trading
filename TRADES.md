@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $89.55 (as of 2026-05-05 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$33.83
+**Current cash balance:** $82.09 (as of 2026-05-05 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$41.29
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 9 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 10 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-05 03:00 | $82.09 |
 | 2026-05-05 00:00 | $89.55 |
 | 2026-05-04 21:00 | $123.38 |
 | 2026-05-04 18:00 | $123.38 |
@@ -49,13 +50,13 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | New York M vs Colorado Winner? | MLB | BUY NO | $8.80 (20 × 44¢) | 40.3% | 40.3% | 56.5¢ | -16.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Boston vs Detroit Winner? | MLB | BUY YES | $8.64 (18 × 48¢) | 62.8% | 62.8% | 47.5¢ | +15.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 3 | Game 1: Philadelphia at New York Winner? | NBA | BUY YES | $5.10 (17 × 30¢) | 41.5% | 41.5% | 29.5¢ | +12.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 4 | Game 2: Philadelphia at Carolina Winner? | NHL | BUY YES | $4.03 (13 × 31¢) | 40.0% | 40.0% | 30.5¢ | +9.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 5 | Toronto vs Tampa Bay Winner? | MLB | BUY NO | $5.94 (11 × 54¢) | 37.5% | 37.5% | 46.5¢ | -8.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | New York M vs Colorado Winner? | MLB | BUY NO | $8.80 (20 × 44¢) | 40.3% | 40.3% | 56.5¢ | -16.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$8.80 |
+| 2 | Boston vs Detroit Winner? | MLB | BUY YES | $8.64 (18 × 48¢) | 62.8% | 62.8% | 47.5¢ | +15.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$8.64 |
+| 3 | Game 1: Philadelphia at New York Winner? | NBA | BUY YES | $5.10 (17 × 30¢) | 41.5% | 41.5% | 29.5¢ | +12.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$5.10 |
+| 4 | Game 2: Philadelphia at Carolina Winner? | NHL | BUY YES | $4.03 (13 × 31¢) | 40.0% | 40.0% | 30.5¢ | +9.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$4.03 |
+| 5 | Toronto vs Tampa Bay Winner? | MLB | BUY NO | $5.94 (11 × 54¢) | 37.5% | 37.5% | 46.5¢ | -8.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$5.06 |
 
-**Total wagered: $32.51**
+**Total wagered: $32.51**  |  **Net P&L: −$21.51**
 
 ---
 ## 2026-05-03
