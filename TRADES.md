@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $87.23 (as of 2026-05-07 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$36.15
+**Current cash balance:** $90.23 (as of 2026-05-07 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$33.15
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 26 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 27 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-07 06:00 | $90.23 |
 | 2026-05-07 03:00 | $87.23 |
 | 2026-05-07 00:00 | $93.86 |
 | 2026-05-06 21:00 | $100.51 |
@@ -53,10 +54,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Game 2: Minnesota at San Antonio Winner? | NBA | BUY NO | $5.06 (22 × 23¢) | 60.9% | 60.9% | 77.5¢ | -16.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Game 2: Anaheim at Vegas Winner? | NHL | BUY NO | $1.23 (3 × 41¢) | 56.1% | 56.1% | 59.5¢ | -3.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Game 2: Minnesota at San Antonio Winner? | NBA | BUY NO | $5.06 (22 × 23¢) | 60.9% | 60.9% | 77.5¢ | -16.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$5.06 |
+| 2 | Game 2: Anaheim at Vegas Winner? | NHL | BUY NO | $1.23 (3 × 41¢) | 56.1% | 56.1% | 59.5¢ | -3.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.77 |
 
-**Total wagered: $6.29**
+**Total wagered: $6.29**  |  **Net P&L: −$3.29**
 
 ---
 ## 2026-05-06
