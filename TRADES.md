@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $81.65 (as of 2026-05-08 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$41.73
+**Current cash balance:** $84.65 (as of 2026-05-08 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$38.73
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 34 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 35 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-08 06:00 | $84.65 |
 | 2026-05-08 03:00 | $81.65 |
 | 2026-05-08 00:00 | $82.84 |
 | 2026-05-07 21:00 | $90.23 |
@@ -61,10 +62,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Game 2: Los Angeles L at Oklahoma City Winner? | NBA | BUY NO | $6.50 (50 × 13¢) | 59.8% | 59.8% | 87.5¢ | -27.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | St. Louis vs San Diego Winner? | MLB | BUY YES | $1.23 (3 × 41¢) | 44.2% | 44.2% | 40.5¢ | +3.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Game 2: Los Angeles L at Oklahoma City Winner? | NBA | BUY NO | $6.50 (50 × 13¢) | 59.8% | 59.8% | 87.5¢ | -27.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$6.50 |
+| 2 | St. Louis vs San Diego Winner? | MLB | BUY YES | $1.23 (3 × 41¢) | 44.2% | 44.2% | 40.5¢ | +3.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.77 |
 
-**Total wagered: $7.73**
+**Total wagered: $7.73**  |  **Net P&L: −$4.73**
 
 ---
 ## 2026-05-07
