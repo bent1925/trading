@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $84.65 (as of 2026-05-08 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$38.73
+**Current cash balance:** $72.12 (as of 2026-05-09 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$51.26
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 40 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 41 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-09 00:00 | $72.12 |
 | 2026-05-08 21:00 | $84.65 |
 | 2026-05-08 18:00 | $84.65 |
 | 2026-05-08 15:00 | $84.65 |
@@ -63,6 +64,19 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 ---
 
+## 2026-05-09
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | New York M vs Arizona Winner? | MLB | BUY NO | $4.70 (10 × 47¢) | 39.1% | 39.1% | 53.5¢ | -14.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Game 3: San Antonio at Minnesota Winner? | NBA | BUY NO | $3.40 (10 × 34¢) | 52.8% | 52.8% | 66.5¢ | -13.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Pittsburgh vs San Francisco Winner? | MLB | BUY NO | $2.00 (4 × 50¢) | 44.8% | 44.8% | 50.5¢ | -5.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Chicago C vs Texas Winner? | MLB | BUY NO | $1.10 (2 × 55¢) | 41.9% | 41.9% | 45.5¢ | -3.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Game 3: Vegas at Anaheim Winner? | NHL | BUY NO | $0.50 (1 × 50¢) | 48.0% | 48.0% | 50.5¢ | -2.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $11.70**
+
+---
 ## 2026-05-08
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
