@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $75.95 (as of 2026-05-09 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$47.43
+**Current cash balance:** $72.69 (as of 2026-05-09 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$50.69
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 47 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 48 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-09 21:00 | $72.69 |
 | 2026-05-09 18:00 | $75.95 |
 | 2026-05-09 15:00 | $75.95 |
 | 2026-05-09 12:00 | $75.95 |
@@ -80,8 +81,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 4 | Chicago C vs Texas Winner? | MLB | BUY NO | $1.10 (2 × 55¢) | 41.9% | 41.9% | 45.5¢ | -3.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.90 |
 | 5 | Game 3: Vegas at Anaheim Winner? | NHL | BUY NO | $0.50 (1 × 50¢) | 48.0% | 48.0% | 50.5¢ | -2.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.50 |
 | 6 | Game 3: Detroit at Cleveland Winner? | NBA | BUY YES | $3.12 (8 × 39¢) | 49.4% | 49.4% | 38.5¢ | +10.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 7 | Game 4: Carolina at Philadelphia Winner? | NHL | BUY YES | $3.24 (9 × 36¢) | 47.4% | 47.4% | 35.5¢ | +11.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $14.82**
+**Total wagered: $18.06**
 
 ---
 ## 2026-05-08
