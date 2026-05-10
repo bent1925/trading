@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $62.30 (as of 2026-05-10 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$61.08
+**Current cash balance:** $64.30 (as of 2026-05-10 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$59.08
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 50 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 51 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-10 06:00 | $64.30 |
 | 2026-05-10 03:00 | $62.30 |
 | 2026-05-10 00:00 | $69.30 |
 | 2026-05-09 21:00 | $72.69 |
@@ -78,9 +79,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Game 3: Oklahoma City at Los Angeles L Winner? | NBA | BUY NO | $5.75 (23 × 25¢) | 50.5% | 50.5% | 75.5¢ | -25.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$5.75 |
-| 2 | Game 3: Colorado at Minnesota Winner? | NHL | BUY YES | $0.90 (2 × 45¢) | 48.1% | 48.1% | 44.5¢ | +3.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Game 3: Colorado at Minnesota Winner? | NHL | BUY YES | $0.90 (2 × 45¢) | 48.1% | 48.1% | 44.5¢ | +3.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.10 |
 
-**Total wagered: $6.65**
+**Total wagered: $6.65**  |  **Net P&L: −$4.65**
 
 ---
 ## 2026-05-09
