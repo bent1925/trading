@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $7.38 (as of 2026-05-11 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$116.00
+**Current cash balance:** $45.29 (as of 2026-05-11 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$78.09
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 63 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 64 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-11 21:00 | $45.29 |
 | 2026-05-11 18:00 | $7.38 |
 | 2026-05-11 15:00 | $18.80 |
 | 2026-05-11 12:00 | $18.80 |
@@ -88,7 +89,14 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 ## 2026-05-11
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Tampa Bay vs Toronto Winner? | MLB | BUY NO | $1.88 (4 × 47¢) | 44.1% | 44.1% | 53.5¢ | -9.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Game 4: Detroit at Cleveland Winner? | NBA | BUY YES | $1.64 (4 × 41¢) | 49.2% | 49.2% | 40.5¢ | +8.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 4: Colorado at Minnesota Winner? | NHL | BUY YES | $0.44 (1 × 44¢) | 47.1% | 47.1% | 43.5¢ | +3.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | New York Y vs Baltimore Winner? | MLB | BUY NO | $0.42 (1 × 42¢) | 56.3% | 56.3% | 58.5¢ | -2.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $4.38**
 
 ---
 ## 2026-05-10
