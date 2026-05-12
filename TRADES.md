@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $45.29 (as of 2026-05-11 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$78.09
+**Current cash balance:** $20.73 (as of 2026-05-12 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$102.65
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 64 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 65 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-12 00:00 | $20.73 |
 | 2026-05-11 21:00 | $45.29 |
 | 2026-05-11 18:00 | $7.38 |
 | 2026-05-11 15:00 | $18.80 |
@@ -87,6 +88,16 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 ---
 
+## 2026-05-12
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Game 4: Oklahoma City at Los Angeles L Winner? | NBA | BUY NO | $1.98 (11 × 18¢) | 50.5% | 50.5% | 82.5¢ | -32.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Seattle vs Houston Winner? | MLB | BUY NO | $0.43 (1 × 43¢) | 51.1% | 51.1% | 57.5¢ | -6.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $2.41**
+
+---
 ## 2026-05-11
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
