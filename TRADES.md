@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $70.73 (as of 2026-05-14 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$52.65
+**Current cash balance:** $73.73 (as of 2026-05-14 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$49.65
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 82 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 83 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-14 06:00 | $73.73 |
 | 2026-05-14 03:00 | $70.73 |
 | 2026-05-14 00:00 | $70.73 |
 | 2026-05-13 21:00 | $74.09 |
@@ -114,10 +115,10 @@ No trades placed today.
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Game 5: Minnesota at Colorado Winner? | NHL | BUY YES | $2.04 (6 × 34¢) | 41.3% | 41.3% | 33.5¢ | +7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Game 5: Cleveland at Detroit Winner? | NBA | BUY NO | $1.17 (3 × 39¢) | 56.9% | 56.9% | 61.5¢ | -4.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Game 5: Minnesota at Colorado Winner? | NHL | BUY YES | $2.04 (6 × 34¢) | 41.3% | 41.3% | 33.5¢ | +7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$2.04 |
+| 2 | Game 5: Cleveland at Detroit Winner? | NBA | BUY NO | $1.17 (3 × 39¢) | 56.9% | 56.9% | 61.5¢ | -4.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.83 |
 
-**Total wagered: $3.21**
+**Total wagered: $3.21**  |  **Net P&L: −$0.21**
 
 ---
 ## 2026-05-12
