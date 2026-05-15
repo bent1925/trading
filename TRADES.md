@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $73.73 (as of 2026-05-15 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$49.65
+**Current cash balance:** $73.73 (as of 2026-05-15 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$49.65
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 95 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 96 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-15 21:00 | $73.73 |
 | 2026-05-15 18:00 | $73.73 |
 | 2026-05-15 15:00 | $73.73 |
 | 2026-05-15 12:00 | $73.73 |
@@ -120,7 +121,15 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 ## 2026-05-15
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | New York Y vs New York M Winner? | MLB | BUY NO | $13.86 (33 × 42¢) | 41.1% | 14.1% | 58.5¢ | -44.4 pp | Fade Kalshi → Polymarket | pending |
+| 2 | Miami vs Tampa Bay Winner? | MLB | BUY YES | $4.24 (8 × 53¢) | 64.1% | 64.1% | 52.5¢ | +11.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Baltimore vs Washington Winner? | MLB | BUY YES | $3.15 (7 × 45¢) | 55.0% | 55.0% | 44.5¢ | +10.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Boston vs Atlanta Winner? | MLB | BUY NO | $4.13 (7 × 59¢) | 31.6% | 31.6% | 41.5¢ | -9.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Game 6: Detroit at Cleveland Winner? | NBA | BUY YES | $2.80 (7 × 40¢) | 49.2% | 49.2% | 39.5¢ | +9.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $28.18**
 
 ---
 ## 2026-05-14
