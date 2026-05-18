@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $71.66 (as of 2026-05-18 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$51.72
+**Current cash balance:** $71.66 (as of 2026-05-18 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$51.72
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 119 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 120 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-18 21:00 | $71.66 |
 | 2026-05-18 18:00 | $71.66 |
 | 2026-05-18 15:00 | $71.66 |
 | 2026-05-18 12:00 | $71.66 |
@@ -119,13 +120,20 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-06 18:00 | $100.51 |
 | 2026-05-06 15:00 | $100.51 |
 | 2026-05-06 12:00 | $100.51 |
-| 2026-05-06 09:00 | $100.51 |
 
 ---
 
 ## 2026-05-18
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | New York M vs Washington Winner? | MLB | BUY YES | $3.76 (8 × 47¢) | 58.5% | 58.5% | 46.5¢ | +12.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Cleveland vs Detroit Winner? | MLB | BUY NO | $3.01 (7 × 43¢) | 47.3% | 47.3% | 57.5¢ | -10.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Atlanta vs Miami Winner? | MLB | BUY NO | $3.00 (6 × 50¢) | 42.1% | 42.1% | 50.5¢ | -8.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Baltimore vs Tampa Bay Winner? | MLB | BUY YES | $2.90 (5 × 58¢) | 64.9% | 64.9% | 57.5¢ | +7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Boston vs Kansas City Winner? | MLB | BUY YES | $2.00 (4 × 50¢) | 55.8% | 55.8% | 49.5¢ | +6.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $14.67**
 
 ---
 ## 2026-05-17
