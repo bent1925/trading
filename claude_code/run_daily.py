@@ -28,9 +28,11 @@ from kalshi.config     import (KALSHI_KEY_ID, KALSHI_KEY_FILE,
                                 MAX_TRADES_PER_RUN, MIN_BALANCE_TO_TRADE,
                                 TRADING_PAUSED_UNTIL, INJURY_DATA_ENABLED,
                                 TRADING_ROOT, TRADES_MD, MODEL_OUTPUTS_DIR,
-                                TRADE_LOG_FILE, OPPONENT_STRENGTH_FILE)
+                                TRADE_LOG_FILE, OPPONENT_STRENGTH_FILE,
+                                BALANCE_LOG_FILE, BALANCE_MD)
 from kalshi.model      import ProbabilityModel, find_opportunities
 from kalshi.polymarket import PolymarketSource
+from kalshi.balance    import update_balance_md
 from kalshi.reporting  import write_model_output, update_trades_md, update_balance_log
 from kalshi.resolve    import resolve_past_trades
 from kalshi.trade_log  import load_today, load_all, save_today
@@ -132,6 +134,7 @@ def main() -> None:
     if TRADING_PAUSED_UNTIL and date_str < TRADING_PAUSED_UNTIL:
         log.info(f"Trading paused until {TRADING_PAUSED_UNTIL} — skipping order placement.")
         update_trades_md(date_str=date_str, trades=trade_log["trades"])
+        update_balance_md()
         _git_push(date_str, trade_log["count"])
         log.info("Done.")
         return
@@ -198,9 +201,11 @@ def main() -> None:
             f"daily total {trade_log['count']}"
         )
 
-    # ── Step 4: Update TRADES.md ──────────────────────────────────────────────
+    # ── Step 4: Update TRADES.md and BALANCE.md ──────────────────────────────
     log.info("Updating TRADES.md…")
     update_trades_md(date_str=date_str, trades=trade_log["trades"])
+    log.info("Updating BALANCE.md…")
+    update_balance_md()
 
     # ── Step 5: Git commit and push ───────────────────────────────────────────
     log.info("Pushing to GitHub…")
@@ -220,9 +225,8 @@ def _git_push(date_str: str, n_trades: int) -> None:
             log.warning(result.stderr.strip())
         return result.returncode
 
-    # Stage markdown files, model outputs, and balance log
-    run(["git", "add", "TRADES.md",
-         "kalshi_balance_log.json",
+    # Stage markdown files, model outputs, and balance tracking
+    run(["git", "add", "TRADES.md", "BALANCE.md", "kalshi_balance_log.json",
          os.path.relpath(MODEL_OUTPUTS_DIR, TRADING_ROOT)])
 
     # Check if there's anything staged
