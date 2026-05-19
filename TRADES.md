@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $71.66 (as of 2026-05-18 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$51.72
+**Current cash balance:** $56.45 (as of 2026-05-19 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$66.93
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 120 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 121 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-19 00:00 | $56.45 |
 | 2026-05-18 21:00 | $71.66 |
 | 2026-05-18 18:00 | $71.66 |
 | 2026-05-18 15:00 | $71.66 |
@@ -119,10 +120,21 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-06 21:00 | $100.51 |
 | 2026-05-06 18:00 | $100.51 |
 | 2026-05-06 15:00 | $100.51 |
-| 2026-05-06 12:00 | $100.51 |
 
 ---
 
+## 2026-05-19
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Game 1: San Antonio at Oklahoma City Winner? | NBA | BUY YES | $2.48 (8 × 31¢) | 44.1% | 44.1% | 30.5¢ | +13.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Los Angeles D vs San Diego Winner? | MLB | BUY YES | $2.20 (5 × 44¢) | 52.7% | 52.7% | 43.5¢ | +9.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Chicago WS vs Seattle Winner? | MLB | BUY NO | $1.64 (4 × 41¢) | 51.3% | 51.3% | 59.5¢ | -8.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Texas vs Colorado Winner? | MLB | BUY NO | $1.29 (3 × 43¢) | 50.9% | 50.9% | 57.5¢ | -6.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $7.61**
+
+---
 ## 2026-05-18
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
