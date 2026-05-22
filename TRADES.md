@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $64.76 (as of 2026-05-22 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$58.62
+**Current cash balance:** $70.02 (as of 2026-05-22 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$53.36
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 145 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 146 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-22 03:00 | $70.02 |
 | 2026-05-22 00:00 | $64.76 |
 | 2026-05-21 21:00 | $69.60 |
 | 2026-05-21 18:00 | $69.60 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-10 00:00 | $69.30 |
 | 2026-05-09 21:00 | $72.69 |
 | 2026-05-09 18:00 | $75.95 |
-| 2026-05-09 15:00 | $75.95 |
 
 ---
 
@@ -137,10 +137,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Game 2: San Antonio at Oklahoma City Winner? | NBA | BUY YES | $3.20 (10 × 32¢) | 44.1% | 44.1% | 31.5¢ | +12.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$3.20 |
-| 2 | Game 2: Cleveland at New York Winner? | NBA | BUY NO | $2.52 (7 × 36¢) | 54.5% | 54.5% | 64.5¢ | -10.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 3 | Game 1: Montreal at Carolina Winner? | NHL | BUY YES | $2.10 (6 × 35¢) | 43.5% | 43.5% | 34.5¢ | +9.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Game 2: Cleveland at New York Winner? | NBA | BUY NO | $2.52 (7 × 36¢) | 54.5% | 54.5% | 64.5¢ | -10.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$2.52 |
+| 3 | Game 1: Montreal at Carolina Winner? | NHL | BUY YES | $2.10 (6 × 35¢) | 43.5% | 43.5% | 34.5¢ | +9.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$3.90 |
 
-**Total wagered: $7.82**
+**Total wagered: $7.82**  |  **Net P&L: −$1.82**
 
 ---
 ## 2026-05-20
