@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $70.02 (as of 2026-05-22 15:00 UTC) &nbsp;·&nbsp; **Since first log:** −$53.36
+**Current cash balance:** $70.02 (as of 2026-05-22 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$53.36
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 150 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 151 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-22 18:00 | $70.02 |
 | 2026-05-22 15:00 | $70.02 |
 | 2026-05-22 12:00 | $70.02 |
 | 2026-05-22 09:00 | $70.02 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-10 15:00 | $64.30 |
 | 2026-05-10 12:00 | $64.30 |
 | 2026-05-10 09:00 | $64.30 |
-| 2026-05-10 06:00 | $64.30 |
 
 ---
 
@@ -128,8 +128,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Colorado vs Arizona Winner? | MLB | BUY YES | $0.70 (2 × 35¢) | 37.9% | 37.9% | 34.5¢ | +3.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.70 |
+| 2 | Houston vs Chicago C Winner? | MLB | BUY NO | $2.85 (5 × 57¢) | 36.1% | 36.1% | 43.5¢ | -7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $0.70**  |  **Net P&L: −$0.70**
+**Total wagered: $3.55**
 
 ---
 ## 2026-05-21
