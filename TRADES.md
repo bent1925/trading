@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $75.73 (as of 2026-05-23 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$47.65
+**Current cash balance:** $75.73 (as of 2026-05-23 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$47.65
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 159 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 160 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-23 21:00 | $75.73 |
 | 2026-05-23 18:00 | $75.73 |
 | 2026-05-23 15:00 | $75.73 |
 | 2026-05-23 12:00 | $75.73 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-11 18:00 | $7.38 |
 | 2026-05-11 15:00 | $18.80 |
 | 2026-05-11 12:00 | $18.80 |
-| 2026-05-11 09:00 | $18.80 |
 
 ---
 
@@ -129,8 +129,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Texas vs Los Angeles A Winner? | MLB | BUY NO | $1.20 (3 × 40¢) | 54.2% | 54.2% | 60.5¢ | -6.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.80 |
 | 2 | Game 3: Oklahoma City at San Antonio Winner? | NBA | BUY NO | $0.86 (2 × 43¢) | 54.0% | 54.0% | 57.5¢ | -3.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.14 |
+| 3 | Game 2: Montreal at Carolina Winner? | NHL | BUY YES | $2.45 (7 × 35¢) | 43.5% | 43.5% | 34.5¢ | +9.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Game 3: New York at Cleveland Winner? | NBA | BUY YES | $0.45 (1 × 45¢) | 46.5% | 46.5% | 44.5¢ | +2.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $2.06**  |  **Net P&L: +$2.94**
+**Total wagered: $4.96**
 
 ---
 ## 2026-05-22
