@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $71.84 (as of 2026-05-27 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$51.54
+**Current cash balance:** $71.84 (as of 2026-05-27 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$51.54
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 186 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 187 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-27 06:00 | $71.84 |
 | 2026-05-27 03:00 | $71.84 |
 | 2026-05-27 00:00 | $67.69 |
 | 2026-05-26 21:00 | $70.80 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-15 03:00 | $73.73 |
 | 2026-05-15 00:00 | $73.73 |
 | 2026-05-14 21:00 | $73.73 |
-| 2026-05-14 18:00 | $73.73 |
 
 ---
 
@@ -127,10 +127,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Game 5: San Antonio at Oklahoma City Winner? | NBA | BUY YES | $1.26 (3 × 42¢) | 46.4% | 46.4% | 41.5¢ | +4.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Game 4: Colorado at Vegas Winner? | NHL | BUY NO | $0.51 (1 × 51¢) | 47.1% | 47.1% | 49.5¢ | -2.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Game 5: San Antonio at Oklahoma City Winner? | NBA | BUY YES | $1.26 (3 × 42¢) | 46.4% | 46.4% | 41.5¢ | +4.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.26 |
+| 2 | Game 4: Colorado at Vegas Winner? | NHL | BUY NO | $0.51 (1 × 51¢) | 47.1% | 47.1% | 49.5¢ | -2.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.51 |
 
-**Total wagered: $1.77**
+**Total wagered: $1.77**  |  **Net P&L: −$1.77**
 
 ---
 ## 2026-05-26
