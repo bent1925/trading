@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $71.84 (as of 2026-05-27 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$51.54
+**Current cash balance:** $71.84 (as of 2026-05-27 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$51.54
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 191 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 192 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-27 21:00 | $71.84 |
 | 2026-05-27 18:00 | $71.84 |
 | 2026-05-27 15:00 | $71.84 |
 | 2026-05-27 12:00 | $71.84 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-15 18:00 | $73.73 |
 | 2026-05-15 15:00 | $73.73 |
 | 2026-05-15 12:00 | $73.73 |
-| 2026-05-15 09:00 | $73.73 |
 
 ---
 
@@ -129,8 +129,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Game 5: San Antonio at Oklahoma City Winner? | NBA | BUY YES | $1.26 (3 × 42¢) | 46.4% | 46.4% | 41.5¢ | +4.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.26 |
 | 2 | Game 4: Colorado at Vegas Winner? | NHL | BUY NO | $0.51 (1 × 51¢) | 47.1% | 47.1% | 49.5¢ | -2.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.51 |
+| 3 | Game 4: Carolina at Montreal Winner? | NHL | BUY YES | $2.58 (6 × 43¢) | 51.6% | 51.6% | 42.5¢ | +9.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $1.77**  |  **Net P&L: −$1.77**
+**Total wagered: $4.35**
 
 ---
 ## 2026-05-26
