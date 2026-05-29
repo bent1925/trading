@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $67.86 (as of 2026-05-29 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$55.52
+**Current cash balance:** $67.86 (as of 2026-05-29 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$55.52
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 207 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 208 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-29 21:00 | $67.86 |
 | 2026-05-29 18:00 | $67.86 |
 | 2026-05-29 15:00 | $67.86 |
 | 2026-05-29 12:00 | $67.86 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-17 18:00 | $71.66 |
 | 2026-05-17 15:00 | $71.66 |
 | 2026-05-17 12:00 | $71.66 |
-| 2026-05-17 09:00 | $71.66 |
 
 ---
 
@@ -128,8 +128,13 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Game 6: Oklahoma City at San Antonio Winner? | NBA | BUY NO | $1.23 (3 × 41¢) | 54.9% | 54.9% | 59.5¢ | -4.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.23 |
+| 2 | Game 5: Montreal at Carolina Winner? | NHL | BUY YES | $3.10 (10 × 31¢) | 43.5% | 43.5% | 30.5¢ | +13.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Detroit vs Chicago WS Winner? | MLB | BUY NO | $4.00 (8 × 50¢) | 38.4% | 38.4% | 50.5¢ | -12.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Boston vs Cleveland Winner? | MLB | BUY YES | $2.75 (5 × 55¢) | 63.2% | 63.2% | 54.5¢ | +8.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Chicago C vs St. Louis Winner? | MLB | BUY YES | $2.30 (5 × 46¢) | 53.3% | 53.3% | 45.5¢ | +7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 6 | Los Angeles A vs Tampa Bay Winner? | MLB | BUY YES | $2.40 (4 × 60¢) | 66.3% | 66.3% | 59.5¢ | +6.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $1.23**  |  **Net P&L: −$1.23**
+**Total wagered: $15.78**
 
 ---
 ## 2026-05-28
