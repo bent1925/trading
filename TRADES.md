@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $78.37 (as of 2026-05-30 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$45.01
+**Current cash balance:** $78.37 (as of 2026-05-30 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$45.01
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 215 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 216 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-30 21:00 | $78.37 |
 | 2026-05-30 18:00 | $78.37 |
 | 2026-05-30 15:00 | $78.37 |
 | 2026-05-30 12:00 | $78.37 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-18 18:00 | $71.66 |
 | 2026-05-18 15:00 | $71.66 |
 | 2026-05-18 12:00 | $71.66 |
-| 2026-05-18 09:00 | $71.66 |
 
 ---
 
@@ -131,8 +131,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2 | San Francisco vs Colorado Winner? | MLB | BUY NO | $1.72 (4 × 43¢) | 49.7% | 49.7% | 57.5¢ | -7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$2.28 |
 | 3 | Arizona vs Seattle Winner? | MLB | BUY NO | $0.88 (2 × 44¢) | 51.1% | 51.1% | 56.5¢ | -5.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.88 |
 | 4 | Kansas City vs Texas Winner? | MLB | BUY YES | $0.54 (1 × 54¢) | 56.7% | 56.7% | 53.5¢ | +3.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.46 |
+| 5 | Game 7: San Antonio at Oklahoma City Winner? | NBA | BUY YES | $1.29 (3 × 43¢) | 46.4% | 46.4% | 42.5¢ | +3.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $5.22**  |  **Net P&L: +$3.78**
+**Total wagered: $6.51**
 
 ---
 ## 2026-05-29
