@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $77.03 (as of 2026-05-31 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$46.35
+**Current cash balance:** $80.03 (as of 2026-05-31 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$43.35
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 217 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 218 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-05-31 03:00 | $80.03 |
 | 2026-05-31 00:00 | $77.03 |
 | 2026-05-30 21:00 | $78.37 |
 | 2026-05-30 18:00 | $78.37 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-19 00:00 | $56.45 |
 | 2026-05-18 21:00 | $71.66 |
 | 2026-05-18 18:00 | $71.66 |
-| 2026-05-18 15:00 | $71.66 |
 
 ---
 
@@ -136,9 +136,9 @@ No trades placed today.
 | 2 | San Francisco vs Colorado Winner? | MLB | BUY NO | $1.72 (4 × 43¢) | 49.7% | 49.7% | 57.5¢ | -7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$2.28 |
 | 3 | Arizona vs Seattle Winner? | MLB | BUY NO | $0.88 (2 × 44¢) | 51.1% | 51.1% | 56.5¢ | -5.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.88 |
 | 4 | Kansas City vs Texas Winner? | MLB | BUY YES | $0.54 (1 × 54¢) | 56.7% | 56.7% | 53.5¢ | +3.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.46 |
-| 5 | Game 7: San Antonio at Oklahoma City Winner? | NBA | BUY YES | $1.29 (3 × 43¢) | 46.4% | 46.4% | 42.5¢ | +3.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Game 7: San Antonio at Oklahoma City Winner? | NBA | BUY YES | $1.29 (3 × 43¢) | 46.4% | 46.4% | 42.5¢ | +3.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.71 |
 
-**Total wagered: $6.51**
+**Total wagered: $6.51**  |  **Net P&L: +$5.49**
 
 ---
 ## 2026-05-29
