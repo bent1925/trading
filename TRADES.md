@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $96.33 (as of 2026-06-03 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$27.05
+**Current cash balance:** $96.33 (as of 2026-06-04 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$27.05
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 248 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 249 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-06-04 00:00 | $96.33 |
 | 2026-06-03 21:00 | $96.33 |
 | 2026-06-03 18:00 | $96.33 |
 | 2026-06-03 15:00 | $96.33 |
@@ -119,10 +120,18 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-22 21:00 | $67.08 |
 | 2026-05-22 18:00 | $70.02 |
 | 2026-05-22 15:00 | $70.02 |
-| 2026-05-22 12:00 | $70.02 |
 
 ---
 
+## 2026-06-04
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Game 1: New York at San Antonio Winner? | NBA | BUY NO | $1.85 (5 × 37¢) | 58.0% | 58.0% | 63.5¢ | -5.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $1.85**
+
+---
 ## 2026-06-03
 
 No trades placed today.
