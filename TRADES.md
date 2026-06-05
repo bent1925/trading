@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $94.32 (as of 2026-06-05 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$29.06
+**Current cash balance:** $94.32 (as of 2026-06-05 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$29.06
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 258 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 259 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-06-05 06:00 | $94.32 |
 | 2026-06-05 03:00 | $94.32 |
 | 2026-06-05 00:00 | $94.32 |
 | 2026-06-04 21:00 | $99.39 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-24 03:00 | $73.69 |
 | 2026-05-24 00:00 | $72.69 |
 | 2026-05-23 21:00 | $75.73 |
-| 2026-05-23 18:00 | $75.73 |
 
 ---
 
@@ -133,9 +133,9 @@ No trades placed today.
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Game 1: New York at San Antonio Winner? | NBA | BUY NO | $1.85 (5 × 37¢) | 58.0% | 58.0% | 63.5¢ | -5.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$3.15 |
-| 2 | Kansas City vs Minnesota Winner? | MLB | BUY YES | $4.90 (10 × 49¢) | 59.2% | 59.2% | 48.5¢ | +10.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Kansas City vs Minnesota Winner? | MLB | BUY YES | $4.90 (10 × 49¢) | 59.2% | 59.2% | 48.5¢ | +10.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$4.90 |
 
-**Total wagered: $6.75**
+**Total wagered: $6.75**  |  **Net P&L: −$1.75**
 
 ---
 ## 2026-06-03
