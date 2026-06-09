@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $97.04 (as of 2026-06-08 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$26.34
+**Current cash balance:** $90.31 (as of 2026-06-09 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$33.07
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 288 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 289 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-06-09 00:00 | $90.31 |
 | 2026-06-08 21:00 | $97.04 |
 | 2026-06-08 18:00 | $97.04 |
 | 2026-06-08 15:00 | $97.04 |
@@ -119,10 +120,20 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-27 21:00 | $71.84 |
 | 2026-05-27 18:00 | $71.84 |
 | 2026-05-27 15:00 | $71.84 |
-| 2026-05-27 12:00 | $71.84 |
 
 ---
 
+## 2026-06-09
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Washington vs San Francisco Winner? | MLB | BUY YES | $3.01 (7 × 43¢) | 50.4% | 50.4% | 42.5¢ | +7.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Houston vs Los Angeles A Winner? | MLB | BUY NO | $1.38 (3 × 46¢) | 50.4% | 50.4% | 54.5¢ | -4.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Game 3: San Antonio at New York Winner? | NBA | BUY YES | $0.94 (2 × 47¢) | 49.6% | 49.6% | 46.5¢ | +3.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $5.33**
+
+---
 ## 2026-06-08
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
