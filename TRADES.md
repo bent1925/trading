@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $103.36 (as of 2026-06-10 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$20.02
+**Current cash balance:** $109.65 (as of 2026-06-10 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$13.73
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 297 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 298 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-06-10 03:00 | $109.65 |
 | 2026-06-10 00:00 | $103.36 |
 | 2026-06-09 21:00 | $107.18 |
 | 2026-06-09 18:00 | $107.18 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-29 00:00 | $69.15 |
 | 2026-05-28 21:00 | $69.15 |
 | 2026-05-28 18:00 | $69.15 |
-| 2026-05-28 15:00 | $69.15 |
 
 ---
 
@@ -139,7 +139,7 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 1 | Washington vs San Francisco Winner? | MLB | BUY YES | $3.01 (7 × 43¢) | 50.4% | 50.4% | 42.5¢ | +7.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$3.99 |
 | 2 | Houston vs Los Angeles A Winner? | MLB | BUY NO | $1.38 (3 × 46¢) | 50.4% | 50.4% | 54.5¢ | -4.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 | 3 | Game 3: San Antonio at New York Winner? | NBA | BUY YES | $0.94 (2 × 47¢) | 49.6% | 49.6% | 46.5¢ | +3.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 4 | St. Louis vs New York M Winner? | MLB | BUY YES | $3.68 (8 × 46¢) | 53.4% | 53.4% | 45.5¢ | +7.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | St. Louis vs New York M Winner? | MLB | BUY YES | $3.68 (8 × 46¢) | 53.4% | 53.4% | 45.5¢ | +7.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$4.32 |
 | 5 | Arizona vs Miami Winner? | MLB | BUY NO | $3.01 (7 × 43¢) | 50.6% | 50.6% | 57.5¢ | -6.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 | 6 | Atlanta vs Chicago WS Winner? | MLB | BUY YES | $1.68 (4 × 42¢) | 45.7% | 45.7% | 41.5¢ | +4.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 | 7 | Los Angeles D vs Pittsburgh Winner? | MLB | BUY NO | $1.96 (4 × 49¢) | 47.6% | 47.6% | 51.5¢ | -3.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
