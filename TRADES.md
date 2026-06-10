@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $107.18 (as of 2026-06-09 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$16.20
+**Current cash balance:** $103.36 (as of 2026-06-10 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$20.02
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 296 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 297 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-06-10 00:00 | $103.36 |
 | 2026-06-09 21:00 | $107.18 |
 | 2026-06-09 18:00 | $107.18 |
 | 2026-06-09 15:00 | $107.18 |
@@ -119,10 +120,18 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-05-28 21:00 | $69.15 |
 | 2026-05-28 18:00 | $69.15 |
 | 2026-05-28 15:00 | $69.15 |
-| 2026-05-28 12:00 | $69.15 |
 
 ---
 
+## 2026-06-10
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Chicago C vs Colorado Winner? | MLB | BUY YES | $1.64 (4 × 41¢) | 44.7% | 44.7% | 40.5¢ | +4.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $1.64**
+
+---
 ## 2026-06-09
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
