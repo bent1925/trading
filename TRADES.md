@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $103.75 (as of 2026-06-14 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$19.63
+**Current cash balance:** $110.75 (as of 2026-06-14 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$12.63
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 330 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 331 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-06-14 06:00 | $110.75 |
 | 2026-06-14 03:00 | $103.75 |
 | 2026-06-14 00:00 | $106.38 |
 | 2026-06-13 21:00 | $106.38 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-06-02 03:00 | $73.71 |
 | 2026-06-02 00:00 | $71.47 |
 | 2026-06-01 21:00 | $80.03 |
-| 2026-06-01 18:00 | $80.03 |
 
 ---
 
@@ -127,9 +127,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Game 5: New York at San Antonio Winner? | NBA | BUY NO | $2.52 (7 × 36¢) | 57.7% | 57.7% | 64.5¢ | -6.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Game 5: New York at San Antonio Winner? | NBA | BUY NO | $2.52 (7 × 36¢) | 57.7% | 57.7% | 64.5¢ | -6.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$4.48 |
 
-**Total wagered: $2.52**
+**Total wagered: $2.52**  |  **Net P&L: +$4.48**
 
 ---
 ## 2026-06-13
