@@ -245,10 +245,28 @@ def _git_push(date_str: str, n_trades: int) -> None:
         return
 
     rc = run(["git", "push"])
-    if rc != 0:
-        log.error("git push failed.")
-    else:
+    if rc == 0:
         log.info("Pushed to GitHub.")
+        return
+
+    # Push rejected — most likely another machine (e.g. the Mac mini) pushed
+    # in between. Reconcile by rebasing our commit on top of the remote and
+    # retry once.
+    log.warning("git push rejected — rebasing on remote and retrying.")
+    run(["git", "fetch", "origin"])
+    rc = run(["git", "pull", "--rebase"])
+    if rc != 0:
+        # Real conflict. Abort so we never leave the repo mid-rebase, which
+        # would wedge every future run. Needs manual reconcile.
+        run(["git", "rebase", "--abort"])
+        log.error("git pull --rebase hit conflicts — aborted. Manual reconcile needed.")
+        return
+
+    rc = run(["git", "push"])
+    if rc != 0:
+        log.error("git push still failing after rebase.")
+    else:
+        log.info("Pushed to GitHub after rebase.")
 
 
 if __name__ == "__main__":
