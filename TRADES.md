@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $45.51 (as of 2026-06-20 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$75.45
+**Current cash balance:** $45.51 (as of 2026-06-21 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$75.45
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 420 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 421 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-06-21 00:00 | $45.51 |
 | 2026-06-20 21:00 | $45.51 |
 | 2026-06-20 18:00 | $45.51 |
 | 2026-06-20 15:00 | $45.51 |
@@ -119,10 +120,14 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-06-08 21:00 | $97.04 |
 | 2026-06-08 18:00 | $97.04 |
 | 2026-06-08 15:00 | $97.04 |
-| 2026-06-08 12:00 | $97.04 |
 
 ---
 
+## 2026-06-21
+
+No trades placed today.
+
+---
 ## 2026-06-20
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
