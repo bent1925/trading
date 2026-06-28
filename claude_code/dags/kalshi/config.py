@@ -1,7 +1,7 @@
 import os
 
 # ── Kalshi API ────────────────────────────────────────────────────────────────
-KALSHI_BASE_URL    = "https://api.elections.kalshi.com"
+KALSHI_BASE_URL    = "https://external-api.kalshi.com"
 KALSHI_KEY_ID      = os.environ.get("KALSHI_KEY_ID", "")
 KALSHI_KEY_FILE    = os.environ.get("KALSHI_KEY_FILE", "")
 

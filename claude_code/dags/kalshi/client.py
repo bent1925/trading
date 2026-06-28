@@ -30,7 +30,7 @@ class KalshiClient:
             text.encode("utf-8"),
             padding.PSS(
                 mgf=padding.MGF1(hashes.SHA256()),
-                salt_length=padding.PSS.DIGEST_LENGTH,
+                salt_length=hashes.SHA256().digest_size,  # 32 bytes
             ),
             hashes.SHA256(),
         )
@@ -129,17 +129,36 @@ class KalshiClient:
 
     def place_order(self, ticker: str, side: str,
                     price_cents: int, count: int) -> dict:
-        """Place a limit buy order. side: 'yes' | 'no'."""
-        body = {
-            "ticker":          ticker,
-            "client_order_id": str(uuid.uuid4()),
-            "action":          "buy",
-            "side":            side,
-            "type":            "limit",
-            "count":           count,
-        }
+        """Place a limit buy order. side: 'yes' | 'no'.
+
+        Kalshi V2 API quotes everything from the YES side:
+          yes → bid at (price_cents / 100)
+          no  → ask at ((100 - price_cents) / 100)  [sell YES = buy NO]
+        Returns a normalized dict with an 'order' key for backward compat.
+        """
+        book_side = "bid" if side == "yes" else "ask"
         if side == "yes":
-            body["yes_price"] = price_cents
+            price_str = f"{price_cents / 100:.4f}"
         else:
-            body["no_price"]  = price_cents
-        return self.post("/trade-api/v2/portfolio/orders", body)
+            # buying NO at price_cents¢ = selling YES at (100 - price_cents)¢
+            price_str = f"{(100 - price_cents) / 100:.4f}"
+
+        body = {
+            "ticker":                     ticker,
+            "client_order_id":            str(uuid.uuid4()),
+            "side":                       book_side,
+            "count":                      f"{count:.2f}",
+            "price":                      price_str,
+            "time_in_force":              "immediate_or_cancel",
+            "self_trade_prevention_type": "taker_at_cross",
+        }
+        resp = self.post("/trade-api/v2/portfolio/events/orders", body)
+        fill_count = int(float(resp.get("fill_count", 0)))
+        status = "executed" if fill_count > 0 else "cancelled"
+        return {
+            "order": {
+                "order_id":      resp.get("order_id"),
+                "status":        status,
+                "fill_count_fp": str(fill_count),
+            }
+        }
