@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $45.51 (as of 2026-06-29 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$75.45
+**Current cash balance:** $37.86 (as of 2026-06-30 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$83.10
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 492 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 493 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-06-30 00:00 | $37.86 |
 | 2026-06-29 21:00 | $45.51 |
 | 2026-06-29 18:00 | $45.51 |
 | 2026-06-29 15:00 | $45.51 |
@@ -119,10 +120,20 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-06-17 21:00 | $102.09 |
 | 2026-06-17 18:00 | $102.09 |
 | 2026-06-17 15:00 | $102.09 |
-| 2026-06-17 12:00 | $102.09 |
 
 ---
 
+## 2026-06-30
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Los Angeles A vs Seattle Winner? | MLB | BUY NO | $1.05 (3 × 35¢) | 58.0% | 58.0% | 65.5¢ | -7.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Miami vs Colorado Winner? | MLB | BUY NO | $0.42 (1 × 42¢) | 53.5% | 53.5% | 58.5¢ | -5.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | San Diego vs Chicago C Winner? | MLB | BUY YES | $0.41 (1 × 41¢) | 44.4% | 44.4% | 40.5¢ | +3.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $1.88**
+
+---
 ## 2026-06-29
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
