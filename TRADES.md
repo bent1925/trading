@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.37 (as of 2026-07-03 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.59
+**Current cash balance:** $37.87 (as of 2026-07-03 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$83.09
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 517 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 518 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-03 03:00 | $37.87 |
 | 2026-07-03 00:00 | $39.37 |
 | 2026-07-02 21:00 | $39.89 |
 | 2026-07-02 18:00 | $39.89 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-06-21 00:00 | $45.51 |
 | 2026-06-20 21:00 | $45.51 |
 | 2026-06-20 18:00 | $45.51 |
-| 2026-06-20 15:00 | $45.51 |
 
 ---
 
@@ -138,9 +138,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Chicago WS vs Cleveland Winner? | MLB | BUY NO | $0.51 (1 × 51¢) | 46.6% | 46.6% | 49.5¢ | -2.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Chicago WS vs Cleveland Winner? | MLB | BUY NO | $0.51 (1 × 51¢) | 46.6% | 46.6% | 49.5¢ | -2.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.49 |
 
-**Total wagered: $0.51**
+**Total wagered: $0.51**  |  **Net P&L: +$0.49**
 
 ---
 ## 2026-07-01
