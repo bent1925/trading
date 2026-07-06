@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $36.65 (as of 2026-07-06 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$84.31
+**Current cash balance:** $36.65 (as of 2026-07-06 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$84.31
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 547 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 548 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-06 21:00 | $36.65 |
 | 2026-07-06 18:00 | $36.65 |
 | 2026-07-06 15:00 | $36.65 |
 | 2026-07-06 12:00 | $36.65 |
@@ -119,13 +120,17 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-06-24 18:00 | $45.51 |
 | 2026-06-24 15:00 | $45.51 |
 | 2026-06-24 12:00 | $45.51 |
-| 2026-06-24 09:00 | $45.51 |
 
 ---
 
 ## 2026-07-06
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | New York Y vs Tampa Bay Winner? | MLB | BUY YES | $1.44 (3 × 48¢) | 56.2% | 56.2% | 47.5¢ | +8.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Houston vs Washington Winner? | MLB | BUY YES | $0.52 (1 × 52¢) | 54.9% | 54.9% | 51.5¢ | +3.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $1.96**
 
 ---
 ## 2026-07-05
