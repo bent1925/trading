@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $34.62 (as of 2026-07-07 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$86.34
+**Current cash balance:** $35.62 (as of 2026-07-07 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$85.34
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 549 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 550 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-07 03:00 | $35.62 |
 | 2026-07-07 00:00 | $34.62 |
 | 2026-07-06 21:00 | $36.65 |
 | 2026-07-06 18:00 | $36.65 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-06-25 00:00 | $45.51 |
 | 2026-06-24 21:00 | $45.51 |
 | 2026-06-24 18:00 | $45.51 |
-| 2026-06-24 15:00 | $45.51 |
 
 ---
 
@@ -132,10 +132,10 @@ No trades placed today.
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | New York Y vs Tampa Bay Winner? | MLB | BUY YES | $1.44 (3 × 48¢) | 56.2% | 56.2% | 47.5¢ | +8.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Houston vs Washington Winner? | MLB | BUY YES | $0.52 (1 × 52¢) | 54.9% | 54.9% | 51.5¢ | +3.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | New York Y vs Tampa Bay Winner? | MLB | BUY YES | $1.44 (3 × 48¢) | 56.2% | 56.2% | 47.5¢ | +8.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.44 |
+| 2 | Houston vs Washington Winner? | MLB | BUY YES | $0.52 (1 × 52¢) | 54.9% | 54.9% | 51.5¢ | +3.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.48 |
 
-**Total wagered: $1.96**
+**Total wagered: $1.96**  |  **Net P&L: −$0.96**
 
 ---
 ## 2026-07-05
