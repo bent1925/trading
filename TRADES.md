@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $31.71 (as of 2026-07-10 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$89.25
+**Current cash balance:** $27.92 (as of 2026-07-11 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$93.04
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 580 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 581 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-11 00:00 | $27.92 |
 | 2026-07-10 21:00 | $31.71 |
 | 2026-07-10 18:00 | $31.71 |
 | 2026-07-10 15:00 | $31.71 |
@@ -119,10 +120,20 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-06-28 21:00 | $45.51 |
 | 2026-06-28 18:00 | $45.51 |
 | 2026-06-28 15:00 | $45.51 |
-| 2026-06-28 12:00 | $45.51 |
 
 ---
 
+## 2026-07-11
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Atlanta vs St. Louis Winner? | MLB | BUY YES | $1.20 (3 × 40¢) | 50.6% | 50.6% | 39.5¢ | +11.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Houston vs Texas Winner? | MLB | BUY YES | $1.35 (3 × 45¢) | 54.9% | 54.9% | 44.0¢ | +10.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Arizona vs Los Angeles D Winner? | MLB | BUY NO | $0.35 (1 × 35¢) | 61.3% | 61.3% | 65.5¢ | -4.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $2.90**
+
+---
 ## 2026-07-10
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
