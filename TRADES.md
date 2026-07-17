@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $33.77 (as of 2026-07-17 12:00 UTC) &nbsp;·&nbsp; **Since first log:** −$87.19
+**Current cash balance:** $33.77 (as of 2026-07-17 15:00 UTC) &nbsp;·&nbsp; **Since first log:** −$87.19
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 633 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 634 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-17 15:00 | $33.77 |
 | 2026-07-17 12:00 | $33.77 |
 | 2026-07-17 09:00 | $33.77 |
 | 2026-07-17 06:00 | $33.77 |
@@ -119,13 +120,16 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-05 12:00 | $36.65 |
 | 2026-07-05 09:00 | $36.65 |
 | 2026-07-05 06:00 | $36.65 |
-| 2026-07-05 03:00 | $36.65 |
 
 ---
 
 ## 2026-07-17
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Tampa Bay vs Boston Winner? | MLB | BUY NO | $0.48 (1 × 48¢) | 48.7% | 48.7% | 52.5¢ | -3.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $0.48**
 
 ---
 ## 2026-07-16
