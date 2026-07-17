@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $33.27 (as of 2026-07-17 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$87.69
+**Current cash balance:** $33.27 (as of 2026-07-17 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$87.69
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 635 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 636 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-17 21:00 | $33.27 |
 | 2026-07-17 18:00 | $33.27 |
 | 2026-07-17 15:00 | $33.77 |
 | 2026-07-17 12:00 | $33.77 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-05 18:00 | $36.65 |
 | 2026-07-05 15:00 | $36.65 |
 | 2026-07-05 12:00 | $36.65 |
-| 2026-07-05 09:00 | $36.65 |
 
 ---
 
@@ -127,9 +127,11 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Tampa Bay vs Boston Winner? | MLB | BUY NO | $0.48 (1 × 48¢) | 48.7% | 48.7% | 52.5¢ | -3.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Tampa Bay vs Boston Winner? | MLB | BUY NO | $0.48 (1 × 48¢) | 48.7% | 48.7% | 52.5¢ | -3.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.48 |
+| 2 | Texas vs Atlanta Winner? | MLB | BUY YES | $0.70 (2 × 35¢) | 42.3% | 42.3% | 34.5¢ | +7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Chicago WS vs Toronto Winner? | MLB | BUY NO | $0.45 (1 × 45¢) | 50.9% | 50.9% | 55.5¢ | -4.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $0.48**
+**Total wagered: $1.63**
 
 ---
 ## 2026-07-16
