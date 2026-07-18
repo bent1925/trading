@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $32.07 (as of 2026-07-18 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$88.89
+**Current cash balance:** $32.67 (as of 2026-07-18 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$88.29
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 637 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 638 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-18 03:00 | $32.67 |
 | 2026-07-18 00:00 | $32.07 |
 | 2026-07-17 21:00 | $33.27 |
 | 2026-07-17 18:00 | $33.27 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-06 00:00 | $36.65 |
 | 2026-07-05 21:00 | $36.65 |
 | 2026-07-05 18:00 | $36.65 |
-| 2026-07-05 15:00 | $36.65 |
 
 ---
 
@@ -137,10 +137,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Tampa Bay vs Boston Winner? | MLB | BUY NO | $0.48 (1 × 48¢) | 48.7% | 48.7% | 52.5¢ | -3.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.48 |
-| 2 | Texas vs Atlanta Winner? | MLB | BUY YES | $0.70 (2 × 35¢) | 42.3% | 42.3% | 34.5¢ | +7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 3 | Chicago WS vs Toronto Winner? | MLB | BUY NO | $0.45 (1 × 45¢) | 50.9% | 50.9% | 55.5¢ | -4.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Texas vs Atlanta Winner? | MLB | BUY YES | $0.70 (2 × 35¢) | 42.3% | 42.3% | 34.5¢ | +7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.70 |
+| 3 | Chicago WS vs Toronto Winner? | MLB | BUY NO | $0.45 (1 × 45¢) | 50.9% | 50.9% | 55.5¢ | -4.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.55 |
 
-**Total wagered: $1.63**
+**Total wagered: $1.63**  |  **Net P&L: −$0.63**
 
 ---
 ## 2026-07-16
