@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $32.67 (as of 2026-07-18 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$88.29
+**Current cash balance:** $33.67 (as of 2026-07-18 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$87.29
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 638 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 639 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-18 06:00 | $33.67 |
 | 2026-07-18 03:00 | $32.67 |
 | 2026-07-18 00:00 | $32.07 |
 | 2026-07-17 21:00 | $33.27 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-06 03:00 | $36.65 |
 | 2026-07-06 00:00 | $36.65 |
 | 2026-07-05 21:00 | $36.65 |
-| 2026-07-05 18:00 | $36.65 |
 
 ---
 
@@ -127,9 +127,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | San Francisco vs Seattle Winner? | MLB | BUY YES | $0.38 (1 × 38¢) | 42.3% | 42.3% | 37.5¢ | +4.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | San Francisco vs Seattle Winner? | MLB | BUY YES | $0.38 (1 × 38¢) | 42.3% | 42.3% | 37.5¢ | +4.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.62 |
 
-**Total wagered: $0.38**
+**Total wagered: $0.38**  |  **Net P&L: +$0.62**
 
 ---
 ## 2026-07-17
