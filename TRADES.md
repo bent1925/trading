@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $28.70 (as of 2026-07-21 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$92.26
+**Current cash balance:** $34.31 (as of 2026-07-21 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$86.65
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 661 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 662 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-21 03:00 | $34.31 |
 | 2026-07-21 00:00 | $28.70 |
 | 2026-07-20 21:00 | $33.67 |
 | 2026-07-20 18:00 | $33.67 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-09 00:00 | $31.71 |
 | 2026-07-08 21:00 | $31.71 |
 | 2026-07-08 18:00 | $31.71 |
-| 2026-07-08 15:00 | $31.71 |
 
 ---
 
@@ -138,13 +138,13 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Tampa Bay vs Toronto Winner? | MLB | BUY NO | $1.60 (4 × 40¢) | 48.4% | 48.4% | 60.5¢ | -12.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Minnesota vs Cleveland Winner? | MLB | BUY NO | $1.38 (3 × 46¢) | 44.4% | 44.4% | 54.5¢ | -10.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 3 | Los Angeles D vs Philadelphia Winner? | MLB | BUY NO | $0.88 (2 × 44¢) | 50.3% | 50.3% | 56.5¢ | -6.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 4 | Pittsburgh vs New York Y Winner? | MLB | BUY NO | $0.52 (1 × 52¢) | 44.2% | 44.2% | 48.5¢ | -4.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 5 | Baltimore vs Boston Winner? | MLB | BUY NO | $0.41 (1 × 41¢) | 55.4% | 55.4% | 59.5¢ | -4.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Tampa Bay vs Toronto Winner? | MLB | BUY NO | $1.60 (4 × 40¢) | 48.4% | 48.4% | 60.5¢ | -12.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$2.40 |
+| 2 | Minnesota vs Cleveland Winner? | MLB | BUY NO | $1.38 (3 × 46¢) | 44.4% | 44.4% | 54.5¢ | -10.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.62 |
+| 3 | Los Angeles D vs Philadelphia Winner? | MLB | BUY NO | $0.88 (2 × 44¢) | 50.3% | 50.3% | 56.5¢ | -6.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.88 |
+| 4 | Pittsburgh vs New York Y Winner? | MLB | BUY NO | $0.52 (1 × 52¢) | 44.2% | 44.2% | 48.5¢ | -4.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.48 |
+| 5 | Baltimore vs Boston Winner? | MLB | BUY NO | $0.41 (1 × 41¢) | 55.4% | 55.4% | 59.5¢ | -4.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.41 |
 
-**Total wagered: $4.79**
+**Total wagered: $4.79**  |  **Net P&L: +$3.21**
 
 ---
 ## 2026-07-19
