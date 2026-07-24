@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $34.97 (as of 2026-07-24 15:00 UTC) &nbsp;·&nbsp; **Since first log:** −$85.99
+**Current cash balance:** $34.97 (as of 2026-07-24 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$85.99
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 690 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 691 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-24 18:00 | $34.97 |
 | 2026-07-24 15:00 | $34.97 |
 | 2026-07-24 12:00 | $34.97 |
 | 2026-07-24 09:00 | $34.97 |
@@ -119,13 +120,16 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-12 15:00 | $34.90 |
 | 2026-07-12 12:00 | $34.90 |
 | 2026-07-12 09:00 | $34.90 |
-| 2026-07-12 06:00 | $34.90 |
 
 ---
 
 ## 2026-07-24
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Colorado vs Milwaukee Winner? | MLB | BUY NO | $0.31 (1 × 31¢) | 66.2% | 66.2% | 69.5¢ | -3.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $0.31**
 
 ---
 ## 2026-07-23
