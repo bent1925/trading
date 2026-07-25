@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $34.69 (as of 2026-07-25 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$86.27
+**Current cash balance:** $35.69 (as of 2026-07-25 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$85.27
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 694 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 695 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-25 06:00 | $35.69 |
 | 2026-07-25 03:00 | $34.69 |
 | 2026-07-25 00:00 | $33.62 |
 | 2026-07-24 21:00 | $34.64 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-13 03:00 | $34.90 |
 | 2026-07-13 00:00 | $34.90 |
 | 2026-07-12 21:00 | $34.90 |
-| 2026-07-12 18:00 | $34.90 |
 
 ---
 
@@ -127,10 +127,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Seattle vs Texas Winner? | MLB | BUY YES | $0.49 (1 × 49¢) | 54.3% | 54.3% | 48.5¢ | +5.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Los Angeles A vs San Francisco Winner? | MLB | BUY NO | $0.41 (1 × 41¢) | 54.7% | 54.7% | 59.5¢ | -4.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Seattle vs Texas Winner? | MLB | BUY YES | $0.49 (1 × 49¢) | 54.3% | 54.3% | 48.5¢ | +5.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.51 |
+| 2 | Los Angeles A vs San Francisco Winner? | MLB | BUY NO | $0.41 (1 × 41¢) | 54.7% | 54.7% | 59.5¢ | -4.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.41 |
 
-**Total wagered: $0.90**
+**Total wagered: $0.90**  |  **Net P&L: +$0.10**
 
 ---
 ## 2026-07-24
