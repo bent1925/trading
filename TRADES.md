@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $35.11 (as of 2026-07-29 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$85.85
+**Current cash balance:** $38.11 (as of 2026-07-29 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$82.85
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 726 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 727 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-29 06:00 | $38.11 |
 | 2026-07-29 03:00 | $35.11 |
 | 2026-07-29 00:00 | $36.16 |
 | 2026-07-28 21:00 | $36.97 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-17 03:00 | $33.77 |
 | 2026-07-17 00:00 | $33.77 |
 | 2026-07-16 21:00 | $34.90 |
-| 2026-07-16 18:00 | $34.90 |
 
 ---
 
@@ -127,10 +127,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Seattle vs Los Angeles D Winner? | MLB | BUY YES | $0.96 (3 × 32¢) | 38.9% | 38.9% | 31.5¢ | +7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Colorado vs San Diego Winner? | MLB | BUY NO | $0.99 (3 × 33¢) | 60.1% | 60.1% | 67.5¢ | -7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Seattle vs Los Angeles D Winner? | MLB | BUY YES | $0.96 (3 × 32¢) | 38.9% | 38.9% | 31.5¢ | +7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$2.04 |
+| 2 | Colorado vs San Diego Winner? | MLB | BUY NO | $0.99 (3 × 33¢) | 60.1% | 60.1% | 67.5¢ | -7.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.99 |
 
-**Total wagered: $1.95**
+**Total wagered: $1.95**  |  **Net P&L: +$1.05**
 
 ---
 ## 2026-07-28
