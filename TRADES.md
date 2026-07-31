@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $38.13 (as of 2026-07-31 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$82.83
+**Current cash balance:** $38.13 (as of 2026-07-31 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$82.83
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 742 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 743 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-07-31 06:00 | $38.13 |
 | 2026-07-31 03:00 | $38.13 |
 | 2026-07-31 00:00 | $37.13 |
 | 2026-07-30 21:00 | $38.11 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-19 03:00 | $33.67 |
 | 2026-07-19 00:00 | $33.67 |
 | 2026-07-18 21:00 | $33.67 |
-| 2026-07-18 18:00 | $33.67 |
 
 ---
 
@@ -133,9 +133,9 @@ No trades placed today.
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Pittsburgh vs Cincinnati Winner? | MLB | BUY NO | $0.48 (1 × 48¢) | 48.0% | 48.0% | 52.5¢ | -4.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.52 |
-| 2 | Miami vs New York M Winner? | MLB | BUY NO | $0.47 (1 × 47¢) | 49.7% | 49.7% | 53.5¢ | -3.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Miami vs New York M Winner? | MLB | BUY NO | $0.47 (1 × 47¢) | 49.7% | 49.7% | 53.5¢ | -3.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.47 |
 
-**Total wagered: $0.95**
+**Total wagered: $0.95**  |  **Net P&L: +$0.05**
 
 ---
 ## 2026-07-29
