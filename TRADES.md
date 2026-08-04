@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.37 (as of 2026-08-04 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.59
+**Current cash balance:** $39.37 (as of 2026-08-04 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.59
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 779 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 780 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-04 21:00 | $39.37 |
 | 2026-08-04 18:00 | $39.37 |
 | 2026-08-04 15:00 | $39.37 |
 | 2026-08-04 12:00 | $39.37 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-23 18:00 | $36.31 |
 | 2026-07-23 15:00 | $36.31 |
 | 2026-07-23 12:00 | $36.31 |
-| 2026-07-23 09:00 | $36.31 |
 
 ---
 
@@ -130,8 +130,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 1 | Tampa Bay vs Colorado Winner? | MLB | BUY NO | $0.76 (2 × 38¢) | 56.0% | 56.0% | 62.5¢ | -6.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.76 |
 | 2 | Los Angeles D vs Chicago C Winner? | MLB | BUY NO | $0.92 (2 × 46¢) | 48.5% | 48.5% | 54.5¢ | -6.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$1.08 |
 | 3 | San Diego vs Arizona Winner? | MLB | BUY NO | $0.52 (1 × 52¢) | 45.5% | 45.5% | 48.5¢ | -3.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.48 |
+| 4 | Minnesota vs Kansas City Winner? | MLB | BUY NO | $0.86 (2 × 43¢) | 51.2% | 51.2% | 57.5¢ | -6.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Chicago WS vs Boston Winner? | MLB | BUY NO | $0.43 (1 × 43¢) | 54.7% | 54.7% | 57.5¢ | -2.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $2.20**  |  **Net P&L: +$0.80**
+**Total wagered: $3.49**
 
 ---
 ## 2026-08-03
