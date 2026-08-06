@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $40.03 (as of 2026-08-06 15:00 UTC) &nbsp;·&nbsp; **Since first log:** −$80.93
+**Current cash balance:** $40.03 (as of 2026-08-06 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$80.93
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 794 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 795 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-06 18:00 | $40.03 |
 | 2026-08-06 15:00 | $40.03 |
 | 2026-08-06 12:00 | $40.03 |
 | 2026-08-06 09:00 | $40.03 |
@@ -119,13 +120,16 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-25 15:00 | $35.69 |
 | 2026-07-25 12:00 | $35.69 |
 | 2026-07-25 09:00 | $35.69 |
-| 2026-07-25 06:00 | $35.69 |
 
 ---
 
 ## 2026-08-06
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Toronto vs Chicago C Winner? | MLB | BUY NO | $1.96 (4 × 49¢) | 40.3% | 40.3% | 51.5¢ | -11.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $1.96**
 
 ---
 ## 2026-08-05
