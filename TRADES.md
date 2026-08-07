@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $42.00 (as of 2026-08-07 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$78.96
+**Current cash balance:** $42.00 (as of 2026-08-07 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$78.96
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 803 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 804 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-07 21:00 | $42.00 |
 | 2026-08-07 18:00 | $42.00 |
 | 2026-08-07 15:00 | $42.00 |
 | 2026-08-07 12:00 | $42.00 |
@@ -119,13 +120,18 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-26 18:00 | $35.69 |
 | 2026-07-26 15:00 | $35.69 |
 | 2026-07-26 12:00 | $35.69 |
-| 2026-07-26 09:00 | $35.69 |
 
 ---
 
 ## 2026-08-07
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Cleveland vs Chicago WS Winner? | MLB | BUY YES | $2.15 (5 × 43¢) | 55.4% | 55.4% | 42.5¢ | +12.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Toronto vs Philadelphia Winner? | MLB | BUY YES | $1.36 (4 × 34¢) | 42.4% | 42.4% | 33.5¢ | +8.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Atlanta vs New York Y Winner? | MLB | BUY NO | $0.45 (1 × 45¢) | 51.6% | 51.6% | 55.5¢ | -3.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $3.96**
 
 ---
 ## 2026-08-06
