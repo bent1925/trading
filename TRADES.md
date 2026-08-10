@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $45.36 (as of 2026-08-10 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$75.60
+**Current cash balance:** $45.36 (as of 2026-08-10 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$75.60
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 827 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 828 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-10 21:00 | $45.36 |
 | 2026-08-10 18:00 | $45.36 |
 | 2026-08-10 15:00 | $45.36 |
 | 2026-08-10 12:00 | $45.36 |
@@ -119,13 +120,18 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-29 18:00 | $38.11 |
 | 2026-07-29 15:00 | $38.11 |
 | 2026-07-29 12:00 | $38.11 |
-| 2026-07-29 09:00 | $38.11 |
 
 ---
 
 ## 2026-08-10
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Boston vs Toronto Winner? | MLB | BUY YES | $1.64 (4 × 41¢) | 49.7% | 49.7% | 40.5¢ | +9.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Philadelphia vs St. Louis Winner? | MLB | BUY YES | $0.96 (2 × 48¢) | 52.7% | 52.7% | 47.5¢ | +5.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Baltimore vs Minnesota Winner? | MLB | BUY YES | $0.51 (1 × 51¢) | 54.0% | 54.0% | 50.5¢ | +3.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $3.11**
 
 ---
 ## 2026-08-09
