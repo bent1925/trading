@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $42.19 (as of 2026-08-11 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$78.77
+**Current cash balance:** $43.77 (as of 2026-08-11 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$77.19
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 829 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 830 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-11 03:00 | $43.77 |
 | 2026-08-11 00:00 | $42.19 |
 | 2026-08-10 21:00 | $45.36 |
 | 2026-08-10 18:00 | $45.36 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-30 00:00 | $38.11 |
 | 2026-07-29 21:00 | $38.11 |
 | 2026-07-29 18:00 | $38.11 |
-| 2026-07-29 15:00 | $38.11 |
 
 ---
 
@@ -140,11 +140,11 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Boston vs Toronto Winner? | MLB | BUY YES | $1.64 (4 × 41¢) | 49.7% | 49.7% | 40.5¢ | +9.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Philadelphia vs St. Louis Winner? | MLB | BUY YES | $0.96 (2 × 48¢) | 52.7% | 52.7% | 47.5¢ | +5.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 3 | Baltimore vs Minnesota Winner? | MLB | BUY YES | $0.51 (1 × 51¢) | 54.0% | 54.0% | 50.5¢ | +3.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Boston vs Toronto Winner? | MLB | BUY YES | $1.64 (4 × 41¢) | 49.7% | 49.7% | 40.5¢ | +9.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$2.36 |
+| 2 | Philadelphia vs St. Louis Winner? | MLB | BUY YES | $0.96 (2 × 48¢) | 52.7% | 52.7% | 47.5¢ | +5.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.96 |
+| 3 | Baltimore vs Minnesota Winner? | MLB | BUY YES | $0.51 (1 × 51¢) | 54.0% | 54.0% | 50.5¢ | +3.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.49 |
 
-**Total wagered: $3.11**
+**Total wagered: $3.11**  |  **Net P&L: +$1.89**
 
 ---
 ## 2026-08-09
