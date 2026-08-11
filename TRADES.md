@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $43.77 (as of 2026-08-11 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$77.19
+**Current cash balance:** $45.77 (as of 2026-08-11 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$75.19
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 830 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 831 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-11 06:00 | $45.77 |
 | 2026-08-11 03:00 | $43.77 |
 | 2026-08-11 00:00 | $42.19 |
 | 2026-08-10 21:00 | $45.36 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-07-30 03:00 | $38.11 |
 | 2026-07-30 00:00 | $38.11 |
 | 2026-07-29 21:00 | $38.11 |
-| 2026-07-29 18:00 | $38.11 |
 
 ---
 
@@ -127,13 +127,13 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Kansas City vs Los Angeles D Winner? | MLB | BUY NO | $1.16 (4 × 29¢) | 63.7% | 63.7% | 71.5¢ | -7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Houston vs San Francisco Winner? | MLB | BUY YES | $0.86 (2 × 43¢) | 48.0% | 48.0% | 42.5¢ | +5.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 3 | Colorado vs Arizona Winner? | MLB | BUY YES | $0.35 (1 × 35¢) | 38.1% | 38.1% | 34.5¢ | +3.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 4 | Milwaukee vs San Diego Winner? | MLB | BUY NO | $0.47 (1 × 47¢) | 50.8% | 50.8% | 53.5¢ | -2.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 5 | Texas vs Los Angeles A Winner? | MLB | BUY YES | $0.51 (1 × 51¢) | 53.2% | 53.2% | 50.5¢ | +2.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Kansas City vs Los Angeles D Winner? | MLB | BUY NO | $1.16 (4 × 29¢) | 63.7% | 63.7% | 71.5¢ | -7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$1.16 |
+| 2 | Houston vs San Francisco Winner? | MLB | BUY YES | $0.86 (2 × 43¢) | 48.0% | 48.0% | 42.5¢ | +5.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.86 |
+| 3 | Colorado vs Arizona Winner? | MLB | BUY YES | $0.35 (1 × 35¢) | 38.1% | 38.1% | 34.5¢ | +3.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.35 |
+| 4 | Milwaukee vs San Diego Winner? | MLB | BUY NO | $0.47 (1 × 47¢) | 50.8% | 50.8% | 53.5¢ | -2.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.53 |
+| 5 | Texas vs Los Angeles A Winner? | MLB | BUY YES | $0.51 (1 × 51¢) | 53.2% | 53.2% | 50.5¢ | +2.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.49 |
 
-**Total wagered: $3.35**
+**Total wagered: $3.35**  |  **Net P&L: −$1.35**
 
 ---
 ## 2026-08-10
