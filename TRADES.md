@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $48.87 (as of 2026-08-17 12:00 UTC) &nbsp;·&nbsp; **Since first log:** −$72.09
+**Current cash balance:** $48.87 (as of 2026-08-17 15:00 UTC) &nbsp;·&nbsp; **Since first log:** −$72.09
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 881 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 882 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-17 15:00 | $48.87 |
 | 2026-08-17 12:00 | $48.87 |
 | 2026-08-17 09:00 | $48.87 |
 | 2026-08-17 06:00 | $48.87 |
@@ -119,13 +120,17 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-08-05 12:00 | $40.03 |
 | 2026-08-05 09:00 | $40.03 |
 | 2026-08-05 06:00 | $40.03 |
-| 2026-08-05 03:00 | $40.03 |
 
 ---
 
 ## 2026-08-17
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | St. Louis vs Cincinnati Winner? | MLB | BUY NO | $0.94 (2 × 47¢) | 47.5% | 47.5% | 53.5¢ | -6.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | St. Louis vs Cincinnati Winner? | MLB | BUY NO | $0.96 (2 × 48¢) | 47.5% | 47.5% | 52.5¢ | -5.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $1.90**
 
 ---
 ## 2026-08-16
