@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $41.18 (as of 2026-08-18 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$79.78
+**Current cash balance:** $41.18 (as of 2026-08-18 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$79.78
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 891 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 892 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-18 21:00 | $41.18 |
 | 2026-08-18 18:00 | $41.18 |
 | 2026-08-18 15:00 | $41.18 |
 | 2026-08-18 12:00 | $41.18 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-08-06 18:00 | $40.03 |
 | 2026-08-06 15:00 | $40.03 |
 | 2026-08-06 12:00 | $40.03 |
-| 2026-08-06 09:00 | $40.03 |
 
 ---
 
@@ -129,8 +129,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Chicago WS vs Chicago C Winner? | MLB | BUY YES | $2.46 (6 × 41¢) | 56.3% | 56.3% | 40.5¢ | +15.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$2.46 |
 | 2 | Los Angeles D vs Colorado Winner? | MLB | BUY NO | $2.03 (7 × 29¢) | 56.5% | 56.5% | 71.5¢ | -15.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$2.03 |
+| 3 | San Francisco vs Cleveland Winner? | MLB | BUY YES | $0.72 (2 × 36¢) | 41.7% | 41.7% | 35.5¢ | +6.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Toronto vs Tampa Bay Winner? | MLB | BUY NO | $0.56 (1 × 56¢) | 40.0% | 40.0% | 44.5¢ | -4.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $4.49**  |  **Net P&L: −$4.49**
+**Total wagered: $5.77**
 
 ---
 ## 2026-08-17
