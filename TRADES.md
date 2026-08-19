@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $41.18 (as of 2026-08-18 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$79.78
+**Current cash balance:** $39.87 (as of 2026-08-19 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.09
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 892 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 893 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-19 00:00 | $39.87 |
 | 2026-08-18 21:00 | $41.18 |
 | 2026-08-18 18:00 | $41.18 |
 | 2026-08-18 15:00 | $41.18 |
@@ -119,10 +120,18 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-08-06 21:00 | $38.00 |
 | 2026-08-06 18:00 | $40.03 |
 | 2026-08-06 15:00 | $40.03 |
-| 2026-08-06 12:00 | $40.03 |
 
 ---
 
+## 2026-08-19
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Washington vs Texas Winner? | MLB | BUY YES | $0.43 (1 × 43¢) | 45.6% | 45.6% | 42.5¢ | +3.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $0.43**
+
+---
 ## 2026-08-18
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
