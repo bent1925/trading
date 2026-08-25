@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.43 (as of 2026-08-24 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
+**Current cash balance:** $39.43 (as of 2026-08-25 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 940 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 941 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-25 00:00 | $39.43 |
 | 2026-08-24 21:00 | $39.43 |
 | 2026-08-24 18:00 | $39.43 |
 | 2026-08-24 15:00 | $39.43 |
@@ -119,10 +120,21 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-08-12 21:00 | $45.90 |
 | 2026-08-12 18:00 | $45.90 |
 | 2026-08-12 15:00 | $45.90 |
-| 2026-08-12 12:00 | $45.90 |
 
 ---
 
+## 2026-08-25
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | San Francisco wins | MLB | BUY YES | $1.56 (4 × 39¢) | 49.5% | 49.5% | 38.5¢ | +11.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Chicago C wins | MLB | BUY NO | $1.29 (3 × 43¢) | 48.3% | 48.3% | 57.5¢ | -9.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Los Angeles A wins | MLB | BUY YES | $1.20 (3 × 40¢) | 48.3% | 48.3% | 39.5¢ | +8.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | San Diego wins | MLB | BUY YES | $0.53 (1 × 53¢) | 57.2% | 57.2% | 52.5¢ | +4.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $4.58**
+
+---
 ## 2026-08-24
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
