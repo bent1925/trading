@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.43 (as of 2026-08-28 15:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
+**Current cash balance:** $39.43 (as of 2026-08-28 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 970 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 971 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-08-28 18:00 | $39.43 |
 | 2026-08-28 15:00 | $39.43 |
 | 2026-08-28 12:00 | $39.43 |
 | 2026-08-28 09:00 | $39.43 |
@@ -119,13 +120,16 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-08-16 15:00 | $48.87 |
 | 2026-08-16 12:00 | $48.87 |
 | 2026-08-16 09:00 | $48.87 |
-| 2026-08-16 06:00 | $48.87 |
 
 ---
 
 ## 2026-08-28
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Cincinnati wins | MLB | BUY YES | $0.72 (2 × 36¢) | 40.7% | 40.7% | 35.5¢ | +5.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $0.72**
 
 ---
 ## 2026-08-27
