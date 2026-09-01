@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.43 (as of 2026-09-01 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
+**Current cash balance:** $39.43 (as of 2026-09-01 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1003 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1004 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-09-01 21:00 | $39.43 |
 | 2026-09-01 18:00 | $39.43 |
 | 2026-09-01 15:00 | $39.43 |
 | 2026-09-01 12:00 | $39.43 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-08-20 18:00 | $39.43 |
 | 2026-08-20 15:00 | $39.43 |
 | 2026-08-20 12:00 | $39.43 |
-| 2026-08-20 09:00 | $39.43 |
 
 ---
 
@@ -130,8 +130,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 1 | Philadelphia wins | MLB | BUY NO | $0.49 (1 × 49¢) | 47.6% | 47.6% | 51.5¢ | -3.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 | 2 | Los Angeles A wins | MLB | BUY NO | $0.54 (1 × 54¢) | 43.5% | 43.5% | 46.5¢ | -3.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 | 3 | Houston wins | MLB | BUY NO | $0.45 (1 × 45¢) | 52.7% | 52.7% | 55.5¢ | -2.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Toronto wins | MLB | BUY YES | $0.78 (2 × 39¢) | 45.4% | 45.4% | 38.5¢ | +6.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Washington wins | MLB | BUY YES | $0.84 (2 × 42¢) | 47.2% | 47.2% | 41.5¢ | +5.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $1.48**
+**Total wagered: $3.10**
 
 ---
 ## 2026-08-31
