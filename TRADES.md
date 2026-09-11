@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.43 (as of 2026-09-11 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
+**Current cash balance:** $39.43 (as of 2026-09-11 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1083 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1084 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-09-11 21:00 | $39.43 |
 | 2026-09-11 18:00 | $39.43 |
 | 2026-09-11 15:00 | $39.43 |
 | 2026-09-11 12:00 | $39.43 |
@@ -119,13 +120,20 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-08-30 18:00 | $39.43 |
 | 2026-08-30 15:00 | $39.43 |
 | 2026-08-30 12:00 | $39.43 |
-| 2026-08-30 09:00 | $39.43 |
 
 ---
 
 ## 2026-09-11
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Miami wins | MLB | BUY YES | $2.10 (6 × 35¢) | 49.1% | 49.1% | 34.5¢ | +14.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Philadelphia wins | MLB | BUY YES | $1.11 (3 × 37¢) | 44.4% | 44.4% | 36.5¢ | +7.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | New York Y wins | MLB | BUY YES | $1.10 (2 × 55¢) | 60.0% | 60.0% | 54.5¢ | +5.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Kansas City wins | MLB | BUY YES | $0.36 (1 × 36¢) | 40.2% | 40.2% | 35.5¢ | +4.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Detroit wins | MLB | BUY NO | $0.38 (1 × 38¢) | 59.0% | 59.0% | 62.5¢ | -3.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $5.05**
 
 ---
 ## 2026-09-10
