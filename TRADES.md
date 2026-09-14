@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.43 (as of 2026-09-14 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
+**Current cash balance:** $39.43 (as of 2026-09-14 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1107 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1108 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-09-14 21:00 | $39.43 |
 | 2026-09-14 18:00 | $39.43 |
 | 2026-09-14 15:00 | $39.43 |
 | 2026-09-14 12:00 | $39.43 |
@@ -119,13 +120,18 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-09-02 18:00 | $39.43 |
 | 2026-09-02 15:00 | $39.43 |
 | 2026-09-02 12:00 | $39.43 |
-| 2026-09-02 09:00 | $39.43 |
 
 ---
 
 ## 2026-09-14
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Los Angeles D wins | MLB | BUY NO | $2.04 (6 × 34¢) | 52.8% | 52.8% | 66.5¢ | -13.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Chicago WS wins | MLB | BUY YES | $0.82 (2 × 41¢) | 46.2% | 46.2% | 40.5¢ | +5.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Baltimore wins | MLB | BUY YES | $0.43 (1 × 43¢) | 47.0% | 47.0% | 42.5¢ | +4.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $3.29**
 
 ---
 ## 2026-09-13
