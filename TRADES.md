@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.43 (as of 2026-09-18 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
+**Current cash balance:** $39.43 (as of 2026-09-18 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1139 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1140 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-09-18 21:00 | $39.43 |
 | 2026-09-18 18:00 | $39.43 |
 | 2026-09-18 15:00 | $39.43 |
 | 2026-09-18 12:00 | $39.43 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-09-06 18:00 | $39.43 |
 | 2026-09-06 15:00 | $39.43 |
 | 2026-09-06 12:00 | $39.43 |
-| 2026-09-06 09:00 | $39.43 |
 
 ---
 
@@ -128,8 +128,11 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Minnesota wins | MLB | BUY YES | $0.49 (1 × 49¢) | 51.1% | 51.1% | 48.5¢ | +2.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Cincinnati wins | MLB | BUY YES | $0.86 (2 × 43¢) | 49.2% | 49.2% | 42.5¢ | +6.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Pittsburgh wins | MLB | BUY NO | $0.74 (2 × 37¢) | 57.4% | 57.4% | 63.5¢ | -6.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | Milwaukee wins | MLB | BUY NO | $0.84 (2 × 42¢) | 52.6% | 52.6% | 58.5¢ | -5.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $0.49**
+**Total wagered: $2.93**
 
 ---
 ## 2026-09-17
