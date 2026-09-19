@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.43 (as of 2026-09-18 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
+**Current cash balance:** $39.43 (as of 2026-09-19 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1140 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1141 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-09-19 00:00 | $39.43 |
 | 2026-09-18 21:00 | $39.43 |
 | 2026-09-18 18:00 | $39.43 |
 | 2026-09-18 15:00 | $39.43 |
@@ -119,10 +120,22 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-09-06 21:00 | $39.43 |
 | 2026-09-06 18:00 | $39.43 |
 | 2026-09-06 15:00 | $39.43 |
-| 2026-09-06 12:00 | $39.43 |
 
 ---
 
+## 2026-09-19
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Seattle wins | MLB | BUY NO | $1.48 (4 × 37¢) | 52.3% | 52.3% | 63.5¢ | -11.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | San Francisco wins | MLB | BUY YES | $1.08 (4 × 27¢) | 36.3% | 36.3% | 26.5¢ | +9.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Toronto wins | MLB | BUY NO | $1.35 (3 × 45¢) | 46.2% | 46.2% | 55.5¢ | -9.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | San Diego wins | MLB | BUY NO | $1.08 (3 × 36¢) | 56.7% | 56.7% | 64.5¢ | -7.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Washington wins | MLB | BUY NO | $1.00 (2 × 50¢) | 44.5% | 44.5% | 50.5¢ | -6.0 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $5.99**
+
+---
 ## 2026-09-18
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
