@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.43 (as of 2026-09-25 15:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
+**Current cash balance:** $39.43 (as of 2026-09-25 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.53
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1194 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1195 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-09-25 18:00 | $39.43 |
 | 2026-09-25 15:00 | $39.43 |
 | 2026-09-25 12:00 | $39.43 |
 | 2026-09-25 09:00 | $39.43 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-09-13 15:00 | $39.43 |
 | 2026-09-13 12:00 | $39.43 |
 | 2026-09-13 09:00 | $39.43 |
-| 2026-09-13 06:00 | $39.43 |
 
 ---
 
@@ -130,8 +130,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 1 | Seattle wins | MLB | BUY NO | $0.37 (1 × 37¢) | 59.3% | 59.3% | 63.5¢ | -4.2 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 | 2 | Chicago C wins | MLB | BUY NO | $0.94 (2 × 47¢) | 46.9% | 46.9% | 53.5¢ | -6.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 | 3 | Chicago C wins | MLB | BUY NO | $0.49 (1 × 49¢) | 46.9% | 46.9% | 51.5¢ | -4.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | New York Y wins | MLB | BUY YES | $1.06 (2 × 53¢) | 58.4% | 58.4% | 52.5¢ | +5.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $1.80**
+**Total wagered: $2.86**
 
 ---
 ## 2026-09-24
