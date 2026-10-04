@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.44 (as of 2026-10-03 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.52
+**Current cash balance:** $39.44 (as of 2026-10-04 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.52
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1260 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1261 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-04 00:00 | $39.44 |
 | 2026-10-03 21:00 | $39.44 |
 | 2026-10-03 18:00 | $39.44 |
 | 2026-10-03 15:00 | $39.44 |
@@ -119,10 +120,18 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-09-21 21:00 | $39.43 |
 | 2026-09-21 18:00 | $39.43 |
 | 2026-09-21 15:00 | $39.43 |
-| 2026-09-21 12:00 | $39.43 |
 
 ---
 
+## 2026-10-04
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | San Diego wins | MLB | BUY YES | $1.08 (3 × 36¢) | 42.6% | 42.6% | 35.5¢ | +7.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $1.08**
+
+---
 ## 2026-10-03
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
