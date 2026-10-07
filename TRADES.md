@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $39.44 (as of 2026-10-07 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.52
+**Current cash balance:** $39.44 (as of 2026-10-07 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$81.52
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1291 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1292 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-07 21:00 | $39.44 |
 | 2026-10-07 18:00 | $39.44 |
 | 2026-10-07 15:00 | $39.44 |
 | 2026-10-07 12:00 | $39.44 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-09-25 18:00 | $39.43 |
 | 2026-09-25 15:00 | $39.43 |
 | 2026-09-25 12:00 | $39.43 |
-| 2026-09-25 09:00 | $39.43 |
 
 ---
 
@@ -128,8 +128,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | San Diego wins | MLB | BUY NO | $0.90 (2 × 45¢) | 50.4% | 50.4% | 55.5¢ | -5.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Tampa Bay wins | MLB | BUY YES | $0.80 (2 × 40¢) | 46.2% | 46.2% | 39.5¢ | +6.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $0.90**
+**Total wagered: $1.70**
 
 ---
 ## 2026-10-06
