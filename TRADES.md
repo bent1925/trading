@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $37.15 (as of 2026-10-10 15:00 UTC) &nbsp;·&nbsp; **Since first log:** −$83.81
+**Current cash balance:** $35.97 (as of 2026-10-10 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$84.99
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1314 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1315 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-10 18:00 | $35.97 |
 | 2026-10-10 15:00 | $37.15 |
 | 2026-10-10 12:00 | $37.15 |
 | 2026-10-10 09:00 | $37.15 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-09-28 15:00 | $39.43 |
 | 2026-09-28 12:00 | $39.43 |
 | 2026-09-28 09:00 | $39.43 |
-| 2026-09-28 06:00 | $39.43 |
 
 ---
 
@@ -128,8 +128,9 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Philadelphia wins | NHL | BUY NO | $1.14 (2 × 57¢) | 37.1% | 37.1% | 43.5¢ | -6.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Vancouver wins | NHL | BUY YES | $1.12 (4 × 28¢) | 38.4% | 38.4% | 27.5¢ | +10.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 
-**Total wagered: $1.14**
+**Total wagered: $2.26**
 
 ---
 ## 2026-10-09
