@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $35.35 (as of 2026-10-11 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$85.61
+**Current cash balance:** $40.26 (as of 2026-10-12 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$80.70
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1324 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1325 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-12 00:00 | $40.26 |
 | 2026-10-11 21:00 | $35.35 |
 | 2026-10-11 18:00 | $37.54 |
 | 2026-10-11 15:00 | $37.54 |
@@ -119,16 +120,20 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-09-29 21:00 | $39.43 |
 | 2026-09-29 18:00 | $39.43 |
 | 2026-09-29 15:00 | $39.43 |
-| 2026-09-29 12:00 | $39.43 |
 
 ---
 
+## 2026-10-12
+
+No trades placed today.
+
+---
 ## 2026-10-11
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Vegas wins | NHL | BUY YES | $1.22 (2 × 61¢) | 68.2% | 68.2% | 60.5¢ | +7.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.78 |
-| 2 | Washington wins | NHL | BUY NO | $2.10 (6 × 35¢) | 50.1% | 50.1% | 65.5¢ | -15.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Washington wins | NHL | BUY NO | $2.10 (6 × 35¢) | 50.1% | 50.1% | 65.5¢ | -15.4 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$3.90 |
 | 3 | Milwaukee wins | MLB | BUY YES | $0.50 (1 × 50¢) | 54.8% | 54.8% | 49.5¢ | +5.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 | 4 | Philadelphia wins | NHL | BUY YES | $0.34 (1 × 34¢) | 38.4% | 38.4% | 33.5¢ | +4.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
 | 5 | Vancouver wins | NHL | BUY NO | $0.72 (1 × 72¢) | 25.9% | 25.9% | 28.5¢ | -2.6 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
