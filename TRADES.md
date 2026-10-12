@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $41.26 (as of 2026-10-12 12:00 UTC) &nbsp;·&nbsp; **Since first log:** −$79.70
+**Current cash balance:** $41.26 (as of 2026-10-12 15:00 UTC) &nbsp;·&nbsp; **Since first log:** −$79.70
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1329 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1330 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-12 15:00 | $41.26 |
 | 2026-10-12 12:00 | $41.26 |
 | 2026-10-12 09:00 | $41.26 |
 | 2026-10-12 06:00 | $41.26 |
@@ -119,13 +120,16 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-09-30 12:00 | $39.43 |
 | 2026-09-30 09:00 | $39.43 |
 | 2026-09-30 06:00 | $39.43 |
-| 2026-09-30 03:00 | $39.43 |
 
 ---
 
 ## 2026-10-12
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Florida wins | NHL | BUY YES | $0.50 (1 × 50¢) | 52.0% | 52.0% | 49.5¢ | +2.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $0.50**
 
 ---
 ## 2026-10-11
