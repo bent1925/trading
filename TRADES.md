@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $40.64 (as of 2026-10-13 18:00 UTC) &nbsp;·&nbsp; **Since first log:** −$80.32
+**Current cash balance:** $40.64 (as of 2026-10-13 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$80.32
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1339 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1340 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-13 21:00 | $40.64 |
 | 2026-10-13 18:00 | $40.64 |
 | 2026-10-13 15:00 | $40.64 |
 | 2026-10-13 12:00 | $40.64 |
@@ -119,13 +120,20 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-10-01 18:00 | $39.43 |
 | 2026-10-01 15:00 | $39.43 |
 | 2026-10-01 12:00 | $39.43 |
-| 2026-10-01 09:00 | $39.43 |
 
 ---
 
 ## 2026-10-13
 
-No trades placed today.
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Seattle wins | NHL | BUY YES | $8.82 (18 × 49¢) | 94.8% | 94.8% | 48.5¢ | +46.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | St. Louis wins | NHL | BUY NO | $4.00 (8 × 50¢) | 30.2% | 30.2% | 50.5¢ | -20.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 3 | Pittsburgh wins | NHL | BUY YES | $3.60 (6 × 60¢) | 75.2% | 75.2% | 59.5¢ | +15.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 4 | New Jersey wins | NHL | BUY NO | $2.04 (4 × 51¢) | 39.4% | 39.4% | 49.5¢ | -10.1 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 5 | Tampa Bay wins | NHL | BUY NO | $1.23 (3 × 41¢) | 50.7% | 50.7% | 59.5¢ | -8.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $19.69**
 
 ---
 ## 2026-10-12
