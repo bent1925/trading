@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $30.01 (as of 2026-10-16 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$90.95
+**Current cash balance:** $33.01 (as of 2026-10-16 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$87.95
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1358 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1359 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-16 06:00 | $33.01 |
 | 2026-10-16 03:00 | $30.01 |
 | 2026-10-16 00:00 | $18.26 |
 | 2026-10-15 21:00 | $33.97 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-10-04 03:00 | $39.44 |
 | 2026-10-04 00:00 | $39.44 |
 | 2026-10-03 21:00 | $39.44 |
-| 2026-10-03 18:00 | $39.44 |
 
 ---
 
@@ -127,10 +127,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Vegas wins | NHL | BUY YES | $2.19 (3 × 73¢) | 89.2% | 89.2% | 72.5¢ | +16.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Utah wins | NHL | BUY NO | $0.98 (2 × 49¢) | 37.2% | 37.2% | 51.5¢ | -14.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Vegas wins | NHL | BUY YES | $2.19 (3 × 73¢) | 89.2% | 89.2% | 72.5¢ | +16.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ✅ WIN +$0.81 |
+| 2 | Utah wins | NHL | BUY NO | $0.98 (2 × 49¢) | 37.2% | 37.2% | 51.5¢ | -14.3 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.98 |
 
-**Total wagered: $3.17**
+**Total wagered: $3.17**  |  **Net P&L: −$0.17**
 
 ---
 ## 2026-10-15
