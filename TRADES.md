@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $32.65 (as of 2026-10-17 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$88.31
+**Current cash balance:** $32.65 (as of 2026-10-17 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$88.31
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1366 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1367 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-17 06:00 | $32.65 |
 | 2026-10-17 03:00 | $32.65 |
 | 2026-10-17 00:00 | $33.01 |
 | 2026-10-16 21:00 | $33.01 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-10-05 03:00 | $39.44 |
 | 2026-10-05 00:00 | $39.44 |
 | 2026-10-04 21:00 | $39.44 |
-| 2026-10-04 18:00 | $39.44 |
 
 ---
 
@@ -128,7 +128,7 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
 | 1 | Portland wins | NBA | BUY NO | $2.10 (5 × 42¢) | 44.1% | 44.1% | 59.0¢ | -14.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Pittsburgh wins | NHL | BUY YES | $0.35 (1 × 35¢) | 37.4% | 37.4% | 34.5¢ | +2.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 2 | Pittsburgh wins | NHL | BUY YES | $0.35 (1 × 35¢) | 37.4% | 37.4% | 34.5¢ | +2.9 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.35 |
 
 **Total wagered: $2.45**
 
