@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $15.82 (as of 2026-10-20 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$105.14
+**Current cash balance:** $15.16 (as of 2026-10-20 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$105.80
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1389 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1390 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-20 03:00 | $15.16 |
 | 2026-10-20 00:00 | $15.82 |
 | 2026-10-19 21:00 | $18.43 |
 | 2026-10-19 18:00 | $18.43 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-10-08 00:00 | $39.44 |
 | 2026-10-07 21:00 | $39.44 |
 | 2026-10-07 18:00 | $39.44 |
-| 2026-10-07 15:00 | $39.44 |
 
 ---
 
@@ -136,10 +136,10 @@ Cash balance only — does not include the value of open limit orders or unsettl
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
 |---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
-| 1 | Philadelphia wins | NHL | BUY NO | $2.10 (3 × 70¢) | 16.0% | 16.0% | 30.5¢ | -14.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
-| 2 | Toronto wins | NHL | BUY NO | $0.45 (1 × 45¢) | 44.8% | 44.8% | 55.5¢ | -10.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+| 1 | Philadelphia wins | NHL | BUY NO | $2.10 (3 × 70¢) | 16.0% | 16.0% | 30.5¢ | -14.5 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$2.10 |
+| 2 | Toronto wins | NHL | BUY NO | $0.45 (1 × 45¢) | 44.8% | 44.8% | 55.5¢ | -10.7 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | ❌ LOSS −$0.45 |
 
-**Total wagered: $2.55**
+**Total wagered: $2.55**  |  **Net P&L: −$2.55**
 
 ---
 ## 2026-10-18
