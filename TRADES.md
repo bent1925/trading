@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $16.16 (as of 2026-10-20 21:00 UTC) &nbsp;·&nbsp; **Since first log:** −$104.80
+**Current cash balance:** $13.62 (as of 2026-10-21 00:00 UTC) &nbsp;·&nbsp; **Since first log:** −$107.34
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1396 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1397 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-21 00:00 | $13.62 |
 | 2026-10-20 21:00 | $16.16 |
 | 2026-10-20 18:00 | $16.16 |
 | 2026-10-20 15:00 | $16.16 |
@@ -119,10 +120,18 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-10-08 21:00 | $39.44 |
 | 2026-10-08 18:00 | $39.44 |
 | 2026-10-08 15:00 | $39.44 |
-| 2026-10-08 12:00 | $39.44 |
 
 ---
 
+## 2026-10-21
+
+| # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
+|---|--------|-------|-----|--------|------|-----------------|-----------|------|----------|--------|
+| 1 | Seattle wins | NHL | BUY YES | $0.48 (1 × 48¢) | 61.3% | 61.3% | 47.5¢ | +13.8 pp | Fade Kalshi → ESPN season win-rate (weakest fallback) | pending |
+
+**Total wagered: $0.48**
+
+---
 ## 2026-10-20
 
 | # | Market | Sport | Bet | Amount | ESPN | Model (blended) | Kalshi Mid | Edge | Strategy | Result |
