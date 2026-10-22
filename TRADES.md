@@ -14,12 +14,13 @@ Model estimates and Kalshi implied probabilities are percentages for the YES out
 
 ## Account Balance
 
-**Current cash balance:** $14.77 (as of 2026-10-22 03:00 UTC) &nbsp;·&nbsp; **Since first log:** −$106.19
+**Current cash balance:** $14.77 (as of 2026-10-22 06:00 UTC) &nbsp;·&nbsp; **Since first log:** −$106.19
 
-Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1406 entries.
+Cash balance only — does not include the value of open limit orders or unsettled positions. Showing the most recent 100 of 1407 entries.
 
 | Timestamp (UTC) | Cash Balance |
 |-----------------|-------------:|
+| 2026-10-22 06:00 | $14.77 |
 | 2026-10-22 03:00 | $14.77 |
 | 2026-10-22 00:00 | $14.77 |
 | 2026-10-21 21:00 | $16.13 |
@@ -119,7 +120,6 @@ Cash balance only — does not include the value of open limit orders or unsettl
 | 2026-10-10 03:00 | $37.15 |
 | 2026-10-10 00:00 | $37.15 |
 | 2026-10-09 21:00 | $39.44 |
-| 2026-10-09 18:00 | $39.44 |
 
 ---
 
